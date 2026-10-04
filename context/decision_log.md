@@ -29,3 +29,14 @@
 - Added a minimal `.gitignore` for macOS metadata, local environment values, and editor temporary files. Stack-specific entries remain pending stack approval.
 - Repository preparation does not approve the PRD or authorize prototype implementation.
 - Initial documentation commit `c30f8f5` was successfully pushed to `origin/main`; no existing history was overwritten.
+
+## 2026-10-05 — PRD expanded to cover technical and product behavior
+
+- The user supplied detailed PRD requirements, approved the edits, and explicitly authorized pushing the updated documentation to `main`.
+- Revised `flowguard_prd.md` to version 0.2 with component responsibilities, internal processing, models/contracts, request/result behavior, UI flows/states, permissions, security, configuration, performance, deployment, testing, and traceable acceptance criteria.
+- Distinguished proposed required behavior from implementation recommendations, assumptions, and unresolved decisions. Document publication does not approve these technical choices or authorize implementation.
+- Recommended a shared TypeScript engine, browser worker, React interface, and Node.js CLI; these are unapproved recommendations, not selected dependencies.
+- Explicitly recorded that no database or account service is required under the proposed stateless local architecture. A local-backend alternative remains decision-gated.
+- Identified the dynamic SQL placeholder-checking gap and the effects of short-circuit semantics and variable initialization. These must be resolved before the affected implementation starts.
+- Added an open-decision register (OD-01–09), recommended measurable budgets, and a documented consistency review. No runtime claims or implementation code were added.
+- The user replaced the earlier workflow instructions with explicit PRD rules: PRDs define product behavior, and approved implementation plans define implementation. Updated the handoff accordingly; the existing authorization to edit and push documentation remains in effect.

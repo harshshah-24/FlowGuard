@@ -30,7 +30,7 @@ The analyzer will model sensitive operations without executing programs, databas
 
 ## Project Documentation
 
-- [Product requirements](context/flowguard_prd.md): proposed scope, features, acceptance criteria, and submission requirements.
+- [Product requirements](context/flowguard_prd.md): detailed draft scope, internal algorithms, data/API contracts, UI states, security boundaries, acceptance criteria, and open decisions.
 - [Context index](context/README.md): guide to the project documents.
 - [Context handoff](context/context_handoff.md): starting point for a new contributor or coding agent.
 - [Decision log](context/decision_log.md): project choices, reasoning, and authorization history.
