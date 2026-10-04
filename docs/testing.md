@@ -41,3 +41,7 @@ GitHub Actions configuration is created but has not run remotely. Full compiler/
 ## Dependency Audit
 
 `npm audit --json` reported two low-severity entries: Monaco Editor and its DOMPurify dependency, associated with [GHSA-p98j-92pf-mc4p](https://github.com/advisories/GHSA-p98j-92pf-mc4p). No moderate/high/critical entries were reported in this run. Monaco is installed as planned but is not imported or bundled by the Phase 0 shell. Review the advisory and an approved dependency mitigation before its Phase 1 integration. No automatic audit fix or package-pin deviation was made.
+
+## Remote CI publication validation
+
+Phase 0 implementation commit `565b47c` was pushed to canonical main after explicit approval. [GitHub Actions run 37237405149](https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149) passed on Ubuntu: clean npm installation, typecheck, 28 unit tests, production build, and two Chromium UI checks. This validates the foundation only; no compiler or VM exists yet.

@@ -8,7 +8,7 @@
 
 **Team:** two; deadline: 8 October 2026 (submission time unspecified).
 
-**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is complete locally. Phases 1–4 require further implementation authorization. No publication/merge authorization is inferred from Phase 0 approval.
+**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. Phases 1–4 require further implementation authorization. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
 
 ## 1. Outcome and Fixed Scope
 

@@ -1,6 +1,6 @@
 # Implementation Phases
 
-**Status:** Phase 0 is complete locally. Phases 1–4 remain unstarted and require authorization.
+**Status:** Phase 0 is published on main. Phases 1–4 remain unstarted and require authorization.
 
 The [master plan](../implementation_plan.md) is the implementation source of truth. These five phase files provide ordered tasks, ownership, dependencies, validation, and exit gates. Read the [PRD](../flowguard_prd.md) and current [status](../status_update.md) before starting.
 

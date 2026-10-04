@@ -2,7 +2,7 @@
 
 **Suggested window:** 5 October 2026
 
-**State:** Complete locally on `codex/flowguard-build` (5 October 2026). User explicitly approved Phase 0 implementation. No later phase is implemented.
+**State:** Published on `main` at implementation commit `565b47c` (5 October 2026). User explicitly approved Phase 0 implementation. No later phase is implemented.
 
 ## Source of Truth
 
@@ -41,7 +41,7 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Exit Gate
 
-Contracts and build foundations are complete locally. Typechecks, 28 unit tests, production build, and two Chromium checks passed; clean lockfile installation succeeded. See [validation evidence](../../docs/testing.md). No runnable analyzer or VM is claimed; remote CI has not run.
+Contracts and build foundations are published on main. Typechecks, 28 unit tests, production build, and two Chromium checks passed; clean lockfile installation succeeded. See [validation evidence](../../docs/testing.md). No runnable analyzer or VM is claimed; remote CI passed for implementation commit `565b47c` (run `37237405149`).
 
 ## State Updates and Continuation
 

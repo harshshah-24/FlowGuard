@@ -58,7 +58,7 @@ The TypeScript engine will be shared by Node CLI and browser workers. Planned in
 
 - [PRD](context/flowguard_prd.md): product behavior and chosen scope.
 - [Master implementation plan](context/implementation_plan.md): exact files, contracts, algorithms, dependencies, and checks.
-- [Phase index](context/phases/README.md): ordered tasks and gates; Phase 0 is complete locally.
+- [Phase index](context/phases/README.md): ordered tasks and gates; Phase 0 is published on main.
 - [Status](context/status_update.md), [handoff](context/context_handoff.md), and [decision log](context/decision_log.md).
 - [Original ideas](context/project_ideas.md): exploration history, not current scope.
 - [Third-party notes](docs/third_party.md): dependency licenses; no project license is added.

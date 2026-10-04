@@ -18,7 +18,7 @@ All context lives in `context/`:
 - `decision_log.md`: chronological decisions and approvals.
 - `status_update.md`: current work, remaining tasks, and next steps.
 - `project_ideas.md`: historical proposals, not current scope.
-- `README.md`: context reading guide. Root README describes current documentation-only state.
+- `README.md`: context reading guide. Root README describes the Phase 0 foundation and current setup.
 
 PRD defines product behavior; the latest approved implementation plan defines implementation. Neither source may be silently contradicted.
 
@@ -36,11 +36,11 @@ PRD defines product behavior; the latest approved implementation plan defines im
 
 ## Current State and Authorization
 
-PRD v0.3/master plan/phase files were published on main. The user then explicitly approved Phase 0 implementation. Phase 0 is complete locally: pinned workspaces/lockfile/configurations, strict models/contracts for analysis and runtime, source/diagnostic/budget utilities, examples/fixture skeletons, a pure workspace reducer, React shell, and CI scaffold.
+PRD v0.3/master plan/phase files were published on main. The user then explicitly approved Phase 0 implementation. Phase 0 implementation commit `565b47c` is published on canonical main: pinned workspaces/lockfile/configurations, strict models/contracts for analysis and runtime, source/diagnostic/budget utilities, examples/fixture skeletons, a pure workspace reducer, React shell, and CI scaffold.
 
-Local checks passed: typecheck, 28 unit tests, production builds, and two Chromium UI checks. Clean lockfile installation succeeded. No remote CI, real compiler/analysis/codegen/VM, or performance benchmarks have run. Analysis and Run remain visibly disabled; CLI only provides version/unavailable scaffolding. See `docs/testing.md`.
+Local checks passed: typecheck, 28 unit tests, production builds, and two Chromium UI checks. Clean lockfile installation succeeded. Remote CI passed for implementation commit `565b47c` ([run](https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149)). No real compiler/analysis/codegen/VM or performance benchmarks have run. Analysis and Run remain visibly disabled; CLI only provides version/unavailable scaffolding. See `docs/testing.md`.
 
-After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Earlier documentation publication was authorized. The subsequent approval covers Phase 0 implementation only; it does not authorize Phases 1–4 or a source push/merge. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
+After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Earlier documentation publication was authorized. The user subsequently explicitly approved merging and pushing Phase 0 to main. This does not authorize Phases 1–4. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
 
 Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes its unresolved scope/recommended stack and no-execution assumptions; history remains in Git.
 
@@ -58,4 +58,4 @@ Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes i
 
 Submission time/report template, teammate names/skills, and demo hardware are unspecified. These do not change product architecture. Do not invent faculty requirements or a precise submission time. Use generic teammate A/B ownership and record the actual benchmark machine later.
 
-Phase 0 is complete locally. Next obtain authorization before any source push/merge or Phase 1 work. Before integrating Monaco in Phase 1, resolve the recorded low-severity dependency advisory without silently changing approved pins. Any newly discovered implementation ambiguity remains a stop-and-ask condition.
+Phase 0 is published on main. Remote CI passed; obtain authorization before Phase 1 work. Before integrating Monaco in Phase 1, resolve the recorded low-severity dependency advisory without silently changing approved pins. Any newly discovered implementation ambiguity remains a stop-and-ask condition.

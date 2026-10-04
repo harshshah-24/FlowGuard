@@ -15,13 +15,13 @@
 
 ## Current Work
 
-- Phase 0 is complete locally; implementation changes are not pushed.
+- Phase 0 implementation commit `565b47c` is published on canonical `origin/main` after the user approved merge/push.
 - No real compiler, analyzer, bytecode generator, verifier, or VM exists yet. UI Analyze/Run are disabled.
-- Remote GitHub Actions is configured but unexecuted.
+- Remote GitHub Actions passed for implementation commit `565b47c`: clean install, typecheck, 28 unit tests, production build, and two Chromium UI tests. [Run](https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149).
 
 ## Remaining Work
 
-- Review source publication; do not infer push/merge permission.
+- Phase 0 publication and remote validation are complete.
 - Obtain explicit Phase 1 authorization before implementing the lexer/parser/semantic checker/lowering or Monaco integration.
 - Implement and validate Phases 1–4 after their authorization.
 
@@ -33,4 +33,4 @@
 
 ## Immediate Next Step
 
-Review the completed Phase 0 changes and decide source publication and Phase 1 authorization. See `docs/testing.md` for verification boundaries.
+Obtain explicit Phase 1 authorization. See `docs/testing.md` for verification boundaries.

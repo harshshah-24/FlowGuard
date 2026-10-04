@@ -72,3 +72,9 @@
 - `npm audit --json` reported two low-severity Monaco/DOMPurify entries (GHSA-p98j-92pf-mc4p), no moderate/high/critical entries. Monaco is not integrated or bundled in this phase. Retained the approved pins; review mitigation before Phase 1 Monaco integration.
 - Source-location helpers use portable WHATWG Encoding globals with structural type declarations; core builds without DOM/Node type libraries. No backend/database/accounts/persistence/project license was added.
 - Implementation changes remain local; any push/merge needs the applicable user authorization.
+
+## 2026-10-05 — Phase 0 publication approved
+
+- The user explicitly approved merging and pushing Phase 0 to `main`.
+- Verified remote main remained `2a5c687`, fast-forwarded main to `565b47c`, and successfully pushed to the sole canonical repository. No history was overwritten.
+- Remote CI passed for implementation commit `565b47c`: clean install, typechecks, 28 unit tests, production build, and two Chromium checks. Evidence: https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149. Later phases remain unauthorized.
