@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "state": "expectations-only; compiler not implemented",
+  "fixtures": [
+    {
+      "id": "empty",
+      "filename": "valid/empty.fg",
+      "expectedDiagnosticCodes": [],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "HALT without events."
+    },
+    {
+      "id": "missing-initializer",
+      "filename": "invalid/missing-initializer.fg",
+      "expectedDiagnosticCodes": [
+        "PARSE_EXPECTED"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not runnable."
+    },
+    {
+      "id": "shadowing",
+      "filename": "invalid/shadowing.fg",
+      "expectedDiagnosticCodes": [
+        "SEM_SHADOWING"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not runnable."
+    }
+  ]
+}

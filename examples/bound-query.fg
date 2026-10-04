@@ -1,0 +1,2 @@
+let name: string = input("Name");
+sql_bind("SELECT * FROM users WHERE name = ?", name);

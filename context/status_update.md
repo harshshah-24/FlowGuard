@@ -4,35 +4,33 @@
 
 ## Completed
 
-- Selected FlowGuard and established the sole canonical GitHub repository.
-- Published initial documentation and detailed PRD v0.2 on main (historical revision `bb5d585`).
-- Collected user answers resolving custom-language scope, stack, language features, binding model, storage, contracts, and main limits.
-- Confirmed added bytecode generation and VM execution, GitHub Actions, two teammates, 8 October deadline, and no project license.
-- Updated local PRD to v0.3 with exact delegated language/runtime/contracts/limit behavior.
-- Created local `implementation_plan.md` v1.1 with exact files, modules, algorithms, interfaces, dependencies, phases, tests, and suggested two-person allocation.
-- Updated README/context index/decision log/handoff to reflect the selected scope and current approval boundary.
-- Verified local runtime and official dependency/action metadata without installing packages.
-- Completed document consistency review, numbered-requirement checks, local-link checks, and whitespace validation.
-- Split the master plan into five synchronized phase documents plus an index, with ordered tasks, ownership, dependencies, checks, and exit gates.
-- Received explicit authorization to publish the PRD, master plan, phase files, README, and synchronized context to main.
-- Successfully pushed PRD v0.3, master plan v1.1, and all five phase files/index to main in documentation commit `ede7f05`.
+- PRD v0.3/master plan/phase documents published on canonical main.
+- User approved Phase 0 implementation; created `codex/flowguard-build`.
+- Phase 0 workspaces, pinned dependencies/lockfile, TypeScript/build/test/CI configuration complete.
+- Shared compiler/analysis/execution schemas, source spans/UTF-8/BOM helpers, diagnostic failures, and fixed budgets complete.
+- Synthetic examples/fixture expectations, pure workspace state machine, and editable React shell complete.
+- Local typecheck, 28 unit tests, ESM/Vite production build, and two Chromium UI tests passed.
+- Clean lockfile installation succeeded; production screenshot inspected.
+- README, validation notes, third-party notes, phase checklist, and project context updated.
 
-## Currently Being Worked On
+## Current Work
 
-- Documentation publication is complete. No active implementation work.
-- No source implementation, dependency installation, VM execution, test run, CI run, or benchmark has started.
+- Phase 0 is complete locally; implementation changes are not pushed.
+- No real compiler, analyzer, bytecode generator, verifier, or VM exists yet. UI Analyze/Run are disabled.
+- Remote GitHub Actions is configured but unexecuted.
 
 ## Remaining Work
 
-- Obtain approval of the implementation plan and authorization to build.
-- Implement/verify each phase and prepare final submission evidence/documentation.
+- Review source publication; do not infer push/merge permission.
+- Obtain explicit Phase 1 authorization before implementing the lexer/parser/semantic checker/lowering or Monaco integration.
+- Implement and validate Phases 1–4 after their authorization.
 
-## Blockers and Unknowns
+## Risks and Unknowns
 
-- Documentation publication is authorized. Implementation/build approval remains pending.
-- Submission time/report template, teammate names/skills, and demo hardware are unknown; no architecture decision is hidden behind them.
-- Three-day delivery window is tight for the full scope; any scope reduction requires the user's decision.
+- Installed Monaco/DOMPurify has two low-severity audit entries; no moderate/high/critical entries in this run. Monaco is not bundled in Phase 0. Review an approved mitigation before integration; no pins were changed.
+- Submission time/report template/teammate names/demo hardware remain unknown.
+- Deadline 8 October 2026; any scope adjustment requires the user's decision.
 
 ## Immediate Next Step
 
-Obtain explicit implementation/build approval before starting Phase 0 from the published plan.
+Review the completed Phase 0 changes and decide source publication and Phase 1 authorization. See `docs/testing.md` for verification boundaries.

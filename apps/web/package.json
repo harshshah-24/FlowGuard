@@ -1,0 +1,20 @@
+{
+  "name": "@flowguard/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json",
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort"
+  },
+  "dependencies": {
+    "@flowguard/core": "0.1.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "monaco-editor": "0.57.0",
+    "@xyflow/react": "12.12.0",
+    "@dagrejs/dagre": "3.1.1"
+  }
+}

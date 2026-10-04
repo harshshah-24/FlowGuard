@@ -1,0 +1,3 @@
+let text: string = "trusted";
+if (true) { text = input("Value"); } else { text = "literal"; }
+shell(text);

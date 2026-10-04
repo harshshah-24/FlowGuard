@@ -1,0 +1,4 @@
+let i: int = 0;
+let text: string = "initial";
+while (i < 2) { text = input("Value"); i = i + 1; }
+sql_query(text);

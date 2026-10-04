@@ -62,3 +62,13 @@
 - Updated README/context navigation and project-state files. Publishing documentation is authorized; building/installing dependencies is not yet authorized.
 
 - Publication completed: documentation commit `ede7f05` pushed successfully to canonical `origin/main`; implementation remains unstarted.
+
+## 2026-10-05 — Phase 0 implemented locally
+
+- The user requested Phase 0 implementation and approved the stated scope before changes. Created the planned `codex/flowguard-build` branch. No later phase is authorized or implemented.
+- Added exact pinned npm workspaces/lockfile, TypeScript configurations, CI scaffold, complete analysis/execution model schemas, source utilities, diagnostics, fixed budget guards, synthetic examples/fixtures, pure workspace reducer, and editable React foundation shell.
+- Analysis/Run controls are disabled and CLI analysis/execution is unavailable; empty-program data is hand-authored schema test input only, never a claimed compiler result.
+- Clean `npm ci --no-audit --no-fund` succeeded. Local typecheck, 28 Vitest tests, ESM/Vite build, and two production Chromium tests passed. Screenshot inspected. No remote CI or compiler/VM/evaluation/benchmark was executed.
+- `npm audit --json` reported two low-severity Monaco/DOMPurify entries (GHSA-p98j-92pf-mc4p), no moderate/high/critical entries. Monaco is not integrated or bundled in this phase. Retained the approved pins; review mitigation before Phase 1 Monaco integration.
+- Source-location helpers use portable WHATWG Encoding globals with structural type declarations; core builds without DOM/Node type libraries. No backend/database/accounts/persistence/project license was added.
+- Implementation changes remain local; any push/merge needs the applicable user authorization.

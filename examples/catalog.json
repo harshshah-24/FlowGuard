@@ -1,0 +1,132 @@
+[
+  {
+    "id": "unsafe-query",
+    "title": "Unsafe query",
+    "purpose": "Follow input into query text.",
+    "filename": "unsafe-query.fg",
+    "expectedFindingRules": [
+      "SQL_QUERY_TEXT"
+    ],
+    "inputs": [
+      "Ada"
+    ],
+    "expectedRuntimeBehavior": "Simulated query event.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "bound-query",
+    "title": "Parameter binding",
+    "purpose": "Distinguish template from bound value.",
+    "filename": "bound-query.fg",
+    "expectedFindingRules": [],
+    "inputs": [
+      "Ada"
+    ],
+    "expectedRuntimeBehavior": "Simulated bound-query event.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "branch-merge",
+    "title": "Branch merge",
+    "purpose": "Union structural branch contributions.",
+    "filename": "branch-merge.fg",
+    "expectedFindingRules": [
+      "SHELL_COMMAND_TEXT"
+    ],
+    "inputs": [
+      "echo example"
+    ],
+    "expectedRuntimeBehavior": "Simulated command event.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "trusted-overwrite",
+    "title": "Trusted overwrite",
+    "purpose": "Assignment replaces earlier explicit taint.",
+    "filename": "trusted-overwrite.fg",
+    "expectedFindingRules": [],
+    "inputs": [
+      "untrusted"
+    ],
+    "expectedRuntimeBehavior": "Simulated literal command event.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "loop-flow",
+    "title": "Loop input flow",
+    "purpose": "Reuse one static input source across iterations.",
+    "filename": "loop-flow.fg",
+    "expectedFindingRules": [
+      "SQL_QUERY_TEXT"
+    ],
+    "inputs": [
+      "one",
+      "two"
+    ],
+    "expectedRuntimeBehavior": "Two input events and one simulated query event.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "multiple-sources",
+    "title": "Multiple input sources",
+    "purpose": "Combine two sources at one sensitive argument.",
+    "filename": "multiple-sources.fg",
+    "expectedFindingRules": [
+      "SHELL_COMMAND_TEXT"
+    ],
+    "inputs": [
+      "hello",
+      "world"
+    ],
+    "expectedRuntimeBehavior": "Simulated command containing both strings.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "short-circuit",
+    "title": "Short circuit",
+    "purpose": "Runtime skips an unnecessary input.",
+    "filename": "short-circuit.fg",
+    "expectedFindingRules": [],
+    "inputs": [],
+    "expectedRuntimeBehavior": "Print false; consume no inputs.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "arithmetic-loop",
+    "title": "Arithmetic loop",
+    "purpose": "Demonstrate integer conditions and assignment.",
+    "filename": "arithmetic-loop.fg",
+    "expectedFindingRules": [],
+    "inputs": [],
+    "expectedRuntimeBehavior": "Print integer 3.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  },
+  {
+    "id": "runtime-error",
+    "title": "Runtime error",
+    "purpose": "A valid typed program can fail during execution.",
+    "filename": "runtime-error.fg",
+    "expectedFindingRules": [],
+    "inputs": [],
+    "expectedRuntimeBehavior": "RUNTIME_DIV_ZERO before print.",
+    "limitations": [
+      "Educational modeled operations; source is not executed in Phase 0."
+    ]
+  }
+]

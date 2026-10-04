@@ -1,0 +1,2 @@
+let skip: bool = false && input("Skipped") == "yes";
+print(skip);

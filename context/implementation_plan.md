@@ -8,7 +8,7 @@
 
 **Team:** two; deadline: 8 October 2026 (submission time unspecified).
 
-**Approval status:** The user authorized publishing the PRD/master plan and separate phase documents to main. Implementation/build authorization remains pending; do not install dependencies or implement from publication approval alone.
+**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is complete locally. Phases 1–4 require further implementation authorization. No publication/merge authorization is inferred from Phase 0 approval.
 
 ## 1. Outcome and Fixed Scope
 

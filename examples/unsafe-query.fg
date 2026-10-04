@@ -1,0 +1,3 @@
+let name: string = input("Name");
+let query: string = "SELECT * FROM users WHERE name = " + name;
+sql_query(query);

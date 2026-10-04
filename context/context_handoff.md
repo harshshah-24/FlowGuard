@@ -8,7 +8,7 @@ FlowGuard is the Innovative Assignment for 4CS501CC25 Principles of Compiler Des
 
 ## Repository and Documents
 
-Canonical/sole repository: `https://github.com/harshshah-24/FlowGuard`; remote `origin`; current branch `main`. Preserve remote history; never force-push or use a different repository without authorization.
+Canonical/sole repository: `https://github.com/harshshah-24/FlowGuard`; remote `origin`; implementation branch `codex/flowguard-build` (based on published main). Preserve remote history; never force-push or use a different repository without authorization.
 
 All context lives in `context/`:
 
@@ -36,9 +36,11 @@ PRD defines product behavior; the latest approved implementation plan defines im
 
 ## Current State and Authorization
 
-PRD v0.3, master plan v1.1, five separate phase documents/index, README, and state files were published to main in documentation commit `ede7f05`. No implementation exists; no dependencies were installed; no compiler/VM/tests/CI/benchmarks were executed. Dependency/version/action metadata were checked read-only.
+PRD v0.3/master plan/phase files were published on main. The user then explicitly approved Phase 0 implementation. Phase 0 is complete locally: pinned workspaces/lockfile/configurations, strict models/contracts for analysis and runtime, source/diagnostic/budget utilities, examples/fixture skeletons, a pure workspace reducer, React shell, and CI scaffold.
 
-After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Documentation publication is authorized; implementation/build is not. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
+Local checks passed: typecheck, 28 unit tests, production builds, and two Chromium UI checks. Clean lockfile installation succeeded. No remote CI, real compiler/analysis/codegen/VM, or performance benchmarks have run. Analysis and Run remain visibly disabled; CLI only provides version/unavailable scaffolding. See `docs/testing.md`.
+
+After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Earlier documentation publication was authorized. The subsequent approval covers Phase 0 implementation only; it does not authorize Phases 1–4 or a source push/merge. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
 
 Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes its unresolved scope/recommended stack and no-execution assumptions; history remains in Git.
 
@@ -56,4 +58,4 @@ Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes i
 
 Submission time/report template, teammate names/skills, and demo hardware are unspecified. These do not change product architecture. Do not invent faculty requirements or a precise submission time. Use generic teammate A/B ownership and record the actual benchmark machine later.
 
-Documentation publication is complete. Next obtain explicit implementation/build approval. Read the phase index and start Phase 0 only after that authorization. Any newly discovered implementation ambiguity remains a stop-and-ask condition.
+Phase 0 is complete locally. Next obtain authorization before any source push/merge or Phase 1 work. Before integrating Monaco in Phase 1, resolve the recorded low-severity dependency advisory without silently changing approved pins. Any newly discovered implementation ambiguity remains a stop-and-ask condition.

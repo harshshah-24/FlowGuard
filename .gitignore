@@ -13,5 +13,11 @@
 *.swo
 *~
 
-# Extend with stack-specific dependencies and build outputs after approval.
+# Approved workspace dependencies, builds, and test outputs
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+.vite/
 # Keep project documentation, test fixtures, and lockfiles tracked.

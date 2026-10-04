@@ -2,7 +2,7 @@
 
 **Suggested window:** 5 October 2026
 
-**State:** Not started. Documentation publication is not implementation authorization.
+**State:** Complete locally on `codex/flowguard-build` (5 October 2026). User explicitly approved Phase 0 implementation. No later phase is implemented.
 
 ## Source of Truth
 
@@ -33,15 +33,15 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Required Validation
 
-- [ ] Contract tests reject invalid versions/unknown fields and preserve analysis/runtime outcome distinctions.
-- [ ] Source tests cover LF/CRLF/CR, leading BOM, Unicode, zero-width EOF, and UTF-8 size boundaries.
-- [ ] Limits tests assert cap/cap+1 and deadline behavior with fake clocks.
-- [ ] Typecheck/build configuration works for the modules actually created; schema fixtures for an empty program are validated without claiming empty-source compilation already exists.
-- [ ] Workspace source editing/revision/dirty-state tests pass; no database, backend, source persistence, or project license is introduced.
+- [x] Contract tests reject invalid versions/unknown fields and preserve analysis/runtime outcome distinctions.
+- [x] Source tests cover LF/CRLF/CR, leading BOM, Unicode, zero-width EOF, and UTF-8 size boundaries.
+- [x] Limits tests assert cap/cap+1 and deadline behavior with fake clocks.
+- [x] Typecheck/build configuration works for the modules actually created; schema fixtures for an empty program are validated without claiming empty-source compilation already exists.
+- [x] Workspace source editing/revision/dirty-state tests pass; no database, backend, source persistence, or project license is introduced.
 
 ## Exit Gate
 
-Complete contracts and build foundations before Phase 1. Record executed checks and phase state; no runnable analyzer is claimed.
+Contracts and build foundations are complete locally. Typechecks, 28 unit tests, production build, and two Chromium checks passed; clean lockfile installation succeeded. See [validation evidence](../../docs/testing.md). No runnable analyzer or VM is claimed; remote CI has not run.
 
 ## State Updates and Continuation
 
