@@ -19,6 +19,7 @@ All five documents above now live in `context/`. `context/README.md` provides a 
 - Remote name: `origin`; working branch: `main`.
 - Preserve the existing remote history. Never force-push or switch to another repository without user authorization.
 - The user approved the initial documentation push to `main`. Implementation remains pending requirements and plan approval.
+- Initial documentation commit `c30f8f5` was pushed successfully. README, PRD, exploration history, and project-state documents are stored in the canonical repository.
 
 ## Current State
 

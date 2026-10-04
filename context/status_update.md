@@ -13,11 +13,12 @@
 - Connected the local repository to the canonical FlowGuard remote and preserved its existing `main` history.
 - Organized the project documents in `context/` and added its index.
 - Updated the root README and added a basic `.gitignore`.
+- Pushed the initial documentation commit `c30f8f5` to the canonical remote's `main` branch.
 
 ## Currently Being Worked On
 
-- Preparing and verifying the authorized initial documentation push to `main`.
-- No prototype implementation work has started.
+- Repository setup and initial documentation push are complete.
+- No active implementation work. The PRD draft is ready for review.
 
 ## Remaining Work
 
