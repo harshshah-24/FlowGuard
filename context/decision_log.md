@@ -40,3 +40,23 @@
 - Identified the dynamic SQL placeholder-checking gap and the effects of short-circuit semantics and variable initialization. These must be resolved before the affected implementation starts.
 - Added an open-decision register (OD-01–09), recommended measurable budgets, and a documented consistency review. No runtime claims or implementation code were added.
 - The user replaced the earlier workflow instructions with explicit PRD rules: PRDs define product behavior, and approved implementation plans define implementation. Updated the handoff accordingly; the existing authorization to edit and push documentation remains in effect.
+
+## 2026-10-05 — Scope decisions resolved and implementation plan drafted
+
+- The user approved the custom typed language, TypeScript/Node/React/browser-worker stack, handwritten front end, literal placeholder checking with nonblocking dynamic-template uncertainty, memory-only storage, and proposed main limits. No faculty language/tool restrictions were reported.
+- The user delegated exact grammar/arithmetic, contract conventions, and remaining resource bounds. PRD v0.3 specifies these for review; the implementation plan defines exact interfaces and algorithms.
+- The faculty does not require code generation, but the user explicitly chose to add it. On follow-up, the user selected both bytecode generation and a VM that executes it; generation-only was not selected.
+- Revised the earlier no-execution boundary: Analyze never runs source; explicit Run executes verified custom bytecode in an isolated bounded interpreter. SQL and shell operations still produce simulated events only.
+- The user confirmed two teammates, deadline 8 October 2026, GitHub Actions checks, and no project license. Submission time/report template/demo hardware were not specified.
+- Selected under delegation: signed-32-bit checked arithmetic, initialized declarations, no shadowing/coercions, short-circuit lowering, UTF-16 source spans, deterministic IDs, JSON/Markdown reports, typed stack bytecode/verifier, supplied-input VM, and additional bounded storage limits.
+- Prepared `implementation_plan.md` with exact files, models, module interfaces, algorithms, worker/UI/CLI behavior, pinned dependencies/action references, tests, phase gates, and suggested ownership/schedule.
+- Verified dependency metadata and local runtime versions only. No packages were installed; no prototype, tests, CI, VM, or benchmark were executed.
+- Current document edits remain uncommitted/unpushed. The user specifically requested a short overview and permission before pushing the finished documents. Plan approval and implementation authorization are also pending.
+
+## 2026-10-05 — Separate phases and documentation publication authorized
+
+- The user explicitly requested pushing the prepared documents and splitting/pushing the implementation plan into separate phases.
+- Added `context/phases/README.md` and five phase files covering foundation, front end/lowering, analysis/explanations, codegen/VM, and release validation.
+- Master plan v1.1 remains the shared technical specification. Phase files are synchronized execution views with ordered tasks, ownership, dependencies, validation, and exit gates.
+- Clarified the phase dependency: static-module validation occurs in Phase 2, while a completed public Analyze result and full browser demonstration require Phase 3 codegen/verifier. No public result-contract or product-scope change was made.
+- Updated README/context navigation and project-state files. Publishing documentation is authorized; building/installing dependencies is not yet authorized.

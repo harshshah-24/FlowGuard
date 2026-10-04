@@ -1,50 +1,59 @@
 # Context Handoff
 
-## Project Context
+**Updated:** 2026-10-05
 
-The user is preparing an Innovative Assignment for **4CS501CC25 Principles of Compiler Design**. Submission requires a working project, source code, and documentation. They want a resume-worthy project that demonstrates core CS fundamentals and supports master's preparation.
+## Purpose
 
-## Current Artifacts
+FlowGuard is the Innovative Assignment for 4CS501CC25 Principles of Compiler Design. The submission needs a working tool, source code, and documentation. The user wants core CS fundamentals, resume value, impressive visuals, and a distinctive use case.
 
-- `project_ideas.md`: Original topic proposals retained as history, with FlowGuard marked as selected.
-- `flowguard_prd.md`: Version 0.2 detailed draft requirements, internal behavior, interfaces, states, acceptance criteria, and open decisions for the visual input-flow analyzer.
-- `decision_log.md`: Decisions and authorization recorded so far.
-- `status_update.md`: Current progress and next steps.
+## Repository and Documents
 
-All five documents above now live in `context/`. `context/README.md` provides a reading guide. The root `README.md` describes the project and links to these documents; the root `.gitignore` excludes basic local-only files.
+Canonical/sole repository: `https://github.com/harshshah-24/FlowGuard`; remote `origin`; current branch `main`. Preserve remote history; never force-push or use a different repository without authorization.
 
-## Repository
+All context lives in `context/`:
 
-- Canonical and sole authorized repository: `https://github.com/harshshah-24/FlowGuard`.
-- Remote name: `origin`; working branch: `main`.
-- Preserve the existing remote history. Never force-push or switch to another repository without user authorization.
-- The user approved the initial documentation push to `main`. Implementation remains pending requirements and plan approval.
-- Initial documentation commit `c30f8f5` was pushed successfully. README, PRD, exploration history, and project-state documents are stored in the canonical repository.
+- `flowguard_prd.md` v0.3: product behavior and approved/delegated specifications.
+- `implementation_plan.md` v1.1: exact implementation files, contracts, algorithms, dependencies, tests, and phases.
+- `phases/README.md` and five phase documents: actionable tasks/gates linked to the master specifications.
+- `decision_log.md`: chronological decisions and approvals.
+- `status_update.md`: current work, remaining tasks, and next steps.
+- `project_ideas.md`: historical proposals, not current scope.
+- `README.md`: context reading guide. Root README describes current documentation-only state.
 
-## Current State
+PRD defines product behavior; the latest approved implementation plan defines implementation. Neither source may be silently contradicted.
 
-The user selected FlowGuard, the third idea from the later suggestions emphasizing impressive visuals and a distinctive use case. They approved project-state updates and requested a PRD. The PRD is now drafted. No implementation has started; neither the PRD requirements nor an implementation plan has been approved.
+## Latest User Decisions
 
-The user subsequently approved expanding the PRD against their detailed product/technical checklist and pushing that revision to `main`. Version 0.2 is written and reviewed for document consistency. Editing/publication approval is not implementation approval.
+- Use a custom language and TypeScript/Node.js/React/browser-worker stack, with our own lexer/parser. No faculty language/tool restrictions were reported.
+- Language: strings, integers, booleans, initialized declarations, block scope, no shadowing/coercion, if/else/while, short-circuit operators.
+- User delegated exact grammar/arithmetic, interfaces, source spans, CLI/report conventions, and remaining bounds. PRD/plan specify these for document review.
+- Literal binding templates get one-placeholder validation; nonliteral templates get a nonblocking uncertainty notice while taint analysis continues.
+- No database, accounts, autosave/history, or draft recovery; explicit saves/exports only.
+- Main resource caps approved; additional retained-state/VM/output budgets specified under delegation.
+- User explicitly added code generation AND VM execution. Do not reduce this to generation-only or silently revert to the earlier no-execution proposal.
+- Analyze is static only; explicit Run executes verified custom bytecode in a bounded worker. SQL/shell effects always remain simulated and never call external services.
+- Team size two; deadline 8 October 2026. CI approved via follow-up answer. Keep the repository without a project license.
 
-The PRD separates required draft behavior, recommendations, assumptions, and open decisions. Its recommended browser-worker/shared-TypeScript stack is not approved. There is no required application database, authentication service, or HTTP analysis API under that recommendation. Logical service/API boundaries still have explicit contracts.
+## Current State and Authorization
 
-Before implementation, resolve OD-01–09 in PRD section 19.2. Important gates include course fit, grammar/scope/initialization/boolean evaluation, dynamic `sql_bind` placeholder behavior, worker versus backend architecture, dependencies, span/schema/CLI conventions, persistence, resource budgets, and delivery constraints. Do not invent answers or treat performance targets as measured results.
+PRD v0.3, master plan v1.1, five separate phase documents/index, README, and state files are prepared for the authorized publication. No implementation exists; no dependencies were installed; no compiler/VM/tests/CI/benchmarks were executed. Dependency/version/action metadata were checked read-only.
 
-FlowGuard analyzes possible explicit flow of untrusted input into modeled SQL query-text and shell-command operations. Proposed scope includes a custom language, a hand-built compiler front end, control-flow graph, worklist-based taint analysis, interactive explanations, a local graphical interface, and command-line parity. These are proposed requirements, not final architecture decisions.
+After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Documentation publication is authorized; implementation/build is not. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
 
-Do not confuse FlowGuard with the original integer-range static analyzer. Interval analysis and division-by-zero checks are outside the proposed FlowGuard initial release. A highlighted graph route must not be called a proven executable exploit path.
+Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes its unresolved scope/recommended stack and no-execution assumptions; history remains in Git.
 
 ## Workflow Requirements
 
-- Give a very short pre-execution summary and wait for approval before changes.
-- The user's replacement workflow requires detailed, self-contained PRDs as the single source of truth for product behavior; separate required behavior, recommendations, assumptions, and open decisions. Review technical behavior, flows, states, edge cases, dependencies, contradictions, and acceptance criteria before finishing.
-- Write implementation plans in Markdown files, not chat.
-- Translate the approved PRD into a deterministic implementation plan as the single source of truth for implementation. Stop and ask the user for unresolved implementation decisions or deviations; update the plan and project state after answers.
-- Make approved plans deterministic; stop for open decisions or deviations.
-- Keep the project-state files synchronized with meaningful changes.
-- Keep explanations simple and concise.
+- Give an extremely short pre-execution summary with crisp bullets and wait for approval before changes.
+- After approval, complete the authorized task and its obvious necessary next steps.
+- PRDs must be detailed/self-contained, explain internal behavior, and distinguish required behavior, choices, assumptions, and unresolved decisions.
+- Implementation plans must be deterministic Markdown files; do not leave decisions for the implementer.
+- If an approved plan has an unresolved decision or needs a deviation, stop and ask, then update plan/state after the answer.
+- Keep decision log, handoff, and status synchronized with meaningful changes.
+- Keep chat simple/concise; technical detail belongs in documents.
 
-## Next Step
+## Remaining Unknowns and Next Step
 
-Review PRD version 0.2 with the user and resolve OD-01–09. Then create a separate deterministic implementation plan for approval. Authorization to edit/publish the PRD does not authorize implementation.
+Submission time/report template, teammate names/skills, and demo hardware are unspecified. These do not change product architecture. Do not invent faculty requirements or a precise submission time. Use generic teammate A/B ownership and record the actual benchmark machine later.
+
+Complete the authorized documentation publication and verify local/remote main match. Next obtain explicit implementation/build approval. Read the phase index and start Phase 0 only after that authorization. Any newly discovered implementation ambiguity remains a stop-and-ask condition.
