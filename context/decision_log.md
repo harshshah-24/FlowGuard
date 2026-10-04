@@ -60,3 +60,5 @@
 - Master plan v1.1 remains the shared technical specification. Phase files are synchronized execution views with ordered tasks, ownership, dependencies, validation, and exit gates.
 - Clarified the phase dependency: static-module validation occurs in Phase 2, while a completed public Analyze result and full browser demonstration require Phase 3 codegen/verifier. No public result-contract or product-scope change was made.
 - Updated README/context navigation and project-state files. Publishing documentation is authorized; building/installing dependencies is not yet authorized.
+
+- Publication completed: documentation commit `ede7f05` pushed successfully to canonical `origin/main`; implementation remains unstarted.

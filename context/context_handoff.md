@@ -36,7 +36,7 @@ PRD defines product behavior; the latest approved implementation plan defines im
 
 ## Current State and Authorization
 
-PRD v0.3, master plan v1.1, five separate phase documents/index, README, and state files are prepared for the authorized publication. No implementation exists; no dependencies were installed; no compiler/VM/tests/CI/benchmarks were executed. Dependency/version/action metadata were checked read-only.
+PRD v0.3, master plan v1.1, five separate phase documents/index, README, and state files were published to main in documentation commit `ede7f05`. No implementation exists; no dependencies were installed; no compiler/VM/tests/CI/benchmarks were executed. Dependency/version/action metadata were checked read-only.
 
 After reviewing the overview, the user explicitly authorized pushing these documents to the repository and requested splitting the implementation plan into separate phases and pushing them too. Documentation publication is authorized; implementation/build is not. Preserve the master plan as the shared technical source of truth and phase files as synchronized task views.
 
@@ -56,4 +56,4 @@ Earlier main revision `bb5d585` published PRD v0.2. The new version supersedes i
 
 Submission time/report template, teammate names/skills, and demo hardware are unspecified. These do not change product architecture. Do not invent faculty requirements or a precise submission time. Use generic teammate A/B ownership and record the actual benchmark machine later.
 
-Complete the authorized documentation publication and verify local/remote main match. Next obtain explicit implementation/build approval. Read the phase index and start Phase 0 only after that authorization. Any newly discovered implementation ambiguity remains a stop-and-ask condition.
+Documentation publication is complete. Next obtain explicit implementation/build approval. Read the phase index and start Phase 0 only after that authorization. Any newly discovered implementation ambiguity remains a stop-and-ask condition.
