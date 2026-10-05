@@ -1,0 +1,1 @@
+export function StatusBar({source,notice}:{source:string;notice:string|null}){return <footer role="status"><span>{notice??(source.trim()?'Draft updated. Full analysis is not available yet.':'Start with a source draft.')}</span><span>No backend · No accounts · No autosave</span></footer>;}

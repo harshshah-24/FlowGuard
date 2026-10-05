@@ -1,0 +1,5 @@
+import { useRef } from 'react';
+export function Toolbar({filename,dirty,revision,onLoad,onSave,fileLoading}:{filename:string;dirty:boolean;revision:number;onLoad:(file:File)=>void;onSave:()=>void;fileLoading:boolean}){
+ const input=useRef<HTMLInputElement>(null);
+ return <div className="toolbar"><span><strong>{filename}</strong> <span className="muted">{dirty?'Unsaved draft':'Saved or empty draft'} · Revision {revision}</span></span><div className="toolbar-actions"><input ref={input} type="file" accept=".fg,text/plain" aria-label="Source file" className="file-input" onChange={e=>{const file=e.target.files?.[0];e.target.value='';if(file)onLoad(file);}}/><button disabled={fileLoading} onClick={()=>input.current?.click()}>{fileLoading?'Reading file…':'Open file'}</button><button onClick={onSave}>Save source</button><button disabled title="Full analysis requires the later taint and bytecode stages">Analyze</button><button disabled title="Bytecode and VM arrive in Phase 3">Run</button></div></div>;
+}

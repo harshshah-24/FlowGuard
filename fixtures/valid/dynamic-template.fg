@@ -1,0 +1,2 @@
+let t: string = "SELECT ?";
+sql_bind(t, 1);

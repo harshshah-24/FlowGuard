@@ -1,6 +1,6 @@
 # FlowGuard — Detailed Implementation Plan
 
-**Version:** 1.1 — master plan with separate phase documents
+**Version:** 1.2 — master plan with separate phase documents
 
 **Date:** 2026-10-05
 
@@ -8,7 +8,9 @@
 
 **Team:** two; deadline: 8 October 2026 (submission time unspecified).
 
-**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. Phases 1–4 require further implementation authorization. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
+**Phase 1 dependency amendment (5 October 2026):** The user approved retaining Monaco 0.57.0 with an exact root npm override `monaco-editor → dompurify: 3.4.16`, replacing its vulnerable 3.4.15 dependency. Update the lockfile and verify production editor/worker behavior.
+
+**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. The user approved Phase 1 and the documented DOMPurify override; Phase 1 is complete locally. Phases 2–4 require further implementation authorization. Phase 1 publication requires separate approval. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
 
 ## 1. Outcome and Fixed Scope
 
@@ -118,7 +120,7 @@ All boundary objects use strict schemas, rejecting unknown fields. Fields descri
 
 `Token`: `id`, `kind`, `span`, `lexeme`, optional decoded `literal`. EOF has a zero-width span at source end.
 
-AST variants: Program(statements); Block(statements); Declaration(name/nameSpan/type/initializer); Assignment(target/targetSpan/value); If(condition/then/optionalElse); While(condition/body); EffectCall(name/args); Literal(scalar); Variable(name); Unary(op/operand); Binary(op/left/right); InputCall(prompt). Each has `id`, `kind`, `span`. Assign IDs by AST preorder after parsing, independent of parser construction order.
+AST variants: Program(statements); Block(statements); Declaration(name/nameSpan/type/initializer); Assignment(target/targetSpan/value); If(condition/then/optionalElse); While(condition/body); EffectCall(name/args); Literal(scalar); Variable(name); Unary(op/operand); Binary(op/left/right); InputCall(prompt). Each has `id`, `kind`, `span`. Assign IDs by AST preorder after parsing, independent of parser construction order. Validate AST payloads iteratively under the total AST-node cap: binary chains must not hit an extra transport depth limit. Parsed effect arguments remain in invalid-source ASTs even when arity is wrong; signature checks are semantic, not AST-schema checks.
 
 `SemanticModel`: `symbols`, `scopes`, `expressionTypes`, `resolvedUses`, `inputSources`, `diagnostics`. Symbol fields: ID/name/type/declarationSpan/scopeId/slotId/topLevel. Scopes: ID/parentId/AST span/declared symbols. `expressionTypes` and `resolvedUses` key by AST ID. Sources sort by input-call span, ID `src-N`.
 
@@ -280,7 +282,7 @@ Execution client uses the same pattern and separate identity, same source revisi
 
 Workspace fields: source/filename/revision/dirty; panel; analysisStatus; activeAnalysisId; currentAnalysis; selectedFindingId/selectedNodeId/selectedBytecodePc; replayIndex/playing; inputJson/inputValidation; runtimeStatus/activeExecutionId/currentExecution; graphLayoutStatus/positions; adapterNotice.
 
-Actions: EDIT_SOURCE, REQUEST_REPLACEMENT, CONFIRM_SAVE_REPLACE, CONFIRM_DISCARD_REPLACE, CANCEL_REPLACEMENT, START_ANALYSIS, ANALYSIS_PROGRESS, ANALYSIS_TERMINAL, CANCEL_ANALYSIS, SELECT_FINDING, SELECT_NODE, SELECT_BYTECODE, SET_REPLAY_INDEX, SET_REPLAY_PLAYING, SET_INPUTS, START_EXECUTION, EXECUTION_TERMINAL, CANCEL_EXECUTION, LAYOUT_RESULT, LAYOUT_ERROR, EXPORT_SUCCESS/ERROR, SET_PANEL.
+Actions: SOURCE_SAVED (matching revision clears dirty after download initiation), EDIT_SOURCE, REQUEST_REPLACEMENT, CONFIRM_SAVE_REPLACE, CONFIRM_DISCARD_REPLACE, CANCEL_REPLACEMENT, START_ANALYSIS, ANALYSIS_PROGRESS, ANALYSIS_TERMINAL, CANCEL_ANALYSIS, SELECT_FINDING, SELECT_NODE, SELECT_BYTECODE, SET_REPLAY_INDEX, SET_REPLAY_PLAYING, SET_INPUTS, START_EXECUTION, EXECUTION_TERMINAL, CANCEL_EXECUTION, LAYOUT_RESULT, LAYOUT_ERROR, EXPORT_SUCCESS/ERROR, SET_PANEL.
 
 EDIT_SOURCE increments revision, sets dirty, cancels workers via controller effect, invalidates current result for marks/Run, pauses replay, resets selections/runtime. Keep previous immutable result available only as previous-snapshot export. Inputs edits invalidate only previous runtime inputs/result, not static compilation. New successful analysis resets replay to final static view (index end, paused), starts layout, and resets runtime to idle. Invalid analysis removes current finding/bytecode presentation for that revision. Result displays never derive spans from stale source.
 
@@ -296,7 +298,7 @@ Trace truncated notice offers “View final analysis”; do not imply last recor
 
 Use one desktop page, minimum supported viewport 1280×720. Layout: header/status row; left source editor (~40% width); center graph (~35%); right findings/inspector (~25%); bottom collapsible runtime/inputs and replay controls. At 1024–1279 pixels switch center/right to tabs; below 1024 show desktop-size guidance while preserving source saving. No new route/login/dashboard.
 
-Monaco registers `flowguard`, extension `.fg`, token coloring, brackets, comments, and supported keywords. Configure its editor worker via Vite `?worker` import; do not load CDN assets or use `@monaco-editor/react` default remote loader. Convert span positions directly to marker ranges, including zero-width EOF diagnostics. Dispose editor/listeners/worker references on unmount.
+Monaco registers `flowguard`, extension `.fg`, token coloring, brackets, comments, and supported keywords. Configure its editor worker via Vite `?worker` import; do not load CDN assets or use `@monaco-editor/react` default remote loader. Convert span positions directly to marker ranges, including zero-width EOF diagnostics. Dispose editor/listeners/worker references on unmount. Keep original text independent of Monaco line-ending normalization/BOM stripping; apply editor changes via original-source line indexes and compensate BOM in editor marker coordinates. Preserve exact bytes for save and snapshot hashing.
 
 Graph layout runs Dagre with top-to-bottom direction, fixed node width 180/height 64, rank separation 70/node separation 30. Label nodes by instruction kind plus compact source/slot summary. React Flow handles zoom/pan/fit; graph is view-only, no user-created edges. Input source/sink/merge/loop use labels and icons/colors. For >200 nodes, layout error, or timeout, show searchable node/edge list with identical selections/inspectors. Do not filter semantic edges to make the graph prettier.
 

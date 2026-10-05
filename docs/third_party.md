@@ -16,4 +16,4 @@ Installed direct dependency pins:
 
 Type-definition packages are pinned in the root manifest; license metadata and notices remain in their installed packages. Consult the root lockfile and each dependency's package metadata/LICENSE/NOTICE files under `node_modules/` for the complete transitive inventory and notices. Preserve applicable notices when packaging third-party assets in future phases.
 
-Monaco/React Flow/Dagre are not integrated into the Phase 0 UI. See [validation notes](testing.md) for the current audit findings before integration.
+Monaco is integrated in Phase 1 using locally bundled API/contributions and editor worker assets. The user approved a Monaco-scoped exact npm override to DOMPurify 3.4.16, replacing 3.4.15. The updated lockfile installs the patched version; audit reported zero vulnerabilities. React Flow/Dagre integration remains for later phases. See [validation notes](testing.md).

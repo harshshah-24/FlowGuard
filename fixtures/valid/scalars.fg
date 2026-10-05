@@ -1,0 +1,4 @@
+let a: int = -2147483647 - 1;
+let b: string = "hello" + " world";
+let c: bool = a < 0 && b != "";
+print(c);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "state": "expectations-only; compiler not implemented",
+  "state": "independently specified expectations; Phase 1 lexer/parser/semantics/lowering validated; taint/runtime not implemented",
   "fixtures": [
     {
       "id": "empty",
@@ -26,6 +26,90 @@
       ],
       "expectedFindingRules": [],
       "expectedRuntimeBehavior": "Not runnable."
+    },
+    {
+      "id": "scalars",
+      "filename": "valid/scalars.fg",
+      "expectedDiagnosticCodes": [],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "nested-control",
+      "filename": "valid/nested-control.fg",
+      "expectedDiagnosticCodes": [],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "sibling-scopes",
+      "filename": "valid/sibling-scopes.fg",
+      "expectedDiagnosticCodes": [],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "dynamic-template",
+      "filename": "valid/dynamic-template.fg",
+      "expectedDiagnosticCodes": [
+        "TEMPLATE_UNVERIFIED"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "unknown-escape",
+      "filename": "invalid/unknown-escape.fg",
+      "expectedDiagnosticCodes": [
+        "LEX_INVALID_ESCAPE"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "integer-range",
+      "filename": "invalid/integer-range.fg",
+      "expectedDiagnosticCodes": [
+        "LEX_INTEGER_RANGE"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "undeclared",
+      "filename": "invalid/undeclared.fg",
+      "expectedDiagnosticCodes": [
+        "SEM_UNDECLARED"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "type-mismatch",
+      "filename": "invalid/type-mismatch.fg",
+      "expectedDiagnosticCodes": [
+        "SEM_TYPE"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "placeholders",
+      "filename": "invalid/placeholders.fg",
+      "expectedDiagnosticCodes": [
+        "SEM_TEMPLATE_PLACEHOLDERS"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
+    },
+    {
+      "id": "arity",
+      "filename": "invalid/arity.fg",
+      "expectedDiagnosticCodes": [
+        "SEM_ARGUMENTS"
+      ],
+      "expectedFindingRules": [],
+      "expectedRuntimeBehavior": "Not executed in Phase 1."
     }
   ]
 }

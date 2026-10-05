@@ -6,9 +6,9 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 ## Current Status
 
-**Phase 0 foundation is implemented.** The repository now has pinned npm workspaces, strict shared models/contracts, source-location and resource-budget utilities, a React workspace shell, synthetic examples, tests, and GitHub Actions configuration.
+**Phase 1 is implemented locally on `codex/flowguard-build`.** Core APIs now tokenize, parse, check scope/types, and lower source into a typed instruction graph with short-circuit branches and loop edges. The browser has a locally bundled Monaco editor, example/help panels, UTF-8 file loading, explicit source downloads, and dirty-draft replacement protection.
 
-The lexer, parser, type checker, graph builder, taint solver, code generator, verifier, and VM are not implemented yet. Analyze and Run are disabled in the UI. The CLI supports only a foundation version check and an honest unavailable message. No successful analysis is fabricated.
+The taint solver, completed Analyze flow, graph presentation, bytecode generator/verifier, and VM arrive in later phases. Analyze and Run remain disabled. The CLI remains a version/unavailable scaffold. No security verdict or execution is fabricated.
 
 ## Local Setup
 
@@ -31,7 +31,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Or run `npm run check` after the browser installation. Phase 0 verification passed 28 unit tests, two production Chromium tests, typechecks, and builds. [Testing notes](docs/testing.md) distinguish these checks from later compiler/runtime acceptance and record the dependency audit findings. Remote GitHub Actions has not run yet.
+Or run `npm run check` after the browser installation. Phase 1 verification passed 111 unit tests, six production Chromium tests, typechecks, and builds. [Testing notes](docs/testing.md) distinguish these checks from later compiler/runtime acceptance and record the dependency audit findings. Remote Phase 0 CI passed; Phase 1 CI will run after authorized publication.
 
 Foundation CLI version check after building:
 
@@ -41,12 +41,12 @@ node packages/cli/dist/main.js --version
 
 ## Structure
 
-- `packages/core/`: portable ESM models, schemas, source utilities, diagnostics, and budgets.
+- `packages/core/`: portable compiler front end, lowering/CFG validation, models, source utilities, diagnostics, and budgets.
 - `packages/cli/`: buildable CLI scaffold; analysis/execution adapters arrive later.
-- `apps/web/`: editable foundation shell and pure workspace state machine.
+- `apps/web/`: Monaco workspace, file/snapshot adapters, examples/help, and pure state machine.
 - `examples/`, `fixtures/`: synthetic, independently specified teaching examples and expectations.
 - `context/`: PRD, master plan, phases, decisions, handoff, and status.
-- `docs/`: current validation and third-party notes.
+- `docs/`: language reference, validation, and third-party notes.
 
 ## Planned Product
 
@@ -56,6 +56,7 @@ The TypeScript engine will be shared by Node CLI and browser workers. Planned in
 
 ## Project Documents
 
+- [Language reference](docs/language.md): grammar, types, errors, limits, and Phase 1 APIs.
 - [PRD](context/flowguard_prd.md): product behavior and chosen scope.
 - [Master implementation plan](context/implementation_plan.md): exact files, contracts, algorithms, dependencies, and checks.
 - [Phase index](context/phases/README.md): ordered tasks and gates; Phase 0 is published on main.

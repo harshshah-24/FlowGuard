@@ -29,23 +29,48 @@ export const DiagnosticSchema = strict({ code: z.enum(DIAGNOSTIC_CODES), stage: 
 export const TOKEN_KINDS = ['IDENTIFIER','INTEGER','STRING','EOF','LET','TYPE_STRING','TYPE_INT','TYPE_BOOL','IF','ELSE','WHILE','TRUE','FALSE','INPUT','PRINT','SQL_QUERY','SQL_BIND','SHELL','LPAREN','RPAREN','LBRACE','RBRACE','COLON','SEMICOLON','COMMA','ASSIGN','PLUS','MINUS','STAR','SLASH','PERCENT','BANG','LT','LE','GT','GE','EQ','NE','AND','OR'] as const;
 export const TokenSchema = strict({ id: id('tok'), kind: z.enum(TOKEN_KINDS), span: SourceSpanSchema, lexeme: z.string(), literal: ScalarSchema.optional() });
 const astBase = { id: astId, span: SourceSpanSchema };
-export const ExpressionSchema: z.ZodType<Expression> = z.lazy(() => z.discriminatedUnion('kind', [
- strict({ ...astBase, kind: z.literal('Literal'), scalar: ScalarSchema }),
- strict({ ...astBase, kind: z.literal('Variable'), name: z.string().regex(/^[A-Za-z_][A-Za-z0-9_]*$/) }),
- strict({ ...astBase, kind: z.literal('Unary'), op: unary, operand: ExpressionSchema }),
- strict({ ...astBase, kind: z.literal('Binary'), op: binary, left: ExpressionSchema, right: ExpressionSchema }),
- strict({ ...astBase, kind: z.literal('InputCall'), prompt: ExpressionSchema }),
-]));
-export const BlockSchema: z.ZodType<Block> = z.lazy(() => strict({ ...astBase, kind: z.literal('Block'), statements: z.array(StatementSchema).max(DEFAULT_LIMITS.maxAstNodes) }));
-export const StatementSchema: z.ZodType<Statement> = z.lazy(() => z.discriminatedUnion('kind', [
- strict({ ...astBase, kind: z.literal('Block'), statements: z.array(StatementSchema).max(DEFAULT_LIMITS.maxAstNodes) }),
- strict({ ...astBase, kind: z.literal('Declaration'), name: z.string(), nameSpan: SourceSpanSchema, type: scalarType, initializer: ExpressionSchema }),
- strict({ ...astBase, kind: z.literal('Assignment'), target: z.string(), targetSpan: SourceSpanSchema, value: ExpressionSchema }),
- strict({ ...astBase, kind: z.literal('If'), condition: ExpressionSchema, then: BlockSchema, optionalElse: BlockSchema.optional() }),
- strict({ ...astBase, kind: z.literal('While'), condition: ExpressionSchema, body: BlockSchema }),
- strict({ ...astBase, kind: z.literal('EffectCall'), name: effect, args: z.array(ExpressionSchema).max(2) }),
-]));
-export const ProgramSchema: z.ZodType<Program> = strict({ ...astBase, kind: z.literal('Program'), statements: z.array(StatementSchema).max(DEFAULT_LIMITS.maxAstNodes) });
+// Validate ASTs iteratively: a flat left-associated expression may be deep even
+// though syntactic nesting is within 128. No hidden transport-depth restriction.
+const AstShellSchema = z.discriminatedUnion('kind', [
+ strict({ ...astBase, kind:z.literal('Program'), statements:z.array(z.unknown()).max(DEFAULT_LIMITS.maxAstNodes) }),
+ strict({ ...astBase, kind:z.literal('Block'), statements:z.array(z.unknown()).max(DEFAULT_LIMITS.maxAstNodes) }),
+ strict({ ...astBase, kind:z.literal('Declaration'),name:z.string(),nameSpan:SourceSpanSchema,type:scalarType,initializer:z.unknown() }),
+ strict({ ...astBase, kind:z.literal('Assignment'),target:z.string(),targetSpan:SourceSpanSchema,value:z.unknown() }),
+ strict({ ...astBase, kind:z.literal('If'),condition:z.unknown(),then:z.unknown(),optionalElse:z.unknown().optional() }),
+ strict({ ...astBase, kind:z.literal('While'),condition:z.unknown(),body:z.unknown() }),
+ strict({ ...astBase, kind:z.literal('EffectCall'),name:effect,args:z.array(z.unknown()).max(DEFAULT_LIMITS.maxAstNodes) }),
+ strict({ ...astBase, kind:z.literal('Literal'),scalar:ScalarSchema }),
+ strict({ ...astBase, kind:z.literal('Variable'),name:z.string().regex(/^[A-Za-z_][A-Za-z0-9_]*$/) }),
+ strict({ ...astBase, kind:z.literal('Unary'),op:unary,operand:z.unknown() }),
+ strict({ ...astBase, kind:z.literal('Binary'),op:binary,left:z.unknown(),right:z.unknown() }),
+ strict({ ...astBase, kind:z.literal('InputCall'),prompt:z.unknown() }),
+]);
+function validAst(value:unknown,expected:'Program'|'Block'|'statement'|'expression'):boolean {
+ const stack:{value:unknown;expected:typeof expected}[]=[{value,expected}],seen=new Set<unknown>();let count=0;
+ const expressions=new Set(['Literal','Variable','Unary','Binary','InputCall']);
+ const statements=new Set(['Block','Declaration','Assignment','If','While','EffectCall']);
+ while(stack.length){const item=stack.pop()!;if(seen.has(item.value)||++count>DEFAULT_LIMITS.maxAstNodes)return false;seen.add(item.value);
+  const result=AstShellSchema.safeParse(item.value);if(!result.success)return false;const node=result.data;
+  if(item.expected==='expression'?!expressions.has(node.kind):item.expected==='statement'?!statements.has(node.kind):node.kind!==item.expected)return false;
+  const add=(value:unknown,expected:typeof item.expected)=>stack.push({value,expected});
+  switch(node.kind){
+   case 'Program':case 'Block':node.statements.forEach(v=>add(v,'statement'));break;
+   case 'Declaration':add(node.initializer,'expression');break;
+   case 'Assignment':add(node.value,'expression');break;
+   case 'If':add(node.condition,'expression');add(node.then,'Block');if(node.optionalElse!==undefined)add(node.optionalElse,'Block');break;
+   case 'While':add(node.condition,'expression');add(node.body,'Block');break;
+   case 'EffectCall':node.args.forEach(v=>add(v,'expression'));break;
+   case 'Unary':add(node.operand,'expression');break;
+   case 'Binary':add(node.left,'expression');add(node.right,'expression');break;
+   case 'InputCall':add(node.prompt,'expression');break;
+  }
+ }
+ return true;
+}
+export const ExpressionSchema:z.ZodType<Expression>=z.custom<Expression>(v=>validAst(v,'expression'),'Invalid expression AST.');
+export const BlockSchema:z.ZodType<Block>=z.custom<Block>(v=>validAst(v,'Block'),'Invalid block AST.');
+export const StatementSchema:z.ZodType<Statement>=z.custom<Statement>(v=>validAst(v,'statement'),'Invalid statement AST.');
+export const ProgramSchema:z.ZodType<Program>=z.custom<Program>(v=>validAst(v,'Program'),'Invalid program AST.');
 export const SymbolSchema = strict({ id: symbolId, name: z.string(), type: scalarType, declarationSpan: SourceSpanSchema, scopeId: id('scope'), slotId, topLevel: z.boolean() });
 export const ScopeSchema = strict({ id: id('scope'), parentId: id('scope').optional(), span: SourceSpanSchema, symbolIds: z.array(symbolId) });
 export const InputSourceSchema = strict({ id: sourceId, astId, span: SourceSpanSchema, label: z.string() });
@@ -115,14 +140,17 @@ export const RUNTIME_STATUSES = ['completed','runtime-error','cancelled','incomp
 export const ExecutionResultSchema = strict({schemaVersion:z.literal(1),requestId,snapshotId:z.string(),revision:nat,status:z.enum(RUNTIME_STATUSES),diagnostics:z.array(DiagnosticSchema),events:z.array(ExecutionEventSchema).max(DEFAULT_LIMITS.maxVmEvents),consumedInputCount:nat.max(DEFAULT_LIMITS.maxInputItems),instructionCount:nat.max(DEFAULT_LIMITS.maxVmInstructions),elapsedMs:z.number().finite().nonnegative(),finalTopLevelValues:z.array(strict({symbolId,name:z.string(),value:ScalarSchema})),limits:EffectiveLimitsSchema}).refine(r=>r.status!=='completed'||!r.diagnostics.some(d=>d.blocking),'Completed runtime cannot contain blocking errors.');
 export const ReportSchema = strict({schemaVersion:z.literal(1),analysis:AnalysisResultSchema,execution:ExecutionResultSchema.optional()}).refine(r=>!r.execution||(r.analysis.status==='completed'&&r.analysis.snapshot?.snapshotId===r.execution.snapshotId&&r.analysis.snapshot.revision===r.execution.revision),'Execution/report snapshot mismatch.');
 export const ExampleProgramSchema = strict({id:z.string().min(1),title:z.string(),purpose:z.string(),filename:z.string().regex(/^[A-Za-z0-9-]+\.fg$/),expectedFindingRules:z.array(z.enum(['SQL_QUERY_TEXT','SHELL_COMMAND_TEXT'])),inputs:InputsSchema,expectedRuntimeBehavior:z.string(),limitations:z.array(z.string())});
-// Avoid cycles, explicit undefined values, and deep payloads before recursive schemas.
-function plainPayload(value:unknown, seen=new Set<object>(), depth=0):boolean {
- if(value===undefined||depth>512) return false;
- if(value===null||typeof value!=='object') return typeof value!=='function'&&typeof value!=='symbol'&&typeof value!=='bigint';
- if(seen.has(value)) return false;
- seen.add(value);
- const result=(Array.isArray(value)?Array.from(value):Object.values(value)).every(v=>plainPayload(v,seen,depth+1));
- seen.delete(value);return result;
+// Reject cycles and explicit undefined values without recursive JS calls.
+function plainPayload(value:unknown):boolean {
+ const stack:{value:unknown;exit?:boolean}[]=[{value}],path=new Set<object>();
+ while(stack.length){const frame=stack.pop()!,v=frame.value;
+  if(v!==null&&typeof v==='object'){
+   if(frame.exit){path.delete(v);continue;}
+   if(path.has(v))return false;path.add(v);stack.push({value:v,exit:true});
+   for(const child of Array.isArray(v)?Array.from(v):Object.values(v))stack.push({value:child});
+  }else if(v===undefined||typeof v==='function'||typeof v==='symbol'||typeof v==='bigint')return false;
+ }
+ return true;
 }
 export function boundary<T extends z.ZodType>(schema:T) {
  return z.preprocess((value,ctx)=>{if(!plainPayload(value)){ctx.addIssue({code:'custom',message:'Payload must be finite plain data without explicit undefined fields.'});return z.NEVER;}return value;},schema);

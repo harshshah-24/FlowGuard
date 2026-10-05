@@ -2,7 +2,7 @@
 
 **Suggested window:** 5–6 October 2026
 
-**State:** Not started. Documentation publication is not implementation authorization.
+**State:** Complete locally on `codex/flowguard-build`. User approved Phase 1 implementation and the exact DOMPurify 3.4.16 override on 5 October 2026.
 
 ## Source of Truth
 
@@ -34,15 +34,15 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Required Validation
 
-- [ ] Valid/invalid lexical, grammar, scope, operator, built-in, initialization, and placeholder fixtures pass.
-- [ ] Nested boolean expressions preserve intended runtime evaluation order in graph lowering.
-- [ ] CFG tests assert branch targets, joins, loop test/body/back/exit edges, and source links, not layout snapshots alone.
-- [ ] Unicode/CRLF highlights match source spans; empty/comment-only programs lower to a halt node.
-- [ ] Compiler-dependent UI Analyze completion and Run remain unavailable until required later stages exist.
+- [x] Valid/invalid lexical, grammar, scope, operator, built-in, initialization, and placeholder fixtures pass.
+- [x] Nested boolean expressions preserve intended runtime evaluation order in graph lowering.
+- [x] CFG tests assert branch targets, joins, loop test/body/back/exit edges, and source links, not layout snapshots alone.
+- [x] Unicode/CRLF highlights match source spans; empty/comment-only programs lower to a halt node.
+- [x] Compiler-dependent UI Analyze completion and Run remain unavailable until required later stages exist.
 
 ## Exit Gate
 
-Complete typed front-end/IR behavior before Phase 2. No taint verdict or verified bytecode is claimed.
+Typed front-end/IR and editing/file behavior validated: 111 unit tests, six production browser tests, typechecks, builds, and clean lockfile install passed. Exact BOM/newline preservation and live local Monaco worker checked. No taint verdict or verified bytecode is claimed. Source publication and Phase 2 authorization remain pending.
 
 ## State Updates and Continuation
 

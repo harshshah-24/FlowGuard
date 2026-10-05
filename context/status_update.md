@@ -4,33 +4,32 @@
 
 ## Completed
 
-- PRD v0.3/master plan/phase documents published on canonical main.
-- User approved Phase 0 implementation; created `codex/flowguard-build`.
-- Phase 0 workspaces, pinned dependencies/lockfile, TypeScript/build/test/CI configuration complete.
-- Shared compiler/analysis/execution schemas, source spans/UTF-8/BOM helpers, diagnostic failures, and fixed budgets complete.
-- Synthetic examples/fixture expectations, pure workspace state machine, and editable React shell complete.
-- Local typecheck, 28 unit tests, ESM/Vite production build, and two Chromium UI tests passed.
-- Clean lockfile installation succeeded; production screenshot inspected.
-- README, validation notes, third-party notes, phase checklist, and project context updated.
+- PRD v0.3 and original phased plan published on canonical main.
+- Phase 0 implementation `565b47c` and publication record `581e246` are on main; remote CI passed.
+- Phase 1 completed locally after explicit authorization: handwritten lexer/parser, scope/type checking, stable symbols/input sources, typed lowering/CFG structural validation.
+- Locally bundled Monaco editor/worker, UTF-8 file/snapshot/download adapters, examples/help, markers, loading/error states, dirty replacement and revision-aware save behavior.
+- Language documentation, synthetic fixture expectations, and synchronized master plan v1.2.
+- Clean lockfile install; `npm run check` passed: 111 unit tests, six production browser tests, typechecks and builds. Synthetic screenshot inspected.
+- Approved Monaco-scoped DOMPurify 3.4.16 override installed; audit reported zero vulnerabilities.
 
 ## Current Work
 
-- Phase 0 implementation commit `565b47c` is published on canonical `origin/main` after the user approved merge/push.
-- No real compiler, analyzer, bytecode generator, verifier, or VM exists yet. UI Analyze/Run are disabled.
-- Remote GitHub Actions passed for implementation commit `565b47c`: clean install, typecheck, 28 unit tests, production build, and two Chromium UI tests. [Run](https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149).
+- Phase 1 is local on `codex/flowguard-build`; publication approval is pending.
+- Analyze/Run remain disabled. No taint solver, completed analysis coordinator, graph presentation, codegen/verifier, VM, or CLI analysis yet.
+- No Phase 1 remote CI, release evaluation, or benchmarks have run.
 
 ## Remaining Work
 
-- Phase 0 publication and remote validation are complete.
-- Obtain explicit Phase 1 authorization before implementing the lexer/parser/semantic checker/lowering or Monaco integration.
-- Implement and validate Phases 1–4 after their authorization.
+- Obtain approval to merge/push Phase 1 to canonical main and check its remote CI.
+- Obtain explicit Phase 2 authorization before analysis/explanation/integration work.
+- Implement and validate Phases 2–4 after authorization.
 
 ## Risks and Unknowns
 
-- Installed Monaco/DOMPurify has two low-severity audit entries; no moderate/high/critical entries in this run. Monaco is not bundled in Phase 0. Review an approved mitigation before integration; no pins were changed.
-- Submission time/report template/teammate names/demo hardware remain unknown.
-- Deadline 8 October 2026; any scope adjustment requires the user's decision.
+- Monaco production chunk is ~3.29 MB uncompressed/~0.86 MB gzip; Vite emits a chunk-size warning. Performance measurement/tuning remains a later gate.
+- Submission time/report template/teammate names/demo hardware remain unspecified.
+- Deadline 8 October 2026; any product scope change needs user approval.
 
 ## Immediate Next Step
 
-Obtain explicit Phase 1 authorization. See `docs/testing.md` for verification boundaries.
+Review the completed Phase 1 result and approve publication. See [testing evidence](../docs/testing.md) and [language reference](../docs/language.md).

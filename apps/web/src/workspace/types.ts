@@ -12,6 +12,7 @@ export interface WorkspaceState {
 }
 export type WorkspaceAction =
  | {type:'EDIT_SOURCE';source:string}
+ | {type:'SOURCE_SAVED';revision:number}
  | {type:'REQUEST_REPLACEMENT';source:string;filename:string}
  | {type:'CONFIRM_SAVE_REPLACE'|'CONFIRM_DISCARD_REPLACE'|'CANCEL_REPLACEMENT'}
  | {type:'START_ANALYSIS';requestId:string;revision:number}

@@ -17,6 +17,7 @@ function validInputs(json:string):string|null {
 }
 export function workspaceReducer(s:WorkspaceState,a:WorkspaceAction):WorkspaceState {
  switch(a.type) {
+  case 'SOURCE_SAVED':return a.revision===s.revision?{...s,dirty:false}:s;
   case 'EDIT_SOURCE':return a.source===s.source?s:changed(s,a.source);
   case 'REQUEST_REPLACEMENT':return s.dirty?{...s,pendingReplacement:{source:a.source,filename:a.filename}}:changed(s,a.source,a.filename);
   case 'CANCEL_REPLACEMENT':return {...s,pendingReplacement:null};

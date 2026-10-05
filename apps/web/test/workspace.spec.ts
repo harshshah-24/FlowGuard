@@ -1,30 +1,23 @@
 import { test,expect } from '@playwright/test';
-test('foundation allows a draft but never pretends to analyze or execute',async({page})=>{
- await page.goto('/');
- await expect(page.getByText('Phase 0 · Foundation')).toBeVisible();
- await expect(page.getByRole('button',{name:'Analyze',exact:true})).toBeDisabled();
- await expect(page.getByRole('button',{name:'Run',exact:true})).toBeDisabled();
- await page.getByLabel('Write a FlowGuard program').fill('let n: int = 1;');
- await expect(page.getByRole('status')).toContainText('Draft updated');
- await expect(page.getByText('Revision 1')).toBeVisible();
- await page.getByRole('button',{name:'Help',exact:true}).click();
- await expect(page.getByRole('heading',{name:'About this foundation'})).toBeVisible();
- await page.getByRole('button',{name:'Workspace',exact:true}).click();
- await expect(page.getByLabel('Write a FlowGuard program')).toHaveValue('let n: int = 1;');
- await expect(page.getByRole('heading',{name:'No analysis results'})).toBeVisible();
- await page.screenshot({path:'test-results/phase-0-workspace.png',fullPage:true});
- await page.reload();
- await expect(page.getByLabel('Write a FlowGuard program')).toHaveValue('');
+import type { Page } from '@playwright/test';
+async function edit(page:Page,text:string){const editor=page.getByRole('textbox',{name:'Write a FlowGuard program'});await editor.focus();await page.keyboard.press('ControlOrMeta+A');await page.keyboard.insertText(text);}
+async function loadExample(page:Page,name:string){await page.getByRole('button',{name:'Examples',exact:true}).click();await page.getByRole('button',{name:`Load ${name}`,exact:true}).click();}
+async function downloaded(page:Page){const promise=page.waitForEvent('download');await page.getByRole('button',{name:'Save source',exact:true}).click();const download=await promise;const stream=await download.createReadStream();const chunks:Buffer[]=[];for await(const chunk of stream!)chunks.push(Buffer.from(chunk));return {name:download.suggestedFilename(),source:Buffer.concat(chunks).toString('utf8')};}
+test('Monaco draft survives navigation, remains memory-only, and cannot run full analysis',async({page})=>{
+ await page.goto('/');await expect(page.getByText('Phase 1 · Compiler front end')).toBeVisible();await expect(page.getByRole('button',{name:'Analyze',exact:true})).toBeDisabled();await expect(page.getByRole('button',{name:'Run',exact:true})).toBeDisabled();await edit(page,'let n: int = 1;');await expect(page.getByRole('status')).toContainText('Draft updated');await expect(page.getByText('Revision 1')).toBeVisible();await page.getByRole('button',{name:'Help',exact:true}).click();await expect(page.getByRole('heading',{name:'Language and workspace help'})).toBeVisible();await page.keyboard.press('Escape');expect((await downloaded(page)).source).toBe('let n: int = 1;');await expect(page.getByRole('heading',{name:'No analysis results'})).toBeVisible();await page.screenshot({path:'test-results/phase-1-workspace.png',fullPage:true});await page.reload();expect((await downloaded(page)).source).toBe('');
 });
-test('only loads locally packaged assets and renders a draft as text',async({page,context})=>{
- const external:string[]=[];
- await context.route('**/*',async route=>{
-  const url=new URL(route.request().url());
-  if(url.origin!=='http://127.0.0.1:4173'){external.push(url.href);await route.abort();}else await route.continue();
- });
- await page.goto('/');
- await page.getByLabel('Write a FlowGuard program').fill('<img src=x onerror=alert(1)>');
- await expect(page.locator('img')).toHaveCount(0);
- await expect(page.getByRole('button',{name:'Analyze',exact:true})).toBeDisabled();
- expect(external).toEqual([]);
+test('examples protect dirty source with cancel, discard, and save then replace',async({page})=>{
+ await page.goto('/');await edit(page,'print("draft");');await loadExample(page,'Unsafe query');await expect(page.getByRole('dialog')).toBeVisible();await page.getByRole('button',{name:'Cancel',exact:true}).click();expect((await downloaded(page)).source).toBe('print("draft");');await loadExample(page,'Unsafe query');await expect(page.getByRole('dialog')).toHaveCount(0);await loadExample(page,'Parameter binding');await page.getByRole('button',{name:'Discard and replace'}).click();expect((await downloaded(page)).name).toBe('bound-query.fg');await edit(page,'print("save me");');await loadExample(page,'Arithmetic loop');const promise=page.waitForEvent('download');await page.getByRole('button',{name:'Save and replace'}).click();const download=await promise;expect(download.suggestedFilename()).toBe('bound-query.fg');await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.getByText('arithmetic-loop.fg',{exact:true})).toBeVisible();await expect(page.getByText('Unsaved draft',{exact:false})).toBeVisible();
+});
+test('file loading and editor changes preserve exact BOM, mixed newlines, Unicode',async({page})=>{
+ await page.goto('/');const source='\uFEFFprint("😀");\r\nprint("a");\rprint("b");\n';await page.getByLabel('Source file').setInputFiles({name:'unicode.fg',mimeType:'text/plain',buffer:Buffer.from(source)});await expect(page.getByText('unicode.fg',{exact:true})).toBeVisible();expect((await downloaded(page)).source).toBe(source);const editor=page.getByRole('textbox',{name:'Write a FlowGuard program'});await editor.focus();await page.keyboard.press('ControlOrMeta+Home');await page.keyboard.press('End');await page.keyboard.insertText(' // added');expect((await downloaded(page)).source).toBe('\uFEFFprint("😀"); // added\r\nprint("a");\rprint("b");\n');
+});
+test('invalid UTF-8 and oversized files leave current draft untouched',async({page})=>{
+ await page.goto('/');await edit(page,'print(1);');await page.getByLabel('Source file').setInputFiles({name:'bad.fg',mimeType:'text/plain',buffer:Buffer.from([255])});await expect(page.getByRole('status')).toContainText('valid UTF-8');expect((await downloaded(page)).source).toBe('print(1);');await page.getByLabel('Source file').setInputFiles({name:'large.fg',mimeType:'text/plain',buffer:Buffer.alloc(262145,32)});await expect(page.getByRole('status')).toContainText('256 KiB');expect((await downloaded(page)).source).toBe('print(1);');
+});
+test('locally packaged Monaco worker starts without external assets or HTML injection',async({page,context})=>{
+ const external:string[]=[],errors:string[]=[],workers:string[]=[];page.on('pageerror',error=>errors.push(error.message));page.on('worker',worker=>workers.push(worker.url()));await context.route('**/*',async route=>{const url=new URL(route.request().url());if(url.origin!=='http://127.0.0.1:4173'){external.push(url.href);await route.abort();}else await route.continue();});await page.goto('/');await edit(page,'<img src=x onerror=alert(1)>');await expect(page.locator('img')).toHaveCount(0);await page.keyboard.press('Control+Space');await expect.poll(()=>workers.length).toBeGreaterThan(0);expect(workers.every(url=>url.startsWith('http://127.0.0.1:4173/'))).toBe(true);expect(external).toEqual([]);expect(errors).toEqual([]);
+});
+test('replacement dialog supports Escape and returns focus',async({page})=>{
+ await page.goto('/');await edit(page,'print(1);');await loadExample(page,'Short circuit');await expect(page.getByRole('button',{name:'Cancel',exact:true})).toBeFocused();await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);expect((await downloaded(page)).source).toBe('print(1);');
 });

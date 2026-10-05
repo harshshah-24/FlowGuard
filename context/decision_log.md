@@ -78,3 +78,17 @@
 - The user explicitly approved merging and pushing Phase 0 to `main`.
 - Verified remote main remained `2a5c687`, fast-forwarded main to `565b47c`, and successfully pushed to the sole canonical repository. No history was overwritten.
 - Remote CI passed for implementation commit `565b47c`: clean install, typechecks, 28 unit tests, production build, and two Chromium checks. Evidence: https://github.com/harshshah-24/FlowGuard/actions/runs/37237405149. Later phases remain unauthorized.
+
+## 2026-10-05 — Phase 1 and dependency mitigation approved
+
+- User approved Phase 1 implementation, then explicitly approved the Monaco-scoped exact DOMPurify 3.4.16 override after reviewing the advisory. Keep Monaco 0.57.0.
+- Update the approved plan and lockfile before integration, verify the audit and production editor assets. Phase 1 source push remains subject to separate approval.
+
+## 2026-10-05 — Phase 1 completed locally
+
+- Implemented the approved handwritten lexer/parser, source-order scope/type checker, and typed instruction lowering/CFG validation. AST IDs are preorder; input IDs sort by source position; structural branches and loop back edges are preserved.
+- Added shared internal iterative AST traversal. Fixed the foundation schema gap: AST validation now honors the total-node budget without an extra 512-level transport cap, and retains wrong-arity effect arguments for semantic diagnostics. No language/product contract changed; master plan and phase view are synchronized.
+- Integrated bundled Monaco API, suggestion/find/highlight contributions and local editor worker. Original source remains independent of Monaco's BOM stripping/newline normalization; edit ranges and markers use original line indexes. Added file/snapshot/download adapters, examples/help, loading/error feedback, dirty replacement dialog, beforeunload and keyboard behavior.
+- Added SOURCE_SAVED revision bookkeeping so only the actually downloaded revision becomes clean. Download initiation cannot guarantee a file was saved to disk. Draft recovery/history/persistence remain excluded.
+- Clean lockfile install and final `npm run check` passed: 111 unit tests, six production Chromium checks, typechecks and builds. The patched Monaco-scoped DOMPurify 3.4.16 installs correctly; audit reported zero vulnerabilities. Vite's Monaco chunk warning is recorded; no benchmark/performance claim is made.
+- Full Analyze, security findings, graph presentation, codegen/verifier/VM and CLI analysis remain later work. Phase 1 publication and Phase 2 require separate user approval; no push occurred.
