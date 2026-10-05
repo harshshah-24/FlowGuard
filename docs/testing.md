@@ -50,10 +50,14 @@ Phase 0 implementation commit `565b47c` was pushed to canonical main after expli
 
 Implemented lexer/parser, scope/type checks, typed lowering and CFG structural validation. Locally bundled Monaco editing, exact-source adapters, snapshots, examples/help, dirty replacement, save downloads, and editor marker conversion are implemented. Analyze completion, taint verdicts, bytecode/verifier, VM, and CLI analysis are still unavailable.
 
-Clean `npm ci --no-audit --no-fund` succeeded with the approved Monaco-scoped DOMPurify 3.4.16 override. `npm run check` passed: typechecks, 111 unit tests across ten files, core/CLI/Vite production builds, and six Chromium production UI tests. No Phase 1 remote CI or performance/evaluation benchmark has run.
+Clean `npm ci --no-audit --no-fund` succeeded with the approved Monaco-scoped DOMPurify 3.4.16 override. `npm run check` passed: typechecks, 111 unit tests across ten files, core/CLI/Vite production builds, and six Chromium production UI tests. The subsequent Phase 1 remote CI result is recorded below. No performance/evaluation benchmark has run.
 
 Core tests check lexical errors/escapes/spans, precedence/associativity, all statement kinds, scope/initialization/signatures, literal placeholder errors/dynamic notices, exact caps/cap+1, real empty graphs, source-linked branches/loops/short-circuit joins, corrupt graph rejection, and definite assignment across structural paths. Thirteen fixture files have independently specified diagnostic expectations; all nine teaching examples lower successfully. Flat deep expressions use iterative traversal/schema validation rather than a hidden transport-depth cap. Invalid-arity ASTs remain inspectable before semantic rejection.
 
 Browser tests cover Monaco drafts/navigation/reload, cancel/discard/save replacement, exact BOM/mixed-newline/Unicode file saving and edits, invalid UTF-8/oversized files preserving the draft, Escape/focus, text-only rendering, and a live locally bundled editor worker. Source positions are tested in UTF-16 with the BOM compensated only in Monaco display coordinates. No CDN/remote asset calls occurred in the offline-origin test. `test-results/phase-1-workspace.png` is an ignored synthetic screenshot, visually inspected locally.
 
 `npm audit --json` after the approved patch reported zero vulnerabilities. This is the audit result at verification time, not a permanent guarantee. Monaco's main bundle is approximately 3.29 MB before gzip (~0.86 MB gzip); Vite reports a chunk-size warning. Performance targets and any bundle tuning remain for the later validation phase; no speed claim is made.
+
+## Phase 1 remote validation
+
+After explicit push approval, implementation commit `ed9f952` was published to canonical main. [GitHub Actions run 37274679542](https://github.com/harshshah-24/FlowGuard/actions/runs/37274679542) passed on Ubuntu: clean install, typechecks, 111 unit tests, production builds, and six Chromium UI tests. This validates the Phase 1 front end and workspace, not later taint/codegen/runtime stages.

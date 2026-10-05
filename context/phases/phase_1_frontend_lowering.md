@@ -2,7 +2,7 @@
 
 **Suggested window:** 5–6 October 2026
 
-**State:** Complete locally on `codex/flowguard-build`. User approved Phase 1 implementation and the exact DOMPurify 3.4.16 override on 5 October 2026.
+**State:** Published on main at `ed9f952`; remote CI passed. User approved Phase 1 implementation and the exact DOMPurify 3.4.16 override on 5 October 2026.
 
 ## Source of Truth
 
@@ -42,7 +42,7 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Exit Gate
 
-Typed front-end/IR and editing/file behavior validated: 111 unit tests, six production browser tests, typechecks, builds, and clean lockfile install passed. Exact BOM/newline preservation and live local Monaco worker checked. No taint verdict or verified bytecode is claimed. Source publication and Phase 2 authorization remain pending.
+Typed front-end/IR and editing/file behavior validated: 111 unit tests, six production browser tests, typechecks, builds, and clean lockfile install passed. Exact BOM/newline preservation and live local Monaco worker checked. No taint verdict or verified bytecode is claimed. Source publication is complete; remote CI passed. Phase 2 authorization remains pending.
 
 ## State Updates and Continuation
 

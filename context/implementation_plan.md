@@ -10,7 +10,7 @@
 
 **Phase 1 dependency amendment (5 October 2026):** The user approved retaining Monaco 0.57.0 with an exact root npm override `monaco-editor → dompurify: 3.4.16`, replacing its vulnerable 3.4.15 dependency. Update the lockfile and verify production editor/worker behavior.
 
-**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. The user approved Phase 1 and the documented DOMPurify override; Phase 1 is complete locally. Phases 2–4 require further implementation authorization. Phase 1 publication requires separate approval. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
+**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. The user approved Phase 1 and the documented DOMPurify override; Phase 1 is published on main at `ed9f952` after explicit merge/push approval. Phases 2–4 require further implementation authorization. Phase 1 remote CI passed. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
 
 ## 1. Outcome and Fixed Scope
 

@@ -6,7 +6,7 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 ## Current Status
 
-**Phase 1 is implemented locally on `codex/flowguard-build`.** Core APIs now tokenize, parse, check scope/types, and lower source into a typed instruction graph with short-circuit branches and loop edges. The browser has a locally bundled Monaco editor, example/help panels, UTF-8 file loading, explicit source downloads, and dirty-draft replacement protection.
+**Phase 1 is implemented and published on `main` at `ed9f952`.** Core APIs now tokenize, parse, check scope/types, and lower source into a typed instruction graph with short-circuit branches and loop edges. The browser has a locally bundled Monaco editor, example/help panels, UTF-8 file loading, explicit source downloads, and dirty-draft replacement protection.
 
 The taint solver, completed Analyze flow, graph presentation, bytecode generator/verifier, and VM arrive in later phases. Analyze and Run remain disabled. The CLI remains a version/unavailable scaffold. No security verdict or execution is fabricated.
 
@@ -31,7 +31,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Or run `npm run check` after the browser installation. Phase 1 verification passed 111 unit tests, six production Chromium tests, typechecks, and builds. [Testing notes](docs/testing.md) distinguish these checks from later compiler/runtime acceptance and record the dependency audit findings. Remote Phase 0 CI passed; Phase 1 CI will run after authorized publication.
+Or run `npm run check` after the browser installation. Phase 1 verification passed 111 unit tests, six production Chromium tests, typechecks, and builds. [Testing notes](docs/testing.md) distinguish these checks from later compiler/runtime acceptance and record the dependency audit findings. Remote Phase 0 and Phase 1 CI passed.
 
 Foundation CLI version check after building:
 

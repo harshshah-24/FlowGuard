@@ -62,12 +62,12 @@ Phase 0 is published on main. Remote Phase 0 CI passed. Phase 1 and the exact DO
 
 ## Phase 1 continuation
 
-User approved Phase 1 and the Monaco-scoped DOMPurify 3.4.16 override. Phase 1 is complete locally on `codex/flowguard-build`; source publication and later phases are not authorized.
+User approved Phase 1 and the Monaco-scoped DOMPurify 3.4.16 override. The user subsequently approved the Phase 1 push. Implementation commit `ed9f952` is published on canonical main; remote CI passed. Later phases are not authorized.
 
 Actual core exports: lex, Parser/parse, SemanticChecker/checkSemantics, Lowerer/lowerProgram, deriveEdges/adjacency/validateLoweredProgram. Internal ast.ts provides iterative traversal. Semantics returns diagnostics; lowering throws SourceFailure on a blocking diagnostic. No frontend pipeline produces a completed Analyze result or taint verdict.
 
 Frontend includes self-hosted Monaco worker/contributions, exact-text/BOM/newline edit and marker mapping, file/snapshot/download adapters, useWorkspace, toolbar/status/examples/help/replace dialog. SOURCE_SAVED clears dirty only for a matching revision. Snapshot helper captures source/revision and rejects stale hashing; analysis worker integration is later. Browser drafts remain memory-only.
 
-Validation: clean npm ci and npm run check passed (111 unit tests/ten files, six production Chromium tests, types/builds). Audit after the approved override reported zero vulnerabilities; no Phase 1 remote CI or benchmarks. Docs/testing.md records the Monaco chunk-size warning and exact validation boundary. docs/language.md describes implemented grammar/types/lowering/API behavior. Fixtures are independently specified expectations, not fabricated analyzer results.
+Validation: clean npm ci and npm run check passed (111 unit tests/ten files, six production Chromium tests, types/builds). Audit after the approved override reported zero vulnerabilities; Phase 1 remote CI also passed ([run 37274679542](https://github.com/harshshah-24/FlowGuard/actions/runs/37274679542)); no benchmarks have run. Docs/testing.md records the Monaco chunk-size warning and exact validation boundary. docs/language.md describes implemented grammar/types/lowering/API behavior. Fixtures are independently specified expectations, not fabricated analyzer results.
 
-Next ask for source publication approval; do not start Phase 2 until authorized. Then use the latest master plan v1.2 and Phase 2 document. Preserve the no-license/no-persistence/no-real-effects boundaries.
+Publication is complete; do not start Phase 2 until authorized. Then use the latest master plan v1.2 and Phase 2 document. Preserve the no-license/no-persistence/no-real-effects boundaries.
