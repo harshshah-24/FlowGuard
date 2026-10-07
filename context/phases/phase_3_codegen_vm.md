@@ -2,7 +2,7 @@
 
 **Suggested window:** 7 October 2026
 
-**State:** Authorized and completed locally on 7 October, including the separately approved top-level scope metadata amendment. The user authorized publication with Phase 2 for teammate Phase 4 continuation.
+**State:** Authorized and completed locally on 7 October, including the separately approved top-level scope metadata amendment. Published with Phase 2 as implementation commit `9b3e96c` on canonical main after user authorization; teammate Phase 4 continuation is authorized.
 
 ## Source of Truth
 
@@ -41,7 +41,7 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 - [x] Production build demonstrates real analysis, verified bytecode, explicit VM Run, Stop/retry, and the binding correction.
 - [x] Final top-level values: approved/synchronized explicit bytecode scope metadata, initialized-value projection and block-local/temporary exclusion on successful and failed runs.
 
-Validation: typechecks, builds, 260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration checks. Synthetic production screenshot was visually inspected. See [testing notes](../../docs/testing.md). Remote CI must be verified for this publication. Phase 4 release evaluation and benchmarks have not run.
+Validation: typechecks, builds, 260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration checks. Synthetic production screenshot was visually inspected. See [testing notes](../../docs/testing.md). [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu. Phase 4 release evaluation and benchmarks have not run.
 
 ## Exit Gate
 

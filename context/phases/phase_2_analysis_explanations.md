@@ -2,7 +2,7 @@
 
 **Suggested window:** 6 October 2026
 
-**State:** Implemented and validated locally on 7 October 2026 after explicit user authorization. All Phase 2 gates below passed. Publication is authorized with Phase 3. Phase 3 has since completed the release Analyze flow.
+**State:** Implemented and validated locally on 7 October 2026 after explicit user authorization. All Phase 2 gates below passed. Published with Phase 3 in implementation commit `9b3e96c` on canonical main. Phase 3 has since completed the release Analyze flow.
 
 ## Source of Truth
 

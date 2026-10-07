@@ -4,7 +4,7 @@
 
 ## Starting point
 
-Use the sole canonical repository [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard), branch `main`. Phases 0–3 are functionally complete. The shared TypeScript core, browser workers and CLI perform real analysis, verified bytecode execution and simulated effects. Required `topLevelSymbolIds` metadata was explicitly approved and is implemented. No mock completion or missing final-value feature remains.
+Use the sole canonical repository [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard), branch `main`. Phases 2/3 were published as implementation commit `9b3e96c`; Phases 0–3 are functionally complete. The shared TypeScript core, browser workers and CLI perform real analysis, verified bytecode execution and simulated effects. Required `topLevelSymbolIds` metadata was explicitly approved and is implemented. No mock completion or missing final-value feature remains.
 
 Read in order:
 
@@ -33,7 +33,7 @@ npm run dev
 
 On Linux, Playwright may require `npx playwright install --with-deps chromium`. The workspace serves at loopback 5173. Production tests use 4173; the separate static harness uses 4174 and is absent from the release build.
 
-Prior local full check: **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration tests**, typechecks and builds, on Windows. Verify current GitHub Actions and rerun on the teammate's actual machine; prior timings are not performance benchmarks.
+Prior local full check: **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration tests**, typechecks and builds, on Windows. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu. Verify current CI and rerun on the teammate's actual machine; prior timings are not performance benchmarks.
 
 ## Work still required in Phase 4
 

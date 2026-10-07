@@ -6,7 +6,7 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 ## Current Status
 
-**Phases 2 and 3 are complete and validated locally.** The user authorized publication to canonical main; this change publishes the completed Phases 2/3 implementation. The previous main was `f4c0aa9` (Phase 1 publication record).
+**Phases 0–3 are implemented and published on canonical main.** Phases 2/3 implementation commit is `9b3e96c`; the previous main was `f4c0aa9` (Phase 1 publication record).
 
 Analyze now completes the full compiler, taint, codegen and verifier pipeline. Explicit Run executes verified bytecode in a bounded VM with supplied JSON string-array inputs. The browser includes source-linked findings, graph/inspectors, replay, bytecode selection, runtime events, Stop/retry and matching-snapshot exports. CLI analysis/runtime uses the same core. SQL and shell effects are simulations.
 
@@ -33,7 +33,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Or run `npm run check` after the browser installation. Current local checks passed **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration Chromium tests, typechecks and builds** with Node 26.5.0/npm 11.17.0. `npm run test:phase2` runs the existing isolated harness. [Testing notes](docs/testing.md) record the full-check evidence and approved scope-metadata amendment. Remote CI for this publication must be checked separately from the recorded local validation.
+Or run `npm run check` after the browser installation. Current local checks passed **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration Chromium tests, typechecks and builds** with Node 26.5.0/npm 11.17.0. `npm run test:phase2` runs the existing isolated harness. [Testing notes](docs/testing.md) record the full-check evidence and approved scope-metadata amendment. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu.
 
 CLI after building:
 

@@ -4,7 +4,7 @@
 
 ## Completed Implementation
 
-- Phases 0/1 are published on canonical main `f4c0aa9`; remote CI passed. Phase 2 is complete locally on `codex/flowguard-build`.
+- Phases 0–3 are published on canonical main. Phases 2/3 implementation commit is `9b3e96c`, fast-forwarded from the Phase 1 publication record `f4c0aa9` without rewriting history.
 - Phase 3 was explicitly authorized and completed locally, including the separately approved topLevelSymbolIds contract amendment.
 - Typed bytecode generation with deduplicated constants, patched jumps, ordered input-source IDs, per-PC source maps and disassembly.
 - Strict bytecode verification: schemas/operands/types, stack joins, bounded greatest-fixed-point definite initialization, and LOAD checks after convergence.
@@ -21,7 +21,7 @@
 - Eleven production Chromium checks and four existing isolated static-integration checks passed.
 - Production browser verification found and fixed a graph selection feedback loop. Synthetic binding/run screenshot was visually inspected.
 - Dependency pins and lockfile remain unchanged. See [testing notes](../docs/testing.md).
-- The user authorized publishing all Phases 2/3 work to canonical main for teammate Phase 4 continuation. Remote CI is not inferred from the local check; its publication result will be recorded separately. No release evaluation or benchmark claim is made.
+- Phases 2/3 publication is complete. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu. No release evaluation or benchmark claim is made.
 
 ## Completed Phase 3 Gate
 
@@ -31,4 +31,4 @@ The full npm run check passed, completing the Phase 3 functional gate. Phase 4 r
 
 ## Risks and Next Step
 
-Publish the completed Phases 2/3 work as requested, verify remote CI, then continue Phase 4 via the [teammate agent handoff](phase_4_agent_handoff.md). Publication of later Phase 4 changes needs applicable authorization. Vite's existing large-main-chunk warning persists (~3.50 MB uncompressed/~0.92 MB gzip); performance evaluation remains a later gate. Submission time, template, teammate identities and demo hardware are unspecified.
+The teammate can pull canonical main and continue Phase 4 via the [agent handoff](phase_4_agent_handoff.md). Publication of later Phase 4 changes needs applicable authorization. Vite's existing large-main-chunk warning persists (~3.50 MB uncompressed/~0.92 MB gzip); performance evaluation remains a later gate. Submission time, template, teammate identities and demo hardware are unspecified.
