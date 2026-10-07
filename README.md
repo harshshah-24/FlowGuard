@@ -12,7 +12,7 @@ The workspace links source, control flow, findings, analysis replay, bytecode an
 
 ![Dark-only compiler workspace with real analysis and simulated execution](docs/evidence/dark-ui-workspace.png)
 
-The current UI uses dark charcoal cards, blue-green/red accents, bold headings and pill navigation, with matching dark editor/graph themes. Summary counts come from the current analysis. Harsh approved publication of this visual refresh on 8 October 2026; prior Phase 4 benchmarks retain their original measured source hashes.
+The current UI uses dark charcoal cards, blue-green/red accents, bold headings and pill navigation, with matching dark editor/graph themes. Summary counts come from the current analysis. This visual refresh is published to main as a591a69; prior Phase 4 benchmarks retain their original measured source hashes.
 
 ## Local Setup
 

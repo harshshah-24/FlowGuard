@@ -178,3 +178,7 @@ Harsh requested blue-green in place of yellow and approved implementation. The p
 ## UI publication approval — 8 October 2026
 
 Harsh answered yes to committing and pushing the complete dark UI refresh to main. Publish the teal/cyan version, refreshed screenshot and synchronized documentation to canonical origin. Local typechecks/build and all fifteen production Chromium checks passed; four isolated checks passed before the palette-only revision. Fetch confirmed main and the UI branch share base 44db27f. Fast-forward publication preserves teammate history. Verify remote main and its GitHub Actions result after pushing.
+
+## Dark UI publication — 8 October 2026
+
+The complete approved dark teal/cyan UI refresh was committed as a591a6906b92ec2f8f18a6e8cf257c20de37c667 and fast-forwarded from 44db27f to canonical origin/main. Remote main was verified to match the implementation commit. Local typechecks, build and 15 production Chromium checks passed for the final palette; 4 isolated checks passed for the preceding layout refresh. [GitHub Actions run 37683554717](https://github.com/harshshah-24/FlowGuard/actions/runs/37683554717) was queued at publication verification; this record does not claim its result. Prior benchmark source hashes remain unchanged. The working checkout is main. Human rehearsal and faculty submission remain outstanding.

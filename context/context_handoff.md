@@ -48,10 +48,14 @@ Normal builds exclude the test-only phase2 harness; its isolated build uses4174.
 
 Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.
 
-## Current local continuation — dark-only UI refresh
+## Published dark-only UI refresh
 
 Harsh requested the Apex Analytics design as inspiration and explicitly approved implementation on8October. Local branch codex/flowguard-dark-ui adds charcoal/blue-green/red styling, bold condensed headings, pill navigation, current-result summary cards and matching Monaco/React Flow dark themes. Compiler/VM, reducer/adapters, limits and dependencies are unchanged. Counts use current identity-gated artifacts; missing/stale/invalid findings never become an invented safe verdict. No light mode, external assets or reference-site product features are added. Typechecks/builds passed; all fifteen production and four isolated browser checks passed. Desktop/mobile layouts and a real unsafe-query Analyze/Run were verified. Preserve prior raw benchmark evidence as historical; its source hashes precede this UI refresh. Harsh approved publication to canonical main on 8 October 2026.
 
 ## Current palette override — 8 October 2026
 
-The approved primary palette is now blue-green: teal #48dbc6 and cyan #40c9d0. Yellow accents have been replaced throughout CSS and the Monaco theme. Red warning/sink accents remain. Keep this revision when continuing the local UI refresh. Publication to canonical main is approved.
+The approved primary palette is now blue-green: teal #48dbc6 and cyan #40c9d0. Yellow accents have been replaced throughout CSS and the Monaco theme. Red warning/sink accents remain. Keep this palette in subsequent UI changes. Publication to canonical main is approved.
+
+## Dark UI publication — 8 October 2026
+
+The complete approved dark teal/cyan UI refresh was committed as a591a6906b92ec2f8f18a6e8cf257c20de37c667 and fast-forwarded from 44db27f to canonical origin/main. Remote main was verified to match the implementation commit. Local typechecks, build and 15 production Chromium checks passed for the final palette; 4 isolated checks passed for the preceding layout refresh. [GitHub Actions run 37683554717](https://github.com/harshshah-24/FlowGuard/actions/runs/37683554717) was queued at publication verification; this record does not claim its result. Prior benchmark source hashes remain unchanged. The working checkout is main. Human rehearsal and faculty submission remain outstanding.

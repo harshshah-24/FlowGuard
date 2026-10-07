@@ -1,6 +1,6 @@
 # Status Update
 
-**Updated:** 8 October 2026. **Branch:** `codex/flowguard-dark-ui`.
+**Updated:** 8 October 2026. **Branch:** `main`.
 
 ## Completed
 
@@ -42,3 +42,7 @@ Harsh approved a dark-only UI inspired by the supplied Apex Analytics reference.
 ## Blue-green palette revision — 8 October 2026
 
 Approved replacement of yellow accents with teal/cyan is implemented locally. Dark mode and existing behavior remain intact. Typechecking, production build and all fifteen production Chromium checks passed for this palette revision. The evidence screenshot is refreshed. Harsh approved publication to canonical main; remote verification follows the push.
+
+## Dark UI publication — 8 October 2026
+
+The complete approved dark teal/cyan UI refresh was committed as a591a6906b92ec2f8f18a6e8cf257c20de37c667 and fast-forwarded from 44db27f to canonical origin/main. Remote main was verified to match the implementation commit. Local typechecks, build and 15 production Chromium checks passed for the final palette; 4 isolated checks passed for the preceding layout refresh. [GitHub Actions run 37683554717](https://github.com/harshshah-24/FlowGuard/actions/runs/37683554717) was queued at publication verification; this record does not claim its result. Prior benchmark source hashes remain unchanged. The working checkout is main. Human rehearsal and faculty submission remain outstanding.
