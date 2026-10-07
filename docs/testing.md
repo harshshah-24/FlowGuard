@@ -19,6 +19,8 @@ npm run test:e2e
 
 `npm run check` combines typecheck, unit tests, production build, and browser checks. Browser checks start and stop a loopback production preview automatically. Tests use synthetic input only.
 
+Phase 2 additionally runs `npm run test:phase2` from `check` and CI. This builds a separate labeled static-module harness and serves it on loopback 4174; normal production checks use 4173. The harness build lives in ignored `.vite/phase2-dist`, separate from Playwright's output cleanup, and is absent from `apps/web/dist`.
+
 ## Executed Results — 5 October 2026
 
 - TypeScript checks passed for core, CLI scaffold, web, and relevant tests.
@@ -61,3 +63,69 @@ Browser tests cover Monaco drafts/navigation/reload, cancel/discard/save replace
 ## Phase 1 remote validation
 
 After explicit push approval, implementation commit `ed9f952` was published to canonical main. [GitHub Actions run 37274679542](https://github.com/harshshah-24/FlowGuard/actions/runs/37274679542) passed on Ubuntu: clean install, typechecks, 111 unit tests, production builds, and six Chromium UI tests. This validates the Phase 1 front end and workspace, not later taint/codegen/runtime stages.
+
+## Phase 2 validation — 7 October 2026
+
+The user authorized Phase 2 implementation. It is complete locally on `codex/flowguard-build`; no Phase 2 commit, merge, push or remote CI was performed.
+
+Full `npm run check` passed with 180 unit/CLI tests across 18 files, six normal-production Chromium tests, four separate static-integration Chromium tests, typechecks and core/CLI/Vite builds. Final CLI output-error mapping and graph-label refinements subsequently passed typechecks, **181 unit/CLI tests**, and all four affected browser integration tests. The normal production build was regenerated after these refinements. The six normal workspace tests remain applicable; their behavior was unchanged by the refinements.
+
+Installed exact pins were verified with `npm ls --depth=0`; the lockfile and dependency versions are unchanged. `npm audit --json` reported zero vulnerabilities on 7 October, a point-in-time result. The main production JS is approximately 3.50 MB uncompressed/~0.92 MB gzip; Vite still reports a chunk-size warning. No engine/layout/selection/cancellation benchmark or release evaluation has run.
+
+### Environment
+
+Windows validation uses official, checksum-verified Node 26.5.0 (bundled npm 11.17.0) from a temporary task toolchain. The existing system installation is Node 22.16.0/npm 11.6.2 and was not modified. The first restricted dependency install failed due to npm-cache permissions; retry with normal cache permissions installed the exact lockfile successfully. Validation uses the pinned temporary runtime, not the system Node 22 executable.
+
+For this existing Windows checkout, the temporary runtime can be selected in PowerShell before validation:
+
+```powershell
+$env:PATH = "$env:TEMP\flowguard-toolchain\node-v26.5.0-win-x64;$env:PATH"
+node --version
+npm --version
+npm run check
+```
+
+This path is task-local and temporary, not a general installation instruction. Other machines should provide the approved Node/npm versions before using README commands.
+
+### Executed static checks
+
+- Independent fixtures in `fixtures/taint/manifest.json` specify sensitive-argument/rule units, sink lines and contributing sources before execution. They cover direct/transitive flow, branch merge, overwrite, loop-carried flow, multiple sources, bound values and tainted binding templates. All nine catalog example labels also match static output.
+- Inline semantic cases cover print exclusion, prompt-versus-input identity, no implicit control propagation, zero-iteration flow and constant short-circuit structural overapproximation. Tests verify deterministic finite source sets, preserved earlier states, solver cancellation/deadline and exact cap/cap-minus-one state/membership/pop budgets.
+- Provenance checks verify source/copy/operator/merge/cycle facts, valid predecessor references, deduplication and per-finding/global truncation preserving all source IDs.
+- Replay checks reconstruct final solver outputs, undo/redo every update, preserve the initial checkpoint, reconstruct across the 100-event checkpoint, enforce count/byte bounds and count omitted updates without stopping the solver.
+- Coordinator checks verify stage-prefix/artifact gating, progress, invalid envelopes, source errors/limits/cancellation, empty source and replay opt-out. No completed public result or runnable bytecode is fabricated.
+- Reports roundtrip exact BOM/newline/Unicode identity, reject unsupported/forged completion and mismatched runtime, reject output above 16 MiB before joining, and use longer Markdown fences for embedded source/runtime backticks.
+- CLI tests invoke the built ESM command in isolated temporary directories, checking flags/help/version, valid-but-incomplete output, source/UTF-8/file/input errors, trace opt-in, no-clobber/overwrite/output failures and stdout/report error mapping.
+- Worker tests explicitly deliver duplicate/retired/malformed/wrong-identity/error messages, constructor/postMessage failures, cancellation and watchdog expiry. Layout tests cover missing/nonfinite/wrong-identity positions, failure/timeout and >200-node fallback. Reducer tests cover partial/stale artifacts, invalid-source replacement, selection guards, final/replay modes and late layouts.
+
+### Executed browser checks
+
+The separate production-style test build computes real front-end/taint/finding/provenance/replay artifacts and runs the actual bundled analysis/layout/Monaco workers. It checks graph rendering, finding selection and source highlighting, manual replay and final view, unsafe-query versus bound-value comparison, keyboard list selection with retained semantic edges, real worker incomplete exports, stale snapshots, invalid source, >200-node fallback, reduced-motion autoplay gating and local-only assets. Its fallback seam exists only in the test-build entry, not a production query flag.
+
+The normal six production workspace checks pass with Analyze and Run visibly disabled. The normal build does not contain `test/phase2.html`. Synthetic screenshots `test-results/phase-2-workspace.png` and `test-results/phase-2-integration.png` were visually inspected. These are ignored local evidence, not private source or completed release demonstrations.
+
+### Completion boundary
+
+The Phase 2 coordinator computes through findings internally, then explicitly returns internal-error/ENGINE_INTERNAL at missing Phase 3 codegen, with completed static artifacts and no public final findings/bytecode/disassembly. Valid-source CLI exit is 3; invalid source/file/options is 2. Complete Analyze, codegen/verifier, VM/runtime browser flows and full release acceptance remain Phase 3/4 work. See [architecture](architecture.md).
+
+## Initial Phase 3 validation before the scope amendment — 7 October 2026
+
+At this intermediate check, codegen/verifier, full Analyze, VM, CLI runtime and browser execution were implemented, but top-level value reporting awaited approval for missing scope metadata. These initial checks did not cover that requirement. The completed amendment and full check are recorded below.
+
+The commands were run separately: npm run typecheck, npm run test, npm run build, npm run test:e2e and npm run test:phase2. All passed: **249 unit/CLI tests across 22 files, ten production Chromium tests, four isolated static-integration Chromium tests**, typechecks and builds. Exact Node26.5.0/npm11.17.0, dependency pins and lockfile are unchanged. No complete release evaluation, benchmark, publication or remote Phase3 CI has run.
+
+New checks cover all opcodes, constant deduplication, branch PC targets/source maps, strict malformed artifacts, stack/join/overflow rejection, greatest-fixed-point initialization including a forward-jump predecessor and an entry backedge, both verifier work caps, generation caps, and shared deadlines. Runtime checks cover all scalar operators, signed division/remainder, short circuit, finite/infinite loops, repeated input identities/encounter order, simulated effects, overflow/zero/exhaustion, cancellation, exact instruction/event/string boundaries, conservative storage accounting and JSON-escaped output bytes. Independent fixture expectations in fixtures/runtime/manifest.json cover all nine teaching examples.
+
+CLI checks verify successful query/binding runtime exit codes, runtime-over-finding precedence, retained static results on runtime failure, cancelled reports, output protection and invalid inputs. Main-thread SIGINT handling uses an atomic flag shared with the synchronous worker; cooperative cancellation is tested. An OS-delivered SIGINT timing experiment has not been run on Windows.
+
+Production browser tests verify real unsafe-to-binding Analyze/Run, source-linked finding/PC selection, text injection rendering, JSON input validation/exhaustion/correction, Stop/retry, limit outcomes, source edit during run, stale bytecode gating, keyboard Analyze and local-only worker/assets/effects. Execution client unit checks cover malformed/error/startup messages, identity mismatches, retired/duplicate results, fresh retry and exact1250ms watchdog. A graph selection feedback loop found during these tests was fixed by stabilizing React Flow's selection callback; the final production suite passed. Alert test selectors were narrowed to application alerts, excluding Monaco's hidden live regions.
+
+The ignored synthetic screenshot test-results/phase-3-binding-run.png was visually inspected: editor, graph, findings, replay, bytecode, inputs and runtime panels display correctly. The initial screenshot lacked final values while the metadata decision was pending; the final check below regenerates it with final values. The existing Vite main-chunk warning persists (~3.50MB/~0.92MB gzip); no performance claim is inferred from test durations.
+
+## Phase 3 completed after approved scope amendment — 7 October 2026
+
+The user approved adding topLevelSymbolIds to bytecode with "go ahead". Master plan v1.3, strict schemas, codegen, verifier, VM, contract fixtures, phase/status/handoff and usage/architecture notes are synchronized. Metadata is required, capped, unique, in symbol order and restricted to user slots. Generated membership comes from final IR HALT visibility. VM output projects initialized top-level values on completion and core-reported failures, limits or cancellation; locals, temporaries and unreached declarations are omitted. Unverified metadata yields no values.
+
+The final **npm run check passed** with **260 unit/CLI tests across 22 files, eleven production Chromium checks, four isolated static-integration checks**, typechecks and production builds. New scope checks cover interleaved local/top-level declarations, assignment updates, empty/local-only programs, malformed membership/order/references, runtime failure before later declarations, limits/cooperative cancellation, CLI exports and real browser worker/report transport. Existing compiler/runtime/cancellation/limit checks also pass. The synthetic production binding/run screenshot was regenerated and visually inspected with the final name value present.
+
+Phase 3 is complete locally on codex/flowguard-build. Phases 2/3 remain uncommitted/unpushed; no remote Phase 2/3 CI has run. Phase 4 evaluation, benchmarks and submission artifacts remain unstarted and unauthorized. The pinned runtime/dependencies/lockfile and fixed limits are unchanged; Vite's existing large-main-chunk warning remains.

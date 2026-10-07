@@ -1,6 +1,6 @@
 # Implementation Phases
 
-**Status:** Phase 0 is published on main. Phase 1 is published on main after explicit approval; remote CI passed. Phases 2–4 remain unstarted and require authorization.
+**Status:** Phases 0/1 are published; Phases 2/3 are complete and validated locally, including the top-level scope metadata approved on 7 October. Publication of Phases 2/3 is authorized in this change. Phase 4 continuation is authorized for the teammate and is unstarted; see [agent handoff](../phase_4_agent_handoff.md).
 
 The [master plan](../implementation_plan.md) is the implementation source of truth. These five phase files provide ordered tasks, ownership, dependencies, validation, and exit gates. Read the [PRD](../flowguard_prd.md) and current [status](../status_update.md) before starting.
 

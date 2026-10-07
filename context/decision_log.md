@@ -98,3 +98,37 @@
 - User explicitly requested pushing Phase 1 to main. Fetched the sole canonical origin and verified main remained `581e246`; fast-forwarded and pushed implementation commit `ed9f952` without overwriting history.
 - [GitHub Actions run 37274679542](https://github.com/harshshah-24/FlowGuard/actions/runs/37274679542) passed: clean install, typechecks, 111 unit tests, production builds, and six Chromium tests.
 - Publication/status/plan/phase/handoff records synchronized. Phase 2 remains unauthorized.
+
+## 2026-10-07 — Phase 2 implementation authorized and completed locally
+
+- User explicitly instructed: "go ahead and fully implement phase 2". This authorizes the Phase 2 work and necessary installation/validation, not Phases 3/4 or publication.
+- Created the planned codex/flowguard-build branch from published main f4c0aa9. No commit, merge or push was performed.
+- Implemented finite FIFO explicit may-taint, exact transfers/joins/overwrite, storage/work/time/cancellation caps, independently labeled converged sink/source units, bounded final-state provenance/cycle markers, and reversible count/byte-bounded replay.
+- Added the static-stage coordinator, capped versioned JSON/Markdown reports, strict CLI/file/output adapters, and bundled validated analysis/layout workers/clients with independent identities, cancellation, watchdogs and fallback.
+- Integrated view-only React Flow/Dagre graph/list, source-linked finding/graph selection, expandable/paginated inspectors, explicit final-versus-replay state modes, reduced-motion replay controls and current/previous snapshot exports.
+- Preserved existing completion contracts. Until Phase 3, the coordinator explicitly returns incomplete internal-error/ENGINE_INTERNAL at missing codegen; no final findings/bytecode/disassembly are published. Analyze/Run remain disabled in the normal browser; valid static CLI input returns incomplete report/exit 3. Real module findings are verified in a separate labeled test-build harness absent from normal production output.
+- Exact approved Node 26.5.0/npm 11.17.0 were temporarily installed after checksum verification because the Windows system runtime was Node 22.16.0/npm 11.6.2. System runtime and dependency pins/lockfile were unchanged. Locked installation succeeded; npm audit reported zero vulnerabilities.
+- Full check passed: 180 unit/CLI tests, six production Chromium tests, four real-static integration Chromium tests, typechecks and builds. Both synthetic screenshots were inspected. Final focused refinement checks are recorded in docs/testing.md. Phase 2 remote CI/evaluation/benchmarks/VM have not run.
+- Updated implementation/phase/status/handoff, README, language/architecture/testing/third-party documentation. Phase 2 publication remains pending separate authorization; Phases 3/4 remain unauthorized.
+
+## 2026-10-07 — Phase 3 authorized; implementation awaiting final scope contract
+
+- User explicitly requested "go ahead and implement phase 3 as well". Phase 4 and publication remain unauthorized.
+- Implemented typed generation/disassembly, strict stack-flow and greatest-fixed-point initialization verification, complete Analyze, bounded typed VM, CLI --run/inputs/status precedence and responsive worker-based SIGINT handling.
+- Integrated separate execution worker/client/watchdog, current-source Run/Stop gating, bytecode selection, input validation, runtime events/reports and cancellation on edit. Fixed graph selection feedback discovered by production tests.
+- All local checks passed: 249 unit/CLI tests, ten production Chromium checks, four isolated integration checks, typechecks and builds. Independent runtime fixtures and synthetic inspected screenshot are recorded in docs/testing.md. No benchmark, evaluation, remote CI, commit or push was performed.
+- Identified a contract gap: bytecode slots omit lexical scope membership, but finalTopLevelValues must exclude locals/temporaries. Proposed explicit topLevelSymbolIds derived from final IR HALT visibility; requested approval under the master plan's stop-and-ask rule. That field has not been added; finalTopLevelValues remains empty. Phase 3 exit gate remains open.
+
+## 2026-10-07 — Scope metadata approved; Phase 3 completed locally
+
+- User answered "go ahead" to the concrete proposal for topLevelSymbolIds. Added the required bounded, unique, ordered user-symbol metadata, derived from final HALT visibility; synchronized master plan v1.3 and affected contracts/phases.
+- VM now projects initialized top-level values in symbol order after completed or core-reported failed/cancelled runs. Locals, temporaries, unreached declarations and unverified metadata do not appear.
+- Final npm run check passed: 260 unit/CLI tests, eleven production Chromium checks, four isolated integration checks, typechecks and production builds. Scope checks include malformed metadata, runtime failure/limit/cancellation, CLI reports and real browser workers/exports. Synthetic final screenshot regenerated and inspected.
+- Phase 3 exit gate is complete locally. Changes remain uncommitted/unpushed; publication and Phase 4 require applicable authorization. No benchmark, release evaluation or remote CI was run.
+
+## 2026-10-07 — Publication and teammate Phase 4 continuation authorized
+
+- User explicitly requested: "push all this so I can let my teammate know that he can continue with phase 4 with his coding agent".
+- Verified sole canonical origin and fetched remote main; it remains f4c0aa9, matching the implementation branch base. Publish completed Phases 2/3 by fast-forward, without rewriting remote history.
+- Added context/phase_4_agent_handoff.md with the authorized continuation, source-of-truth reading order, pinned setup/baseline commands, missing evaluation/benchmark scripts and remaining release evidence. Phase 4 is authorized for teammate continuation but has not been executed here.
+- Current implementation has passed the full local check (260 unit/CLI, eleven production Chromium and four static-integration checks, typechecks/builds). Verify the real publication commit's remote CI separately; do not infer it from local checks.

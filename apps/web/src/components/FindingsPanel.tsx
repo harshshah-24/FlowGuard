@@ -1,0 +1,6 @@
+import type { ExplanationFact, Finding, SemanticModel } from '@flowguard/core';
+export function FindingsPanel({findings,explanations,semantic,selected,onSelect}:{findings:Finding[];explanations:ExplanationFact[];semantic:SemanticModel;selected:string|null;onSelect:(finding:Finding)=>void}){
+ return <section className="findings"><h2>Possible explicit flows</h2><p className="panel-note">Structural paths may be infeasible. These findings do not prove attacks or universal safety.</p>{!findings.length&&<p className="panel-note">No modeled explicit-flow findings.</p>}
+ {findings.map(f=><article key={f.id}><button aria-pressed={selected===f.id} onClick={()=>onSelect(f)}>{f.rule} · {f.span.startLine}:{f.span.startColumn}</button><p>Input sources: {f.sourceIds.map(id=>`${id} (${semantic.inputSources.find(s=>s.id===id)?.label??'input'})`).join(', ')}</p>{!f.explanationComplete&&<p role="status">Explanation truncated; contributing source sets remain complete.</p>}{selected===f.id&&<ul>{f.explanationFactIds.map(id=>explanations.find(fact=>fact.id===id)).filter((f):f is ExplanationFact=>!!f).map(fact=><li key={fact.id}>{fact.kind} · {fact.sourceId} · {fact.nodeId}/{fact.slotId} · line {fact.span.startLine}</li>)}</ul>}</article>)}
+ </section>;
+}

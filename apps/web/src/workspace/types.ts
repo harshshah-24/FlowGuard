@@ -4,7 +4,7 @@ export interface WorkspaceState {
   source:string;filename:string;revision:number;dirty:boolean;panel:'workspace'|'examples'|'help';
   analysisStatus:AnalysisStatus;activeAnalysisId:string|null;currentAnalysis:AnalysisResult|null;
   progress:AnalysisProgress|null;selectedFindingId:string|null;selectedNodeId:string|null;
-  selectedBytecodePc:number|null;replayIndex:number;playing:boolean;
+  selectedBytecodePc:number|null;replayIndex:number;replayMode:'final'|'updates';playing:boolean;
   inputJson:string;inputValidation:string|null;runtimeStatus:'idle'|'running'|'completed'|'runtime-error'|'cancelled'|'incomplete-limit'|'internal-error';
   activeExecutionId:string|null;currentExecution:ExecutionResult|null;
   graphLayoutStatus:'idle'|'running'|'ready'|'error';positions:Record<string,{x:number;y:number}>;
@@ -23,6 +23,7 @@ export type WorkspaceAction =
  | {type:'SELECT_NODE';id:string|null}
  | {type:'SELECT_BYTECODE';pc:number|null}
  | {type:'SET_REPLAY_INDEX';index:number}
+ | {type:'SET_REPLAY_FINAL'}
  | {type:'SET_REPLAY_PLAYING';playing:boolean}
  | {type:'SET_INPUTS';json:string}
  | {type:'START_EXECUTION';requestId:string;revision:number}

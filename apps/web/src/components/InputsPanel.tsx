@@ -1,0 +1,3 @@
+export function InputsPanel({json,error,onChange}:{json:string;error:string|null;onChange:(json:string)=>void}){
+ return <section className="inputs-panel"><h2>Runtime inputs</h2><label htmlFor="runtime-inputs">Supplied values (JSON array of strings)</label><textarea id="runtime-inputs" value={json} onChange={e=>onChange(e.target.value)} aria-invalid={!!error} aria-describedby="input-help" rows={3} spellCheck={false}/><p id="input-help" className="panel-note">Consumed in runtime encounter order. Unused values are allowed. Up to 1,000 values, 64 KiB each, 1 MiB combined.</p>{error&&<p role="alert">{error}</p>}</section>;
+}

@@ -1,34 +1,34 @@
 # Status Update
 
-**Updated:** 2026-10-05
+**Updated:** 2026-10-07
 
-## Completed
+## Completed Implementation
 
-- PRD v0.3 and original phased plan published on canonical main.
-- Phase 0 implementation `565b47c` and publication record `581e246` are on main; remote CI passed.
-- Phase 1 published on main at `ed9f952` after explicit authorization: handwritten lexer/parser, scope/type checking, stable symbols/input sources, typed lowering/CFG structural validation.
-- Locally bundled Monaco editor/worker, UTF-8 file/snapshot/download adapters, examples/help, markers, loading/error states, dirty replacement and revision-aware save behavior.
-- Language documentation, synthetic fixture expectations, and synchronized master plan v1.2.
-- Clean lockfile install; `npm run check` passed: 111 unit tests, six production browser tests, typechecks and builds. Synthetic screenshot inspected.
-- Approved Monaco-scoped DOMPurify 3.4.16 override installed; audit reported zero vulnerabilities.
+- Phases 0/1 are published on canonical main `f4c0aa9`; remote CI passed. Phase 2 is complete locally on `codex/flowguard-build`.
+- Phase 3 was explicitly authorized and completed locally, including the separately approved topLevelSymbolIds contract amendment.
+- Typed bytecode generation with deduplicated constants, patched jumps, ordered input-source IDs, per-PC source maps and disassembly.
+- Strict bytecode verification: schemas/operands/types, stack joins, bounded greatest-fixed-point definite initialization, and LOAD checks after convergence.
+- Full Analyze now completes through codegen/verify and only then publishes findings, bytecode and disassembly. Failures retain safe partial static artifacts.
+- Bounded typed VM with BigInt-backed int32 checks, short circuit, encounter-order inputs, typed simulated effects, HALT completion and all fixed instruction/time/string/storage/event/output/input caps.
+- Separate execution worker/client, 1250 ms watchdog, fresh workers, stale/duplicate rejection, Stop/retry and cancellation on source/input edits.
+- Browser Analyze/Run controls, bytecode/source/graph selection, JSON input validation, paginated runtime events, matching-snapshot reports and keyboard Analyze.
+- CLI --run/--inputs, runtime failure exit precedence, static-plus-failed-runtime reports and shared-memory SIGINT cancellation while the main thread remains responsive.
 
-## Current Work
+## Validation
 
-- Phase 1 publication is complete. [Remote CI passed](https://github.com/harshshah-24/FlowGuard/actions/runs/37274679542): clean install, typechecks, 111 unit tests, builds, and six browser tests.
-- Analyze/Run remain disabled. No taint solver, completed analysis coordinator, graph presentation, codegen/verifier, VM, or CLI analysis yet.
-- Release evaluation and benchmarks have not run.
+- Typechecks and core/CLI/production web builds passed using exact Node 26.5.0/npm 11.17.0 from the existing temporary toolchain.
+- 260 unit/CLI tests passed, including independent expectations for all nine catalog runtime examples.
+- Eleven production Chromium checks and four existing isolated static-integration checks passed.
+- Production browser verification found and fixed a graph selection feedback loop. Synthetic binding/run screenshot was visually inspected.
+- Dependency pins and lockfile remain unchanged. See [testing notes](../docs/testing.md).
+- The user authorized publishing all Phases 2/3 work to canonical main for teammate Phase 4 continuation. Remote CI is not inferred from the local check; its publication result will be recorded separately. No release evaluation or benchmark claim is made.
 
-## Remaining Work
+## Completed Phase 3 Gate
 
-- Obtain explicit Phase 2 authorization before analysis/explanation/integration work.
-- Implement and validate Phases 2–4 after authorization.
+The user approved topLevelSymbolIds with "go ahead". The schema/codegen/verifier now carries unique, ordered user-symbol references from final HALT visibility. VM projection returns initialized top-level values on successful and core-reported failed/cancelled runs, excluding locals, temporaries and unreached declarations. Unverified bytecode exposes no values. Core, CLI and real-worker browser tests pass. Master plan v1.3 and affected phase/contracts are synchronized.
 
-## Risks and Unknowns
+The full npm run check passed, completing the Phase 3 functional gate. Phase 4 remains unstarted and is authorized for the teammate.
 
-- Monaco production chunk is ~3.29 MB uncompressed/~0.86 MB gzip; Vite emits a chunk-size warning. Performance measurement/tuning remains a later gate.
-- Submission time/report template/teammate names/demo hardware remain unspecified.
-- Deadline 8 October 2026; any product scope change needs user approval.
+## Risks and Next Step
 
-## Immediate Next Step
-
-Obtain Phase 2 authorization. See [testing evidence](../docs/testing.md) and [language reference](../docs/language.md).
+Publish the completed Phases 2/3 work as requested, verify remote CI, then continue Phase 4 via the [teammate agent handoff](phase_4_agent_handoff.md). Publication of later Phase 4 changes needs applicable authorization. Vite's existing large-main-chunk warning persists (~3.50 MB uncompressed/~0.92 MB gzip); performance evaluation remains a later gate. Submission time, template, teammate identities and demo hardware are unspecified.

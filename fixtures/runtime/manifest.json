@@ -1,0 +1,15 @@
+{
+ "schemaVersion":1,
+ "state":"Independently specified runtime expectations for the nine teaching examples; source spans and PCs are checked separately.",
+ "fixtures":[
+  {"id":"unsafe-query","filename":"unsafe-query.fg","inputs":["Ada"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"Name","value":"Ada"},{"kind":"sql-query","query":"SELECT * FROM users WHERE name = Ada","simulated":true}]},
+  {"id":"bound-query","filename":"bound-query.fg","inputs":["Ada"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"Name","value":"Ada"},{"kind":"sql-bind","template":"SELECT * FROM users WHERE name = ?","value":{"type":"string","value":"Ada"},"simulated":true}]},
+  {"id":"branch-merge","filename":"branch-merge.fg","inputs":["echo example"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"Value","value":"echo example"},{"kind":"shell","command":"echo example","simulated":true}]},
+  {"id":"trusted-overwrite","filename":"trusted-overwrite.fg","inputs":["untrusted"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"Value","value":"untrusted"},{"kind":"shell","command":"literal","simulated":true}]},
+  {"id":"loop-flow","filename":"loop-flow.fg","inputs":["one","two"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"Value","value":"one"},{"kind":"input","sourceId":"src-0","prompt":"Value","value":"two"},{"kind":"sql-query","query":"two","simulated":true}]},
+  {"id":"multiple-sources","filename":"multiple-sources.fg","inputs":["hello","world"],"status":"completed","diagnosticCodes":[],"events":[{"kind":"input","sourceId":"src-0","prompt":"First","value":"hello"},{"kind":"input","sourceId":"src-1","prompt":"Second","value":"world"},{"kind":"shell","command":"helloworld","simulated":true}]},
+  {"id":"short-circuit","filename":"short-circuit.fg","inputs":[],"status":"completed","diagnosticCodes":[],"events":[{"kind":"print","value":{"type":"bool","value":false}}]},
+  {"id":"arithmetic-loop","filename":"arithmetic-loop.fg","inputs":[],"status":"completed","diagnosticCodes":[],"events":[{"kind":"print","value":{"type":"int","value":3}}]},
+  {"id":"runtime-error","filename":"runtime-error.fg","inputs":[],"status":"runtime-error","diagnosticCodes":["RUNTIME_DIV_ZERO"],"events":[]}
+ ]
+}

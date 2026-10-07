@@ -2,7 +2,7 @@
 
 **Suggested window:** 7 October 2026
 
-**State:** Not started. Documentation publication is not implementation authorization.
+**State:** Authorized and completed locally on 7 October, including the separately approved top-level scope metadata amendment. The user authorized publication with Phase 2 for teammate Phase 4 continuation.
 
 ## Source of Truth
 
@@ -23,7 +23,7 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Ordered Tasks
 
-1. Generate exactly the specified typed stack bytecode from IR, deduplicate typed constants, preserve input source table, patch PC targets, and map every instruction to source.
+1. Generate exactly the specified typed stack bytecode from IR, deduplicate typed constants, preserve input source table, patch PC targets, and map every instruction to source. Carry required topLevelSymbolIds from final HALT visibility in symbol order, validating unique references to user slots.
 2. Implement bytecode schema/arity/type/reference validation, stack-flow verification, and fixed-point definite initialization. Check LOAD safety after convergence, not during an incomplete first iteration.
 3. Complete the analysis coordinator through codegen/verifier. Completed result now includes verified artifact and disassembly; invalid/incomplete results cannot run.
 4. Implement the VM with supplied input order, exact checked 32-bit arithmetic using widened BigInt calculation, short-circuit execution, scalar slots/stack, deterministic events, and HALT-only completion.
@@ -34,11 +34,14 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Required Validation
 
-- [ ] All opcode, target/source-map, stack/join/initialization, malformed-bytecode, and verifier-cap fixtures pass.
-- [ ] Short-circuit skipped inputs, integer loops, overflow/division/remainder, exhaustion, and modeled SQL/shell/print events match expected behavior.
-- [ ] Infinite/oversized-output programs return incomplete-limit without freezing UI or executing external services.
-- [ ] CLI/runtime report schemas and statuses match browser outcomes; stale bytecode cannot run.
-- [ ] Production build demonstrates real analysis, verified bytecode, explicit VM Run, Stop/retry, and the binding correction.
+- [x] All opcode, target/source-map, stack/join/initialization, malformed-bytecode, and verifier-cap fixtures pass.
+- [x] Short-circuit skipped inputs, integer loops, overflow/division/remainder, exhaustion, and modeled SQL/shell/print events match expected behavior.
+- [x] Infinite/oversized-output programs return incomplete-limit without freezing UI or executing external services.
+- [x] CLI/runtime report schemas and statuses match browser outcomes; stale bytecode cannot run.
+- [x] Production build demonstrates real analysis, verified bytecode, explicit VM Run, Stop/retry, and the binding correction.
+- [x] Final top-level values: approved/synchronized explicit bytecode scope metadata, initialized-value projection and block-local/temporary exclusion on successful and failed runs.
+
+Validation: typechecks, builds, 260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration checks. Synthetic production screenshot was visually inspected. See [testing notes](../../docs/testing.md). Remote CI must be verified for this publication. Phase 4 release evaluation and benchmarks have not run.
 
 ## Exit Gate
 

@@ -1,0 +1,2 @@
+import type { AnalysisResult } from '@flowguard/core';
+export function ExportPanel({analysis,current,onExport}:{analysis:AnalysisResult;current:boolean;onExport:(format:'json'|'markdown')=>void}){return <section className="export-panel"><p>Export {current?'current':'previous'} snapshot · revision {analysis.snapshot?.revision??'unavailable'} · {analysis.status}</p><button onClick={()=>onExport('json')}>Export JSON</button><button onClick={()=>onExport('markdown')}>Export Markdown</button></section>;}

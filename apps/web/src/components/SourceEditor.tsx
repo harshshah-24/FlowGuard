@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import type * as Monaco from 'monaco-editor';
-import type { Diagnostic } from '@flowguard/core';
+import type { Diagnostic, SourceSpan } from '@flowguard/core';
 import { editorApi, releaseEditorWorkers } from '../editor/monaco.js';
-import { applyEditorChanges, markerData } from '../editor/text.js';
-export function SourceEditor({source,onChange,diagnostics=[]}:{source:string;onChange:(source:string)=>void;diagnostics?:readonly Diagnostic[]}){
+import { applyEditorChanges, markerData, editorRange } from '../editor/text.js';
+export function SourceEditor({source,onChange,diagnostics=[],highlight}:{source:string;onChange:(source:string)=>void;diagnostics?:readonly Diagnostic[];highlight?:SourceSpan|undefined}){
  const container=useRef<HTMLDivElement>(null),editor=useRef<Monaco.editor.IStandaloneCodeEditor|null>(null),raw=useRef(source),callback=useRef(onChange),updating=useRef(false);const [failure,setFailure]=useState<string|null>(null);
  callback.current=onChange;
  useEffect(()=>{
@@ -15,5 +15,6 @@ export function SourceEditor({source,onChange,diagnostics=[]}:{source:string;onC
  },[]);
  useEffect(()=>{if(raw.current!==source){raw.current=source;const model=editor.current?.getModel();if(model){updating.current=true;try{model.setValue(source);}finally{updating.current=false;}}}},[source]);
  useEffect(()=>{const model=editor.current?.getModel();if(model)editorApi().editor.setModelMarkers(model,'flowguard',markerData(diagnostics,source));},[source,diagnostics]);
+ useEffect(()=>{const instance=editor.current;if(!instance)return;const range=highlight?editorRange(highlight,source):undefined;const decoration=instance.createDecorationsCollection(range?[{range,options:{className:'source-selection',isWholeLine:false}}]:[]);if(range)instance.revealRangeInCenter(range);return ()=>decoration.clear();},[source,highlight]);
  return <><div className="source-editor" ref={container} hidden={failure!==null}/>{failure&&<><p role="alert">{failure}</p><textarea aria-label="Write a FlowGuard program" value={source} onChange={e=>onChange(e.target.value)}/></>}</>;
 }

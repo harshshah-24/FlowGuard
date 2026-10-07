@@ -2,7 +2,7 @@
 
 **Suggested window:** 7–8 October 2026
 
-**State:** Not started. Documentation publication is not implementation authorization.
+**State:** Continuation authorized for the teammate by the user on 7 October 2026; not started. Phases 0–3 have passed their local functional gates. Use the [agent handoff](../phase_4_agent_handoff.md) and verify the published commit/current CI before beginning.
 
 ## Source of Truth
 

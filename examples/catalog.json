@@ -12,7 +12,7 @@
     ],
     "expectedRuntimeBehavior": "Simulated query event.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -26,7 +26,7 @@
     ],
     "expectedRuntimeBehavior": "Simulated bound-query event.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -42,7 +42,7 @@
     ],
     "expectedRuntimeBehavior": "Simulated command event.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -56,7 +56,7 @@
     ],
     "expectedRuntimeBehavior": "Simulated literal command event.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -73,7 +73,7 @@
     ],
     "expectedRuntimeBehavior": "Two input events and one simulated query event.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -90,7 +90,7 @@
     ],
     "expectedRuntimeBehavior": "Simulated command containing both strings.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -102,7 +102,7 @@
     "inputs": [],
     "expectedRuntimeBehavior": "Print false; consume no inputs.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -114,7 +114,7 @@
     "inputs": [],
     "expectedRuntimeBehavior": "Print integer 3.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   },
   {
@@ -126,7 +126,7 @@
     "inputs": [],
     "expectedRuntimeBehavior": "RUNTIME_DIV_ZERO before print.",
     "limitations": [
-      "Educational modeled operations; source is not executed in Phase 1."
+      "Educational modeled operations; SQL and shell effects are simulated."
     ]
   }
 ]

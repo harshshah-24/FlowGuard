@@ -1,0 +1,5 @@
+let a:string=input("A");
+let b:string=a;
+let c:string=b;
+let d:string=c;
+shell(d);

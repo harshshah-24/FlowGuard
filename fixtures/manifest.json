@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "state": "independently specified expectations; Phase 1 lexer/parser/semantics/lowering validated; taint/runtime not implemented",
+  "state": "independently specified front-end expectations; Phase 2 taint expectations and sink/source units are separately specified in taint/manifest.json; runtime outcomes are independently specified in runtime/manifest.json; final top-level value reporting is validated by scope-specific core, CLI and browser tests",
   "fixtures": [
     {
       "id": "empty",

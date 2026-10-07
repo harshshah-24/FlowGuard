@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:phase2": "vite build --mode phase2-test",
+    "preview:phase2": "vite preview --outDir ../../.vite/phase2-dist --host 127.0.0.1 --port 4174 --strictPort",
     "typecheck": "tsc -p tsconfig.json",
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
     "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort"

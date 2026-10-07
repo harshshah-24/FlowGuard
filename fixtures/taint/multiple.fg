@@ -1,0 +1,3 @@
+let a:string=input("A");
+let b:string=input("B");
+shell(a+b);

@@ -1,6 +1,6 @@
 # FlowGuard — Detailed Implementation Plan
 
-**Version:** 1.2 — master plan with separate phase documents
+**Version:** 1.3 — approved Phase 3 scope metadata amendment
 
 **Date:** 2026-10-05
 
@@ -10,7 +10,9 @@
 
 **Phase 1 dependency amendment (5 October 2026):** The user approved retaining Monaco 0.57.0 with an exact root npm override `monaco-editor → dompurify: 3.4.16`, replacing its vulnerable 3.4.15 dependency. Update the lockfile and verify production editor/worker behavior.
 
-**Approval status:** Documentation was published. The user explicitly approved Phase 0 implementation on 5 October 2026; it is published on main. The user approved Phase 1 and the documented DOMPurify override; Phase 1 is published on main at `ed9f952` after explicit merge/push approval. Phases 2–4 require further implementation authorization. Phase 1 remote CI passed. The user separately approved Phase 0 merge/push; implementation commit `565b47c` is published on main.
+**Approval status:** Phases 0/1 are published on main and remote CI passed. On 7 October the user authorized Phase 2, then explicitly requested "go ahead and implement phase 3 as well", and approved the scope amendment below with "go ahead". Phases 2/3 are complete locally. The user then authorized pushing all completed work for teammate continuation. This publication fast-forwards canonical main from `f4c0aa9` and authorizes the teammate to continue Phase 4. Phase 4 remains unstarted; use phase_4_agent_handoff.md. Publication of later Phase 4 work needs the applicable authorization.
+
+**Approved Phase 3 contract amendment (7 October):** Bytecode now includes required `topLevelSymbolIds` in symbol order, derived from the final lowered HALT's `visibleSymbolIds`. The schema/verifier rejects missing, duplicate, unordered or unknown identities and references to temporary slots. VM results project initialized values at successful or failed termination, omitting block locals, temporaries and declarations not reached. This supplies the metadata required by section 9 without changing language behavior, bytecode opcodes or resource limits.
 
 ## 1. Outcome and Fixed Scope
 
@@ -210,7 +212,7 @@ Public APIs: `solveTaint(program,guard,recorder) → TaintResult`; `collectFindi
 
 ## 8. Bytecode Specification and Verification
 
-`BytecodeArtifact`: version `1`, snapshotId, sourceSha256, slots, sourceIds (ordered static source IDs), constants, instructions, sourceMap, maxVerifiedStack. Constants are typed scalar records deduplicated by type/value in first-use order. Instruction fields are `opcode` and `operands` (numeric array with exactly the opcode-defined arity). `sourceMap` is an array with one `{pc, irNodeId, astId, span}` entry per emitted instruction. `INPUT sourceIndex` refers to artifact sourceIds and must be in range. No executable JS strings.
+`BytecodeArtifact`: version `1`, snapshotId, sourceSha256, slots, topLevelSymbolIds, sourceIds (ordered static source IDs), constants, instructions, sourceMap, maxVerifiedStack. `topLevelSymbolIds` is required, bounded by the slot cap, unique and sorted in numeric symbol order; every identity references a nontemporary user slot. Generate it from the final lowered HALT's visible symbols, including declarations that runtime may not reach. Constants are typed scalar records deduplicated by type/value in first-use order. Instruction fields are `opcode` and `operands` (numeric array with exactly the opcode-defined arity). `sourceMap` is an array with one `{pc, irNodeId, astId, span}` entry per emitted instruction. `INPUT sourceIndex` refers to artifact sourceIds and must be in range. No executable JS strings.
 
 Opcode inventory and stack behavior:
 
@@ -242,7 +244,7 @@ VM stores typed scalar slots (initially uninitialized), an operand stack, PC, co
 
 Every opcode increments count, checks instruction/stack/time bounds, and applies semantics. PUSH_CONST and LOAD also enforce per-string size before placing a value on the stack; STORE does not clone scalar string payloads. Time checks every 256 instructions plus effect/input/loop-target boundaries. Independent browser watchdog enforces wall deadline. Missing input, divide/remainder zero, and overflow are runtime-error; instruction/time/stack/string/event budget exhaustion is incomplete-limit. Unknown opcodes/types/invalid PC after verification are internal-error. Do not return completed until HALT.
 
-Retain at most 1,000 events and 1 MiB serialized event payload; attempting another returns incomplete-limit with previous events, never silent successful truncation. `finalTopLevelValues` includes only initialized top-level symbols; block-local and temporary slots are omitted. Track aggregate UTF-8 string bytes retained in slots and stack with a 4 MiB cap, counting references conservatively even when JS shares an immutable string. Pop/replacement decrements retained accounting; LOAD/PUSH/STORE and concatenation check before adding values. Return LIMIT_VM_STORAGE on excess. Total slots ≤4,000 and strings/events are independently bounded; no enforceable OS heap quota is claimed.
+Retain at most 1,000 events and 1 MiB serialized event payload; attempting another returns incomplete-limit with previous events, never silent successful truncation. `finalTopLevelValues` projects only initialized slots referenced by verified `topLevelSymbolIds`, in symbol order, on completed runs and core-reported runtime errors, limits or cancellation. Block-local/temporary slots and uninitialized declarations are omitted. Unverified requests expose no values. A forcibly terminated browser worker cannot return its local values/events; cancellation/watchdog transport results remain empty. Track aggregate UTF-8 string bytes retained in slots and stack with a 4 MiB cap, counting references conservatively even when JS shares an immutable string. Pop/replacement decrements retained accounting; LOAD/PUSH/STORE and concatenation check before adding values. Return LIMIT_VM_STORAGE on excess. Total slots ≤4,000 and strings/events are independently bounded; no enforceable OS heap quota is claimed.
 
 `runBytecode(request,hooks) → ExecutionResult` verifies input/bytecode then executes. Browser execution worker is distinct from analysis/layout workers. CLI runtime uses the same API. SIGINT/cancel retains static result but labels runtime cancelled. Report runtime identity must match analysis snapshot/checksum; a mismatched execution is rejected by serializer.
 

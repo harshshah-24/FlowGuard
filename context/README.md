@@ -6,8 +6,8 @@ This folder contains the product requirements and persistent project state for F
 
 1. [Context handoff](context_handoff.md): project purpose, current state, and workflow.
 2. [Status update](status_update.md): completed work and immediate next steps.
-3. [Product requirements](flowguard_prd.md): draft scope and acceptance criteria.
-4. [Implementation plan](implementation_plan.md): deterministic implementation specifications prepared for approval.
+3. [Product requirements](flowguard_prd.md): approved scope and acceptance criteria.
+4. [Implementation plan](implementation_plan.md): deterministic implementation specifications; authorization is recorded per phase.
 5. [Phase index](phases/README.md): ordered task views of the master plan, with a separate document for each phase.
 6. [Decision log](decision_log.md): decisions and changes over time.
 7. [Original ideas](project_ideas.md): historical alternatives, not the current requirements.

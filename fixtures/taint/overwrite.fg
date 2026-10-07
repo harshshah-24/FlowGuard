@@ -1,0 +1,3 @@
+let a:string=input("A");
+a="trusted";
+shell(a);

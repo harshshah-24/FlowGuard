@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test';
+export default defineConfig({testDir:'./apps/web/test',testMatch:'phase2.spec.ts',outputDir:'./test-results/phase2-tests',fullyParallel:true,use:{baseURL:'http://127.0.0.1:4174',viewport:{width:1280,height:800},trace:'retain-on-failure'},projects:[{name:'chromium',use:{browserName:'chromium'}}],webServer:{command:'npm run preview:phase2 -w @flowguard/web',url:'http://127.0.0.1:4174/test/phase2.html',reuseExistingServer:false}});

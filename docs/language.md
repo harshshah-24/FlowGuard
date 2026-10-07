@@ -1,6 +1,6 @@
 # FlowGuard Language — Version 1
 
-Phase 1 implements tokenization, parsing, scope/type checking, and typed control-flow lowering. The full analyzer, bytecode generator/verifier, and VM are later phases. Source is never executed by these front-end APIs.
+Phase 1 implements tokenization, parsing, scope/type checking, and typed control-flow lowering. Phase 2 adds explicit may-taint, explanations/replay, reports and integration. Phase 3 completes public analysis, typed bytecode generation/verification and bounded VM execution. Source is never executed by the implemented static APIs.
 
 ## Source and lexical rules
 
@@ -72,7 +72,7 @@ let template: string = "SELECT * FROM t WHERE id = ?";
 sql_bind(template, 1); // Notice: template format remains unverified.
 ```
 
-Later taint analysis will treat template/query/command argument zero as the sensitive text; the bound value alone does not produce a query-text finding. No current front-end result claims a taint verdict.
+Phase 2 taint analysis treats template/query/command argument zero as the sensitive text; the bound value alone does not produce a query-text finding. The front-end APIs alone do not claim a taint verdict, and incomplete coordinator results withhold final public findings.
 
 ## Evaluation and lowering
 
@@ -82,7 +82,7 @@ Ordinary operands and effect arguments lower left-to-right. User slots allocate 
 
 If/else branches join at the following instruction; missing else is an empty false path. A while graph has a test, true body edge, explicit jump back to the test, and false exit. Loop input occurrences reuse their static source IDs. CFG edge metadata distinguishes next/true/false/jump/loop-back, independent of future visual layout.
 
-Planned runtime semantics: signed int32 arithmetic is widened exactly before range checks; division truncates toward zero; remainder follows the dividend; overflow and division/remainder by zero fail. Short-circuit avoids unnecessary right-operand evaluation. These are release requirements, not Phase 1 VM test results.
+Runtime semantics: signed int32 arithmetic is widened exactly before range checks; division truncates toward zero; remainder follows the dividend; overflow and division/remainder by zero fail. Short-circuit avoids unnecessary right-operand evaluation. These behaviors are implemented and covered by VM tests.
 
 ## Errors and limits
 
@@ -95,3 +95,17 @@ Hard caps: source 262144 UTF-8 bytes; 65536 tokens including EOF; 20000 total AS
 Use exports from `@flowguard/core`: `lex(snapshot, guard)`, `parse(tokens, snapshot, guard)`, `checkSemantics(program, snapshot, guard)`, and `lowerProgram(program, semantic, guard)`. Semantics returns diagnostics for review; only a model without blocking diagnostics may be lowered. `deriveEdges`, `adjacency`, and `validateLoweredProgram` expose graph structure/validation. Snapshot hashing and file I/O belong to browser/CLI adapters; core has no browser or Node dependencies.
 
 A completed front-end pipeline is not a completed Analyze result. Do not manufacture taint findings, verified bytecode, or runtime outcomes from these APIs.
+
+## Phase 2 static APIs
+
+`solveTaint(lowered, guard, optionalRecorder)` produces final per-node in/out explicit may-taint states. `collectFindings(lowered, states, semantic)` checks converged sensitive argument zero; `buildProvenance(lowered, states, findings, guard)` fills bounded explanation references/completeness and returns dependency facts. `ReplayRecorder`, `applyReplayEvent` and `reconstructReplay` record/reconstruct analysis updates; replay is separate from VM execution.
+
+Assignments replace a destination's prior source set, input introduces its syntactic singleton, unary/copy propagate sets, binary unions, and joins union reached structural predecessors. Condition taint is not propagated as implicit control flow. Constant conditions and short circuits still retain structural alternatives, so possible-flow findings can include infeasible paths. No finding is proof of an attack or universal safety guarantee.
+
+`analyzeSource` coordinates all compiler/static stages through codegen and verification. Final findings, bytecode and disassembly publish only on completed analysis; invalid/incomplete outcomes retain safe partial artifacts. `buildReport`/`serializeReport` validate snapshot/version/completion identity and enforce output caps. See [architecture](architecture.md) and [testing](testing.md).
+
+## Phase 3 APIs and execution
+
+`generateBytecode(lowered,snapshot,guard)`, `verifyBytecode(artifact,guard)` and `disassembleBytecode(artifact)` expose typed code generation, verification and inspection. `runBytecode(request,hooks)` reverifies its bounded execution envelope and runs explicit supplied inputs; no source evaluation or external effects occur. Missing inputs, division/remainder zero and int32 overflow are runtime errors. Budget exhaustion is incomplete-limit. Prior events remain in core failure results. See the fixed limits in `DEFAULT_LIMITS` and the runtime fixture manifest.
+
+Bytecode includes approved topLevelSymbolIds from final HALT visibility. Runtime finalTopLevelValues reports initialized top-level symbols in symbol order, including core-reported runtime failures, limits and cooperative cancellation. Locals, temporaries and unreached declarations are omitted; invalid/unverified requests expose no values. Forcibly terminated browser workers cannot recover their local values/events.

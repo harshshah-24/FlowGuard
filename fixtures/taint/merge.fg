@@ -1,0 +1,3 @@
+let a:string="";
+if(true){a=input("A");}else{a=input("B");}
+sql_query(a);

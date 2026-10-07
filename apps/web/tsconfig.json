@@ -19,6 +19,7 @@
     "src/**/*.tsx",
     "test/unit/**/*.ts",
     "test/*.spec.ts",
+    "test/phase2.tsx",
     "vite.config.ts"
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "schemaVersion":1,
+  "countingUnit":"sensitive argument zero plus rule; independently labeled before fixture execution",
+  "fixtures":[
+    {"filename":"direct.fg","diagnostics":[],"findings":[{"rule":"SQL_QUERY_TEXT","sinkLine":2,"sourceIds":["src-0"]}]},
+    {"filename":"transitive.fg","diagnostics":[],"findings":[{"rule":"SHELL_COMMAND_TEXT","sinkLine":5,"sourceIds":["src-0"]}]},
+    {"filename":"merge.fg","diagnostics":[],"findings":[{"rule":"SQL_QUERY_TEXT","sinkLine":3,"sourceIds":["src-0","src-1"]}]},
+    {"filename":"overwrite.fg","diagnostics":[],"findings":[]},
+    {"filename":"loop.fg","diagnostics":[],"findings":[{"rule":"SHELL_COMMAND_TEXT","sinkLine":4,"sourceIds":["src-0"]}]},
+    {"filename":"multiple.fg","diagnostics":[],"findings":[{"rule":"SHELL_COMMAND_TEXT","sinkLine":3,"sourceIds":["src-0","src-1"]}]},
+    {"filename":"binding.fg","diagnostics":[],"findings":[]},
+    {"filename":"binding-template.fg","diagnostics":["TEMPLATE_UNVERIFIED"],"findings":[{"rule":"SQL_QUERY_TEXT","sinkLine":2,"sourceIds":["src-0"]}]}
+  ]
+}

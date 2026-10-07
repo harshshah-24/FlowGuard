@@ -2,7 +2,7 @@
 
 **Suggested window:** 6 October 2026
 
-**State:** Not started. Documentation publication is not implementation authorization.
+**State:** Implemented and validated locally on 7 October 2026 after explicit user authorization. All Phase 2 gates below passed. Publication is authorized with Phase 3. Phase 3 has since completed the release Analyze flow.
 
 ## Source of Truth
 
@@ -34,11 +34,13 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Required Validation
 
-- [ ] Independently labeled direct/transitive/merge/overwrite/loop/multiple-source/binding fixtures produce correct states and sink units.
-- [ ] Loop input identities remain finite; caps, cycle-safe provenance, and replay reconstruction behave correctly.
-- [ ] Worker/reducer tests cover duplicates, late results, cancellation, source edits, invalid-source and partial stages.
-- [ ] Graph fallback, source-linked inspection, report snapshot identity, and JSON/Markdown safety tests pass.
-- [ ] The static unsafe-to-binding comparison passes in module/integration tests; the complete user-facing Analyze demo is deferred until Phase 3 adds bytecode/verifier.
+- [x] Independently labeled direct/transitive/merge/overwrite/loop/multiple-source/binding fixtures produce correct states and sink units.
+- [x] Loop input identities remain finite; caps, cycle-safe provenance, and replay reconstruction behave correctly.
+- [x] Worker/reducer tests cover duplicates, late results, cancellation, source edits, invalid-source and partial stages.
+- [x] Graph fallback, source-linked inspection, report snapshot identity, and JSON/Markdown safety tests pass.
+- [x] The static unsafe-to-binding comparison passes in module/integration tests; the complete user-facing Analyze demo is deferred until Phase 3 adds bytecode/verifier.
+
+Validation: `npm run check` passed on Windows with exact Node 26.5.0/npm 11.17.0: 180 unit/CLI tests, six normal production Chromium tests, four isolated real-static integration Chromium tests, typechecks and builds. Final CLI/graph-label refinements passed typechecks, 181 unit/CLI tests and all four affected integration checks; the normal production build was regenerated. Synthetic normal/harness screenshots were inspected. See [testing evidence](../../docs/testing.md) and [architecture](../../docs/architecture.md). No Phase 2 remote CI, VM, release evaluation or benchmark has run.
 
 ## Exit Gate
 
