@@ -1,0 +1,3369 @@
+{
+  "schemaVersion": 1,
+  "seed": 5012026,
+  "machine": {
+    "sourceHashes": {
+      "apps/web/src/App.tsx": "64fa57be6f46e193a5a0da351c96443ecb925bbe917cb5226020d9217f2f93ab",
+      "apps/web/src/adapters/downloads.ts": "31d8a4db406eccc338fb79e76f85516375c90373229acfbf108c4c183af62ee5",
+      "apps/web/src/adapters/executionClient.ts": "a138b1873f43af9e22b6152137943948fe6a1b13c93cd6daf7b46762714ad6ea",
+      "apps/web/src/adapters/files.ts": "792ae0651e0545bb386432b66ce5c4837254104b7a87c08b6f5b4c3be31196a3",
+      "apps/web/src/adapters/layoutClient.ts": "e6b380fdbb095cf9c32552f2649a5ea9d88d7c0d4e8d80972920e51dcc1dd81a",
+      "apps/web/src/adapters/snapshot.ts": "c6eeb38125228226ef9e911368f9240e0c5ef1b201661ccce67a7406d9e2ea5a",
+      "apps/web/src/adapters/workerClient.ts": "dcd6519fcd35f433dd0f31d2f79a9c5a7cddef0092701cdd3199f3c374b281a4",
+      "apps/web/src/components/BytecodePanel.tsx": "abaa900043df8f57ee60618ee5f7796df869b8788ba6facbbe18f0bd371158d8",
+      "apps/web/src/components/ExamplesPanel.tsx": "13492f278ff1c030cb149315ee67561a2ec23a3f2670a9d366e19034e5412042",
+      "apps/web/src/components/ExportPanel.tsx": "4be86980b0e176860cd90c1595c6a58f31bbbb63cad47e6fb5fc4dd233eb9fc5",
+      "apps/web/src/components/FindingsPanel.tsx": "c653b943c451e532948d396f59a12045cdf1357e29da33b25c5d8bfc6544b9ec",
+      "apps/web/src/components/GraphList.tsx": "558198073a5b686193e62c8605d6504802ff5b78a9d68618eae019f731688667",
+      "apps/web/src/components/GraphNode.tsx": "879272cc615e51137f7cf14b5ab5307fa75ae98a15e760399dde6857f0f53b95",
+      "apps/web/src/components/GraphPanel.tsx": "dba689b527f432ded3514a957a08816978b3d1043d1a532d4fde1cbffa1176a5",
+      "apps/web/src/components/HelpPanel.tsx": "bd8205d6f995076dec6dae3518613069bb3a5dbc840766548f3e0a911956a353",
+      "apps/web/src/components/InputsPanel.tsx": "32ea5b4e368d38bea439bf4280536f9c0845b66160d55655b1ea7c663a596496",
+      "apps/web/src/components/InspectorPanel.tsx": "894ff73b29fe922883a9e4eaa5516c85e94574eb09732652c2bacd5f96d1d98a",
+      "apps/web/src/components/ReplaceSourceDialog.tsx": "8642aa270af24f2b6f98c77415cfb4ab65498a1e0fa388171df87166fc0ca438",
+      "apps/web/src/components/ReplayControls.tsx": "3bd65e6383084562b31b05836bec4d7e2491c2d0b7b3d35107ab08a08426b5c9",
+      "apps/web/src/components/RuntimePanel.tsx": "96a50045f0a717ba6eb6091c33c2a84343dcb6eba48d5410cf0bb59c3c7e9334",
+      "apps/web/src/components/SourceEditor.tsx": "a047640f7d51d4de3607260a3f13d218c39cb2d31d02fe32fa8d2f0ab41c057d",
+      "apps/web/src/components/StatusBar.tsx": "f905ed449a1e5c58ae85c47e081220ebb1c7f00eed5c17ef2102d2c7831968f4",
+      "apps/web/src/components/Toolbar.tsx": "26536cff6e86a60dcb8631b28b455cd1753c371f121d2f0e6e8eb87783aaa2ec",
+      "apps/web/src/editor/language.ts": "b119d9b30a584c63a24c0e164e6fbadc5946e4ace1caa43adca9bde3833c73f4",
+      "apps/web/src/editor/monaco.ts": "9cec66afa5900cfdfd8accdf7d5ca55d847dbdf7c43da9097c70de9f92b45a21",
+      "apps/web/src/editor/text.ts": "e973a0877e05b42e2efa78fcbace3e4123876577f79dcc08fd2224713a3c5245",
+      "apps/web/src/main.tsx": "918a7bc72dbe19fadf2391fb1bb7d7d0c58a348da1bdd65b45a586c3076a3ab0",
+      "apps/web/src/styles.css": "6060923b365ff0ad0c31c037d8d5bd85cd181118b38a5086326b1f65f5839353",
+      "apps/web/src/workers/analysis.worker.ts": "101d6d2d70f7237c4f9de66b2f3ec9c0872c09d1a9569134553471d60e763015",
+      "apps/web/src/workers/execution.worker.ts": "bc6a98e64c42e9e668fea3fa3ba8878d734e4887652462df87bde4c3fcee16a4",
+      "apps/web/src/workers/layout.worker.ts": "e6c40eaf10f64b3640649049eff5b05698b382bd57c10288ceb274451a380555",
+      "apps/web/src/workspace/reducer.ts": "547bf891a14e44e773d1327a99ff3ede8daa6655d074d72c64158d6ec1316714",
+      "apps/web/src/workspace/selectors.ts": "877584b1f4211e374d06b64147eafba4b517b4ce6c0f9c3fc699a2e83be03a90",
+      "apps/web/src/workspace/types.ts": "ff58141e56e8aa9b7ec11e040bc9822bcb2b4d9839c2925a054b2a177e2902f3",
+      "apps/web/src/workspace/useWorkspace.ts": "2d6f7ee0a1fd4784325ca07b2cbd21b5d58013f77c0b77f66972db8ab9cb8472",
+      "fixtures/evaluation.json": "5ffa29ed3f0e16d1cdd2f6536e7b3a8e1773a1085cad63b15d223ec0db5aac31",
+      "fixtures/evaluation/infeasible-branch.fg": "541284d25936391f87130ab8413ab60351f44de4fa693e134f46e029b849edfb",
+      "fixtures/evaluation/literal.fg": "8d68c4b2ed89fa8233916cbba38ee7445c18effb0593e3b09f782b353486aa81",
+      "fixtures/evaluation/print-only.fg": "90314809e78a2d2899b4fb62212e8b7df4d5036c957c98e7e4f68e6ad8ed56a2",
+      "fixtures/evaluation/zero-iteration.fg": "a73652586b82c4798e9e71a060d9f128c92041a6e5f4046c128517b38092e86a",
+      "package-lock.json": "ddcbdbec4dbdfe4f4785e7932a8bea5d159d125d0b2f0ec59cc05fee869d8190",
+      "packages/cli/src/cli.worker.ts": "18cfa839d7f3a0c8f92bd93e6de2e0dc0aa938ca3bcc99a3ef1a1aff268fa82d",
+      "packages/cli/src/io.ts": "fc539dde2db55963b787ec3cbbfee556d2b5ff9916f65fc90d899aa850d2e9f5",
+      "packages/cli/src/main.ts": "19cd3ad09364d35616e5386eb2b7abca875db3bf5ecea02885e88f8fd9816157",
+      "packages/cli/src/options.ts": "e319801b09aa9cfbe378529319fc1395fa3b67bcd854028cb58bb7a3a4a13efb",
+      "packages/cli/src/run.ts": "98bd888a22d57a7c612fcd9b5321cc1c91666beb45f5e23504dce169fd4c72ce",
+      "packages/core/src/analyze.ts": "8c2e8ef6d68a6b86e825b5e514a0bbec518f30b153388da9ea8c0f1042dea7db",
+      "packages/core/src/ast.ts": "3de1159c6a8e66d91d791084136d85dc69cd6f4ad09c037c54f7892af6736364",
+      "packages/core/src/codegen.ts": "de433252c0738aee9ac802a585deecca8730d706f1a03bc43204ca061632f83d",
+      "packages/core/src/contracts.ts": "f6ca1c7c7ef5ecf9af95f606dead08e2b71742a0edb94b93810d2bac39d5fb02",
+      "packages/core/src/diagnostics.ts": "bb4996bea1eda25ccbe1e7a1204e1612a12e5d4bb58610f797778a69917051ec",
+      "packages/core/src/findings.ts": "2a7b1ce6cf9fd335737e76d7a5a5d49085461a1d3e6400780c65e05070d8129f",
+      "packages/core/src/graph.ts": "976df9a87063b637eaf77f1b3b6a8e8f41a06277424981d4ca5cc42182084ca8",
+      "packages/core/src/index.ts": "753c57775544e9c71905b97b6f6cce59c2100df8725b1f96992e621d29097b2f",
+      "packages/core/src/json.ts": "2ba638d35794bef27e7846e0c1a693fdd29bc990685c6187e6ad4252b6ddd05f",
+      "packages/core/src/lexer.ts": "c637a8ce915091dcfec406f2c61b775faca21cf68dfb1a24eedbac1356aca5ed",
+      "packages/core/src/limits.ts": "91e6c8409b5d729c492e8968585fdf92d4dd895baacb5fb61352994b93dbf011",
+      "packages/core/src/lower.ts": "a67f9104d650ad9c05b83386e22ff2cc3d6244d7d5cabd54625496d74aa9d02c",
+      "packages/core/src/model.ts": "d4ef668741e1e93d19c7b6f8dc8c5148007fe9d63e2b4a769275d69aabda610e",
+      "packages/core/src/parser.ts": "20d9ceaa3f7ccbc2bf3313164a9a5ce5ce767e29406837a6e9e20481cb9afad2",
+      "packages/core/src/provenance.ts": "746b83ac1c7c787d461b1da3a82554f34236b47d9ab6805e03ecf89d15a9f799",
+      "packages/core/src/replay.ts": "a5bb937b03097c7d933ab1e24acbb6aa9cf09f11ef500694ea56b50c19071fd7",
+      "packages/core/src/report.ts": "7648d5d37572009ae522064864ab4e440f67d32dcbd673bb04e983a4902e6f46",
+      "packages/core/src/semantic.ts": "a0e378b9886b1ef13395e67a60df820af5783d5541b31282c2c1e9a86406e525",
+      "packages/core/src/source.ts": "601f3afc74e60ba10994dad39f71cfeb6e8616d98341f9b1888569da50b88030",
+      "packages/core/src/taint.ts": "bc399cbda50837d207c8611c5d1eacef9a0d1ea1aaee9b2f27cebbb43aa58d66",
+      "packages/core/src/verify.ts": "43e6ba144ccbf5023f3b4f33f9446cfa51692b5860ac40f878765c6fceedace7",
+      "packages/core/src/vm.ts": "747738ff934e62038ba79c2a11f75df5e1e9bb3373b5e0bf56fd6151fc1c8403",
+      "scripts/benchmark.ts": "b48aa7837d7771b761429c69075a4ed42cd339b9ec39e37630c32942ae0a3b74",
+      "scripts/evaluate.ts": "6b3afa9badb66b72f81ac426d197c73ae4211bc52e5ac1af3cfb03caf97ece5a",
+      "scripts/evidence.ts": "37aae3839a93710df7663df6e1c1529569175b959d004a261f7a7d02a67bccc3",
+      "scripts/workloads.ts": "0dec13b17b0af3c3a72058ed90fb285c5423a602ea6f4f65b3e58b0140bb1f95"
+    },
+    "sourceTreeSha256": "0075d7a9e37bde75bcd5967d0ed0ba805db289a44da85e26be3a2410c2081326",
+    "measuredAt": "2026-10-07T18:22:38.463Z",
+    "timezone": "Asia/Kolkata",
+    "os": "darwin",
+    "osRelease": "27.0.0",
+    "architecture": "arm64",
+    "cpu": "Apple A18 Pro",
+    "logicalCpus": 6,
+    "memoryBytes": 8589934592,
+    "node": "v26.5.0",
+    "npm": "11.17.0",
+    "commit": "3a7678cefa4121174aac271785974bc5f1003567",
+    "workingTreeChanged": true,
+    "analyzerVersion": "0.1.0",
+    "languageVersion": 1,
+    "bytecodeVersion": 1,
+    "limits": {
+      "maxSourceBytes": 262144,
+      "maxNesting": 128,
+      "maxTokens": 65536,
+      "maxAstNodes": 20000,
+      "maxSlots": 4000,
+      "maxCfgNodes": 2000,
+      "maxInputSources": 256,
+      "maxBytecodeInstructions": 50000,
+      "maxSolverVisits": 200000,
+      "maxVerifierVisits": 200000,
+      "maxStateCells": 4000000,
+      "maxSourceMemberships": 2000000,
+      "analysisDeadlineMs": 10000,
+      "maxReplayEvents": 10000,
+      "replayCheckpointInterval": 100,
+      "maxReplayBytes": 8388608,
+      "maxProvenanceFacts": 20000,
+      "maxExplanationFacts": 200,
+      "maxReportBytes": 16777216,
+      "maxInteractiveGraphNodes": 200,
+      "maxVmInstructions": 100000,
+      "executionDeadlineMs": 1000,
+      "maxVmStack": 1024,
+      "maxStringBytes": 65536,
+      "maxVmStorageBytes": 4194304,
+      "maxVmEvents": 1000,
+      "maxVmOutputBytes": 1048576,
+      "maxInputItems": 1000,
+      "maxInputBytes": 1048576
+    }
+  },
+  "results": [
+    {
+      "id": "benchmark-00",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nsql_query(value);\nprint(n);\n",
+      "sha256": "50c160b4b7318a83e63f743ec6a148cbbefc69f6c655372b04bb28c943c7a8db",
+      "lines": 120,
+      "nodes": 452,
+      "sources": 1,
+      "warmupMs": 787.6634159999999,
+      "samples": [
+        {
+          "durationMs": 728.4533329999999,
+          "stageDurationsMs": {
+            "validate": 0.012833000000000538,
+            "lex": 0.5791249999999764,
+            "parse": 0.3390829999998459,
+            "semantic": 0.3597500000000764,
+            "lower": 1.2657910000000356,
+            "taint": 709.817333,
+            "findings": 1.2292079999999714,
+            "codegen": 10.203917000000047,
+            "verify": 4.503791999999976
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 752.2292909999999,
+          "stageDurationsMs": {
+            "validate": 0.0042089999999461725,
+            "lex": 0.5023750000000291,
+            "parse": 0.23466700000017227,
+            "semantic": 0.2840839999998934,
+            "lower": 1.1517080000000988,
+            "taint": 735.9095419999999,
+            "findings": 1.5210839999999735,
+            "codegen": 8.494166999999834,
+            "verify": 4.020125000000007
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 724.8599170000002,
+          "stageDurationsMs": {
+            "validate": 0.0038749999998799467,
+            "lex": 0.29104099999995015,
+            "parse": 0.19112500000028376,
+            "semantic": 0.20212500000025102,
+            "lower": 1.0036669999999503,
+            "taint": 709.8965410000001,
+            "findings": 1.0496670000002268,
+            "codegen": 5.105000000000018,
+            "verify": 7.02145900000005
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 799.8442909999999,
+          "stageDurationsMs": {
+            "validate": 0.004457999999885942,
+            "lex": 0.29720899999983885,
+            "parse": 0.18283300000030067,
+            "semantic": 0.22604199999977936,
+            "lower": 0.9560409999999138,
+            "taint": 738.1005420000001,
+            "findings": 1.2732499999997344,
+            "codegen": 50.39816599999995,
+            "verify": 8.287041999999929
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 726.6652080000003,
+          "stageDurationsMs": {
+            "validate": 0.004500000000007276,
+            "lex": 0.25079200000027413,
+            "parse": 0.1835000000000946,
+            "semantic": 0.23758399999996982,
+            "lower": 1.0862080000001697,
+            "taint": 708.017625,
+            "findings": 4.594625000000633,
+            "codegen": 5.099041000000398,
+            "verify": 7.064832999999453
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 722.4908340000002,
+          "stageDurationsMs": {
+            "validate": 0.003749999999854481,
+            "lex": 0.2508749999997235,
+            "parse": 0.15795799999978044,
+            "semantic": 0.19637499999953434,
+            "lower": 1.028374999999869,
+            "taint": 707.9463339999993,
+            "findings": 0.8233330000002752,
+            "codegen": 7.9386670000003505,
+            "verify": 4.031708000000435
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 746.7793330000004,
+          "stageDurationsMs": {
+            "validate": 0.0035419999994701357,
+            "lex": 0.2645409999995536,
+            "parse": 0.16187499999978172,
+            "semantic": 0.1917090000006283,
+            "lower": 1.0365419999998267,
+            "taint": 731.6474580000004,
+            "findings": 0.8183750000007421,
+            "codegen": 4.794458999999733,
+            "verify": 7.769207999999708
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 717.9104160000006,
+          "stageDurationsMs": {
+            "validate": 0.004750000000058208,
+            "lex": 0.2680000000000291,
+            "parse": 0.1751669999994192,
+            "semantic": 0.21154099999967002,
+            "lower": 1.0820410000005722,
+            "taint": 703.6789580000004,
+            "findings": 0.8037080000003698,
+            "codegen": 8.454375000000255,
+            "verify": 3.1017919999994774
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 752.0030000000006,
+          "stageDurationsMs": {
+            "validate": 0.005708000000595348,
+            "lex": 0.26525000000037835,
+            "parse": 0.2016670000002705,
+            "semantic": 0.20524999999997817,
+            "lower": 1.0302499999997963,
+            "taint": 733.3515420000003,
+            "findings": 1.4431669999994483,
+            "codegen": 8.377707999999984,
+            "verify": 6.97808299999997
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 745.2719160000006,
+          "stageDurationsMs": {
+            "validate": 0.016125000000101863,
+            "lex": 0.2736249999998108,
+            "parse": 0.1468750000003638,
+            "semantic": 0.20908400000007532,
+            "lower": 1.012499999999818,
+            "taint": 729.9809580000001,
+            "findings": 0.8671250000006694,
+            "codegen": 9.564583000001221,
+            "verify": 3.1075000000000728
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 799.8442909999999
+    },
+    {
+      "id": "benchmark-01",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "fe935e7b76b3ed6f93bbceea69561be04b820f78ec43868d3ddd99a629d58fad",
+      "lines": 103,
+      "nodes": 342,
+      "sources": 1,
+      "warmupMs": 789.1486249999998,
+      "samples": [
+        {
+          "durationMs": 747.7569999999996,
+          "stageDurationsMs": {
+            "validate": 0.0037919999995210674,
+            "lex": 0.21641600000111794,
+            "parse": 0.13279199999851699,
+            "semantic": 0.16629199999988487,
+            "lower": 0.8226660000000265,
+            "taint": 737.0407500000001,
+            "findings": 0.11608300000079907,
+            "codegen": 6.114042000001064,
+            "verify": 3.0735420000000886
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 763.730458,
+          "stageDurationsMs": {
+            "validate": 0.003875000000334694,
+            "lex": 0.22195800000008603,
+            "parse": 0.12899999999899592,
+            "semantic": 0.1722909999989497,
+            "lower": 0.8003330000010465,
+            "taint": 753.3387080000011,
+            "findings": 0.11137500000040745,
+            "codegen": 5.508750000000873,
+            "verify": 3.370042000000467
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 757.9890410000007,
+          "stageDurationsMs": {
+            "validate": 0.003999999998995918,
+            "lex": 0.21333400000003166,
+            "parse": 0.13833300000078452,
+            "semantic": 0.1705839999995078,
+            "lower": 0.8303339999984019,
+            "taint": 748.1831249999996,
+            "findings": 0.12083300000085728,
+            "codegen": 5.687167000000045,
+            "verify": 2.5645000000004075
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 762.808916,
+          "stageDurationsMs": {
+            "validate": 0.0038330000006681075,
+            "lex": 0.2111669999994774,
+            "parse": 0.1415420000012091,
+            "semantic": 0.16016700000000128,
+            "lower": 0.840541999999914,
+            "taint": 752.4264579999999,
+            "findings": 0.0935829999998532,
+            "codegen": 6.299416000001656,
+            "verify": 2.5545420000016748
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 764.5604579999999,
+          "stageDurationsMs": {
+            "validate": 0.0041250000012951205,
+            "lex": 0.2663750000010623,
+            "parse": 0.13958400000046822,
+            "semantic": 0.18487500000082946,
+            "lower": 0.9231660000004922,
+            "taint": 754.9645,
+            "findings": 0.09400000000096043,
+            "codegen": 5.568209000000934,
+            "verify": 2.3404999999984284
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 915.2259580000009,
+          "stageDurationsMs": {
+            "validate": 0.004790999999386258,
+            "lex": 0.20929099999921164,
+            "parse": 0.1306669999994483,
+            "semantic": 0.1572919999998703,
+            "lower": 0.7952500000010332,
+            "taint": 904.5780419999992,
+            "findings": 0.08970899999985704,
+            "codegen": 6.263541000000259,
+            "verify": 2.9241669999992155
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 815.2342909999988,
+          "stageDurationsMs": {
+            "validate": 0.004666999999244581,
+            "lex": 0.2613329999985581,
+            "parse": 0.20958299999983865,
+            "semantic": 0.20762499999909778,
+            "lower": 1.1027500000000146,
+            "taint": 805.1509580000002,
+            "findings": 0.09616600000117614,
+            "codegen": 5.757416000000376,
+            "verify": 2.351667000000816
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 809.2147909999985,
+          "stageDurationsMs": {
+            "validate": 0.0054579999996349216,
+            "lex": 0.19858299999941664,
+            "parse": 0.1412080000009155,
+            "semantic": 0.16329100000075414,
+            "lower": 0.805833000000348,
+            "taint": 799.3730000000014,
+            "findings": 0.09841700000106357,
+            "codegen": 5.829500000001644,
+            "verify": 2.522541000000274
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 850.6347499999974,
+          "stageDurationsMs": {
+            "validate": 0.003165999998600455,
+            "lex": 0.23175000000082946,
+            "parse": 0.14470800000162853,
+            "semantic": 0.19262499999967986,
+            "lower": 0.9431669999994483,
+            "taint": 839.5650830000013,
+            "findings": 0.11858399999982794,
+            "codegen": 6.831957999998849,
+            "verify": 2.501124999998865
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 780.9195,
+          "stageDurationsMs": {
+            "validate": 0.006208999999216758,
+            "lex": 0.2898329999989073,
+            "parse": 0.14516700000240235,
+            "semantic": 0.3730410000025586,
+            "lower": 0.9837499999994179,
+            "taint": 771.1568330000009,
+            "findings": 0.09133300000030431,
+            "codegen": 5.361457999999402,
+            "verify": 2.3612080000020796
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 915.2259580000009
+    },
+    {
+      "id": "benchmark-02",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nvalue=value+\"x\";\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nvalue=value+\"x\";\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nvalue=value+\"x\";\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nvalue=value+\"x\";\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nvalue=value+\"x\";\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nsql_query(value);\nprint(n);\n",
+      "sha256": "301244ce0773c9f0541342dba659562520837049d6d9c1ed5e7c0878a8cbaa36",
+      "lines": 126,
+      "nodes": 374,
+      "sources": 1,
+      "warmupMs": 790.1359579999989,
+      "samples": [
+        {
+          "durationMs": 804.6547080000018,
+          "stageDurationsMs": {
+            "validate": 0.004457999999431195,
+            "lex": 0.22379200000068522,
+            "parse": 0.1412079999972775,
+            "semantic": 0.23787499999889405,
+            "lower": 0.8144580000007409,
+            "taint": 792.1862499999988,
+            "findings": 3.156833999997616,
+            "codegen": 4.04712500000096,
+            "verify": 3.7690830000028654
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 772.314959000003,
+          "stageDurationsMs": {
+            "validate": 0.0036670000008598436,
+            "lex": 0.28937500000029104,
+            "parse": 0.1659170000020822,
+            "semantic": 0.1930000000029395,
+            "lower": 1.010375000001659,
+            "taint": 761.9265000000014,
+            "findings": 0.829874999999447,
+            "codegen": 4.192041999998764,
+            "verify": 3.6255420000015874
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 794.3370830000022,
+          "stageDurationsMs": {
+            "validate": 0.0034999999988940544,
+            "lex": 0.2287499999983993,
+            "parse": 0.13666599999851314,
+            "semantic": 0.17599999999947613,
+            "lower": 0.8340409999982512,
+            "taint": 785.3581249999988,
+            "findings": 0.7916250000016589,
+            "codegen": 3.8834589999969467,
+            "verify": 2.8430410000000848
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 793.3134169999976,
+          "stageDurationsMs": {
+            "validate": 0.0035830000015266705,
+            "lex": 0.23070800000277814,
+            "parse": 0.13766600000235485,
+            "semantic": 0.1708330000001297,
+            "lower": 3.3622079999986454,
+            "taint": 779.2922499999986,
+            "findings": 0.7614999999968859,
+            "codegen": 3.864417000000685,
+            "verify": 5.418165999999474
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 783.258084000001,
+          "stageDurationsMs": {
+            "validate": 0.015332999999372987,
+            "lex": 0.3031249999985448,
+            "parse": 0.16458400000192341,
+            "semantic": 0.18983300000036252,
+            "lower": 0.8948330000021087,
+            "taint": 771.2516250000008,
+            "findings": 0.7488330000014685,
+            "codegen": 4.162333000000217,
+            "verify": 5.422000000002299
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 780.0425410000025,
+          "stageDurationsMs": {
+            "validate": 0.0034159999995608814,
+            "lex": 0.2275420000005397,
+            "parse": 0.1334580000002461,
+            "semantic": 0.15466699999888078,
+            "lower": 0.7740410000005795,
+            "taint": 768.5050410000003,
+            "findings": 0.7494579999984126,
+            "codegen": 4.1930000000029395,
+            "verify": 5.23124999999709
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 825.5221249999995,
+          "stageDurationsMs": {
+            "validate": 0.003209000002243556,
+            "lex": 0.23804200000085984,
+            "parse": 0.1733749999984866,
+            "semantic": 0.17241700000158744,
+            "lower": 0.801833000001352,
+            "taint": 813.4184160000004,
+            "findings": 0.7548750000023574,
+            "codegen": 3.918958999998722,
+            "verify": 5.963500000001659
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 840.6160830000008,
+          "stageDurationsMs": {
+            "validate": 0.00466700000106357,
+            "lex": 0.32583299999896553,
+            "parse": 0.16066700000010314,
+            "semantic": 0.17358299999978044,
+            "lower": 0.8215410000011616,
+            "taint": 828.3909590000003,
+            "findings": 0.7979169999998703,
+            "codegen": 3.9635420000013255,
+            "verify": 5.851915999999619
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 795.122374999999,
+          "stageDurationsMs": {
+            "validate": 0.003333000000566244,
+            "lex": 0.23825000000215368,
+            "parse": 0.14545800000269082,
+            "semantic": 0.16575000000011642,
+            "lower": 0.8826669999980368,
+            "taint": 783.8847079999978,
+            "findings": 0.7584999999999127,
+            "codegen": 3.854833999997936,
+            "verify": 5.120208000000275
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 812.403624999999,
+          "stageDurationsMs": {
+            "validate": 0.015499999997700797,
+            "lex": 0.2284590000017488,
+            "parse": 0.19562500000029104,
+            "semantic": 0.18224999999802094,
+            "lower": 0.9190419999977166,
+            "taint": 800.3930419999997,
+            "findings": 0.7431660000002012,
+            "codegen": 6.843624999997701,
+            "verify": 2.80958400000236
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 840.6160830000008
+    },
+    {
+      "id": "benchmark-03",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "cabf69d1572f27d9d24833ea8c220d90b5a3afd97601536ff1d228d6aa31acb3",
+      "lines": 124,
+      "nodes": 369,
+      "sources": 1,
+      "warmupMs": 802.2852080000011,
+      "samples": [
+        {
+          "durationMs": 802.6697499999973,
+          "stageDurationsMs": {
+            "validate": 0.0036249999975552782,
+            "lex": 0.284416999998939,
+            "parse": 0.14512499999909778,
+            "semantic": 0.1927910000013071,
+            "lower": 1.030125000001135,
+            "taint": 791.0585000000028,
+            "findings": 0.1130830000001879,
+            "codegen": 7.10712500000227,
+            "verify": 2.658832999997685
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 800.9803749999992,
+          "stageDurationsMs": {
+            "validate": 0.0037909999991825316,
+            "lex": 0.2154999999984284,
+            "parse": 0.11441700000068522,
+            "semantic": 0.17037499999787542,
+            "lower": 0.7974160000012489,
+            "taint": 790.429666,
+            "findings": 0.10387500000069849,
+            "codegen": 6.365708000001177,
+            "verify": 2.708999999998923
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 802.9648750000015,
+          "stageDurationsMs": {
+            "validate": 0.005917000002227724,
+            "lex": 0.2603339999986929,
+            "parse": 0.12437499999941792,
+            "semantic": 0.1733749999984866,
+            "lower": 0.8779589999976452,
+            "taint": 793.0112499999996,
+            "findings": 0.08866599999964819,
+            "codegen": 5.823667000000569,
+            "verify": 2.5262499999989814
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 790.414291000001,
+          "stageDurationsMs": {
+            "validate": 0.005124999999679858,
+            "lex": 0.250292000000627,
+            "parse": 0.13466699999844423,
+            "semantic": 0.19979099999909522,
+            "lower": 0.9345829999983835,
+            "taint": 782.5109999999986,
+            "findings": 0.089125000002241,
+            "codegen": 3.69550000000163,
+            "verify": 2.5227500000000873
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 808.2360829999998,
+          "stageDurationsMs": {
+            "validate": 0.0026250000009895302,
+            "lex": 0.2207079999971029,
+            "parse": 0.11258300000190502,
+            "semantic": 0.16533400000116671,
+            "lower": 0.8790000000008149,
+            "taint": 800.0485829999998,
+            "findings": 0.08258399999976973,
+            "codegen": 3.82341599999927,
+            "verify": 2.831500000000233
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 921.6793749999997,
+          "stageDurationsMs": {
+            "validate": 0.004000000000814907,
+            "lex": 0.24499999999898137,
+            "parse": 0.14179199999853154,
+            "semantic": 0.20020799999838346,
+            "lower": 0.9952919999996084,
+            "taint": 910.3591669999987,
+            "findings": 0.08716700000150013,
+            "codegen": 6.783832999997685,
+            "verify": 2.7850409999991825
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 828.9543749999975,
+          "stageDurationsMs": {
+            "validate": 0.0032079999982670415,
+            "lex": 0.23170899999968242,
+            "parse": 0.11612499999682768,
+            "semantic": 0.18237500000032014,
+            "lower": 0.8080829999998969,
+            "taint": 818.1411249999983,
+            "findings": 0.11937500000203727,
+            "codegen": 6.657458000001498,
+            "verify": 2.59808300000077
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 807.4514170000002,
+          "stageDurationsMs": {
+            "validate": 0.0054579999996349216,
+            "lex": 0.2711250000029395,
+            "parse": 0.14250000000174623,
+            "semantic": 0.19395900000017718,
+            "lower": 1.066208000000188,
+            "taint": 796.3269580000015,
+            "findings": 0.09858299999905284,
+            "codegen": 6.204082999996899,
+            "verify": 3.0503329999992275
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 801.5298330000005,
+          "stageDurationsMs": {
+            "validate": 0.006458000003476627,
+            "lex": 0.31049999999959255,
+            "parse": 0.18029199999728007,
+            "semantic": 0.22316599999612663,
+            "lower": 1.1678329999995185,
+            "taint": 790.6450000000041,
+            "findings": 0.10362500000337604,
+            "codegen": 5.97754200000054,
+            "verify": 2.831791999997222
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 792.903250000003,
+          "stageDurationsMs": {
+            "validate": 0.0056250000052386895,
+            "lex": 0.2830840000024182,
+            "parse": 0.14350000000558794,
+            "semantic": 0.1862909999981639,
+            "lower": 0.9504159999996773,
+            "taint": 784.4625830000004,
+            "findings": 0.08312499999738066,
+            "codegen": 3.9213329999984126,
+            "verify": 2.794540999995661
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 921.6793749999997
+    },
+    {
+      "id": "benchmark-04",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nsql_query(value);\nprint(n);\n",
+      "sha256": "0ce447cbfa42b3c4226628a207e26592ce892a26d3ed4990d5c6cc32350d271d",
+      "lines": 79,
+      "nodes": 297,
+      "sources": 1,
+      "warmupMs": 511.90866699999606,
+      "samples": [
+        {
+          "durationMs": 545.3323749999981,
+          "stageDurationsMs": {
+            "validate": 0.0030000000042491592,
+            "lex": 0.2141669999982696,
+            "parse": 0.11570799999753945,
+            "semantic": 0.147000000004482,
+            "lower": 0.7335410000014235,
+            "taint": 537.6442080000052,
+            "findings": 0.5566250000047148,
+            "codegen": 3.432583000001614,
+            "verify": 2.404666999995243
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 523.5086250000022,
+          "stageDurationsMs": {
+            "validate": 0.002542000001994893,
+            "lex": 0.19166699999914272,
+            "parse": 0.09829200000240235,
+            "semantic": 0.13879199999792036,
+            "lower": 0.5898749999978463,
+            "taint": 516.0397919999959,
+            "findings": 0.5455419999998412,
+            "codegen": 3.306624999997439,
+            "verify": 2.513250000003609
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 524.0982920000024,
+          "stageDurationsMs": {
+            "validate": 0.002417000003333669,
+            "lex": 1.821457999998529,
+            "parse": 0.10420899999735411,
+            "semantic": 0.14929199999460252,
+            "lower": 0.6230409999989206,
+            "taint": 513.7246250000026,
+            "findings": 0.6357500000012806,
+            "codegen": 3.230583000004117,
+            "verify": 3.734042000003683
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 516.9999160000007,
+          "stageDurationsMs": {
+            "validate": 0.0037079999965499155,
+            "lex": 0.20824999999604188,
+            "parse": 0.11258299999462906,
+            "semantic": 0.16966699999466073,
+            "lower": 0.6783750000031432,
+            "taint": 508.60016700000415,
+            "findings": 0.5679579999996349,
+            "codegen": 4.572124999998778,
+            "verify": 2.006999999997788
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 532.7065000000002,
+          "stageDurationsMs": {
+            "validate": 0.004124999999476131,
+            "lex": 0.1730829999942216,
+            "parse": 0.09316699999908451,
+            "semantic": 0.12879200000315905,
+            "lower": 0.5609999999942374,
+            "taint": 522.4387909999932,
+            "findings": 1.1228750000009313,
+            "codegen": 5.537540999997873,
+            "verify": 2.5808340000003227
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 564.893207999994,
+          "stageDurationsMs": {
+            "validate": 0.006916999998793472,
+            "lex": 0.17874999999912689,
+            "parse": 0.09558399999514222,
+            "semantic": 0.14320800000132294,
+            "lower": 0.6861250000001746,
+            "taint": 555.5656249999956,
+            "findings": 0.8017909999980475,
+            "codegen": 4.661541000001307,
+            "verify": 2.684625000001688
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 514.7538329999952,
+          "stageDurationsMs": {
+            "validate": 0.007917000002635177,
+            "lex": 0.19700000000011642,
+            "parse": 0.10766700000385754,
+            "semantic": 0.1703750000015134,
+            "lower": 0.6540000000022701,
+            "taint": 506.51983299999847,
+            "findings": 0.5934999999954016,
+            "codegen": 3.276333000001614,
+            "verify": 3.155124999997497
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 543.5776669999977,
+          "stageDurationsMs": {
+            "validate": 0.003625000004831236,
+            "lex": 0.2413749999977881,
+            "parse": 0.1351250000006985,
+            "semantic": 0.15012500000011642,
+            "lower": 0.7167919999992591,
+            "taint": 533.6656670000011,
+            "findings": 0.5785829999949783,
+            "codegen": 5.101915999999619,
+            "verify": 2.9111250000059954
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 529.9539999999979,
+          "stageDurationsMs": {
+            "validate": 0.0032920000012381934,
+            "lex": 0.26841699999931734,
+            "parse": 0.13995900000008987,
+            "semantic": 0.17195899999933317,
+            "lower": 0.7397500000006403,
+            "taint": 521.6920420000024,
+            "findings": 0.5386660000003758,
+            "codegen": 4.288542000002053,
+            "verify": 2.0273749999978463
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 524.2172500000015,
+          "stageDurationsMs": {
+            "validate": 0.0032920000012381934,
+            "lex": 0.19483399999444373,
+            "parse": 0.10916699999506818,
+            "semantic": 0.1434159999989788,
+            "lower": 0.7898329999952693,
+            "taint": 515.5974999999962,
+            "findings": 0.728291999999783,
+            "codegen": 4.036500000001979,
+            "verify": 2.5400840000002063
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 564.893207999994
+    },
+    {
+      "id": "benchmark-05",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "c036f66d775033b799b52bb5150b26499979b123193c86bfa99081603b9d9bab",
+      "lines": 97,
+      "nodes": 320,
+      "sources": 1,
+      "warmupMs": 820.2859160000007,
+      "samples": [
+        {
+          "durationMs": 812.1632919999975,
+          "stageDurationsMs": {
+            "validate": 0.0027079999999841675,
+            "lex": 0.22145799999998417,
+            "parse": 0.1119159999943804,
+            "semantic": 0.14879199999995762,
+            "lower": 0.7600420000017039,
+            "taint": 804.567624999996,
+            "findings": 0.0972920000058366,
+            "codegen": 3.763790999997582,
+            "verify": 2.415166999999201
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 818.3677089999983,
+          "stageDurationsMs": {
+            "validate": 0.002874999998311978,
+            "lex": 0.2101249999977881,
+            "parse": 0.1164580000040587,
+            "semantic": 0.1529999999984284,
+            "lower": 0.7159170000013546,
+            "taint": 811.1362499999959,
+            "findings": 0.08220900000014808,
+            "codegen": 3.484915999993973,
+            "verify": 2.3737919999985024
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 817.0377919999955,
+          "stageDurationsMs": {
+            "validate": 0.0020409999997355044,
+            "lex": 0.20595800000592135,
+            "parse": 0.10841699999582488,
+            "semantic": 0.14354099999764003,
+            "lower": 2.4528750000026776,
+            "taint": 805.6915420000005,
+            "findings": 0.08237500000541331,
+            "codegen": 3.7825840000004973,
+            "verify": 4.49608299999818
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 824.1698329999999,
+          "stageDurationsMs": {
+            "validate": 0.00408400000014808,
+            "lex": 0.24762500000360887,
+            "parse": 0.1414169999989099,
+            "semantic": 0.17379200000141282,
+            "lower": 0.9194589999970049,
+            "taint": 814.7202500000058,
+            "findings": 0.11054100000183098,
+            "codegen": 5.507167000003392,
+            "verify": 2.26495900000009
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 819.2794169999979,
+          "stageDurationsMs": {
+            "validate": 0.004374999996798579,
+            "lex": 0.21812499999941792,
+            "parse": 0.1302499999947031,
+            "semantic": 0.24149999999644933,
+            "lower": 0.8550829999949201,
+            "taint": 803.617167000004,
+            "findings": 0.14400000000023283,
+            "codegen": 11.58166699999856,
+            "verify": 2.394124999998894
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 843.6684170000008,
+          "stageDurationsMs": {
+            "validate": 0.011834000004455447,
+            "lex": 0.22449999999662396,
+            "parse": 0.1146249999947031,
+            "semantic": 0.14995899999485118,
+            "lower": 0.9802909999998519,
+            "taint": 836.3361670000013,
+            "findings": 0.08199999999487773,
+            "codegen": 3.40625,
+            "verify": 2.2750410000007832
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 820.4309170000051,
+          "stageDurationsMs": {
+            "validate": 0.0026670000006561168,
+            "lex": 0.22441699999762932,
+            "parse": 0.11174999999639113,
+            "semantic": 0.22566700000606943,
+            "lower": 0.806708999996772,
+            "taint": 812.5133750000023,
+            "findings": 0.08308299999771407,
+            "codegen": 3.8175829999963753,
+            "verify": 2.556250000001455
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 860.6332500000062,
+          "stageDurationsMs": {
+            "validate": 0.0026250000009895302,
+            "lex": 0.2194999999992433,
+            "parse": 0.11554199999955017,
+            "semantic": 0.1564169999983278,
+            "lower": 0.8306660000016564,
+            "taint": 853.0037500000035,
+            "findings": 0.08020799999940209,
+            "codegen": 3.7105830000000424,
+            "verify": 2.437917000002926
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 866.3607080000002,
+          "stageDurationsMs": {
+            "validate": 0.003416999999899417,
+            "lex": 0.20799999999871943,
+            "parse": 0.11733299999468727,
+            "semantic": 0.1837089999971795,
+            "lower": 0.8009999999994761,
+            "taint": 857.9223330000023,
+            "findings": 0.09379199999966659,
+            "codegen": 4.2529170000052545,
+            "verify": 2.6931250000052387
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 811.6137499999968,
+          "stageDurationsMs": {
+            "validate": 0.0027079999999841675,
+            "lex": 0.22058400000241818,
+            "parse": 0.11945900000137044,
+            "semantic": 0.18725000000267755,
+            "lower": 0.8021250000019791,
+            "taint": 803.5923340000008,
+            "findings": 0.10066699999879347,
+            "codegen": 4.180124999998952,
+            "verify": 2.3113329999978305
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 866.3607080000002
+    },
+    {
+      "id": "benchmark-06",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nvalue=value+\"x\";\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nvalue=value+\"x\";\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nsql_query(value);\nprint(n);\n",
+      "sha256": "6fa1566c64d39e59028db82e98bfcf2faf3cb32b250b404a8ba9f05de61eea63",
+      "lines": 103,
+      "nodes": 305,
+      "sources": 1,
+      "warmupMs": 804.3474160000042,
+      "samples": [
+        {
+          "durationMs": 804.7988750000004,
+          "stageDurationsMs": {
+            "validate": 0.004124999999476131,
+            "lex": 0.1907909999936237,
+            "parse": 0.09850000000005821,
+            "semantic": 0.1406669999996666,
+            "lower": 0.7362080000020796,
+            "taint": 795.632666999998,
+            "findings": 0.6149999999979627,
+            "codegen": 4.931084000003466,
+            "verify": 2.374167000001762
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 784.0480000000025,
+          "stageDurationsMs": {
+            "validate": 0.003457999999227468,
+            "lex": 0.2037080000009155,
+            "parse": 0.11924999999610009,
+            "semantic": 0.14358300000458257,
+            "lower": 0.7867919999989681,
+            "taint": 775.932041,
+            "findings": 0.6642910000009579,
+            "codegen": 4.012875000000349,
+            "verify": 2.1139170000024023
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 803.5712079999939,
+          "stageDurationsMs": {
+            "validate": 0.0024160000029951334,
+            "lex": 0.18458300000202144,
+            "parse": 0.09587499999906868,
+            "semantic": 0.13433299999451265,
+            "lower": 0.7105000000010477,
+            "taint": 796.3450000000012,
+            "findings": 0.6520420000015292,
+            "codegen": 3.292208999999275,
+            "verify": 2.0869170000005397
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 789.2467089999991,
+          "stageDurationsMs": {
+            "validate": 0.0028750000055879354,
+            "lex": 0.20199999999749707,
+            "parse": 0.1138749999954598,
+            "semantic": 0.184041000000434,
+            "lower": 0.8347500000018044,
+            "taint": 781.2206250000017,
+            "findings": 0.6494170000005397,
+            "codegen": 3.7096249999958673,
+            "verify": 2.254000000000815
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 792.627999999997,
+          "stageDurationsMs": {
+            "validate": 0.003333000000566244,
+            "lex": 0.2090410000018892,
+            "parse": 0.10570800000277814,
+            "semantic": 0.13625000000320142,
+            "lower": 0.6778750000012224,
+            "taint": 782.7273339999956,
+            "findings": 0.6025420000005397,
+            "codegen": 3.7004159999996773,
+            "verify": 4.379249999998137
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 802.0658750000002,
+          "stageDurationsMs": {
+            "validate": 0.003082999995967839,
+            "lex": 0.23508399999991525,
+            "parse": 0.12020900000061374,
+            "semantic": 0.14145899999857647,
+            "lower": 0.7336250000007567,
+            "taint": 792.7906250000015,
+            "findings": 0.6286249999975553,
+            "codegen": 5.1195000000006985,
+            "verify": 2.2154999999984284
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 851.531707999995,
+          "stageDurationsMs": {
+            "validate": 0.005834000003233086,
+            "lex": 0.22725000000355067,
+            "parse": 0.11704099999769824,
+            "semantic": 0.14312499999505235,
+            "lower": 0.7798750000001746,
+            "taint": 842.3297079999975,
+            "findings": 0.5772080000024289,
+            "codegen": 4.821041999995941,
+            "verify": 2.4492079999981797
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 799.8987500000003,
+          "stageDurationsMs": {
+            "validate": 0.003416999999899417,
+            "lex": 0.20758299999579322,
+            "parse": 0.10883300000568852,
+            "semantic": 0.15112499999668216,
+            "lower": 0.750584000001254,
+            "taint": 792.677208000001,
+            "findings": 0.6190829999977723,
+            "codegen": 3.132499999999709,
+            "verify": 2.1768750000046566
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 794.775999999998,
+          "stageDurationsMs": {
+            "validate": 0.0063339999978779815,
+            "lex": 0.2598329999964335,
+            "parse": 0.1299589999980526,
+            "semantic": 0.16475000000355067,
+            "lower": 0.8717920000053709,
+            "taint": 786.7485000000015,
+            "findings": 0.5589169999948354,
+            "codegen": 3.3508750000037253,
+            "verify": 2.6091250000026776
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 839.4773330000025,
+          "stageDurationsMs": {
+            "validate": 0.0034159999995608814,
+            "lex": 0.22237500000483124,
+            "parse": 0.119209000004048,
+            "semantic": 0.15187500000320142,
+            "lower": 0.8100420000046142,
+            "taint": 809.4551250000004,
+            "findings": 0.85791700000118,
+            "codegen": 25.26462499999616,
+            "verify": 2.519916999997804
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 851.531707999995
+    },
+    {
+      "id": "benchmark-07",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "a74ee8a50f8b1243d2f616c325d4028f72c266a69d782d23513264986e795c21",
+      "lines": 88,
+      "nodes": 261,
+      "sources": 1,
+      "warmupMs": 461.1116670000047,
+      "samples": [
+        {
+          "durationMs": 456.20416600000317,
+          "stageDurationsMs": {
+            "validate": 0.001959000001079403,
+            "lex": 0.16950000000360887,
+            "parse": 0.09412500000325963,
+            "semantic": 0.13104200000088895,
+            "lower": 1.91895900000236,
+            "taint": 448.1017920000013,
+            "findings": 0.07841699999698903,
+            "codegen": 3.355250000000524,
+            "verify": 2.28741699999955
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 451.849209,
+          "stageDurationsMs": {
+            "validate": 0.0026250000009895302,
+            "lex": 0.1986250000045402,
+            "parse": 0.10137499999837019,
+            "semantic": 0.1403749999954016,
+            "lower": 0.6972920000043814,
+            "taint": 445.2657919999983,
+            "findings": 0.07508300000336021,
+            "codegen": 3.1710000000020955,
+            "verify": 2.1210839999985183
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 465.786208000005,
+          "stageDurationsMs": {
+            "validate": 0.0030000000042491592,
+            "lex": 0.19574999999895226,
+            "parse": 0.10429099999601021,
+            "semantic": 0.1396249999961583,
+            "lower": 0.7043340000018361,
+            "taint": 458.869749999998,
+            "findings": 0.07191700000112178,
+            "codegen": 3.4378750000032596,
+            "verify": 2.1889159999991534
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 455.71320800000103,
+          "stageDurationsMs": {
+            "validate": 0.0022920000046724454,
+            "lex": 0.15099999999802094,
+            "parse": 0.08012500000040745,
+            "semantic": 0.1314589999965392,
+            "lower": 0.6029169999965234,
+            "taint": 448.58750000000146,
+            "findings": 0.06545799999730662,
+            "codegen": 4.013541000000259,
+            "verify": 2.011665999998513
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 445.22829099999944,
+          "stageDurationsMs": {
+            "validate": 0.007333000001381151,
+            "lex": 0.1671249999999418,
+            "parse": 0.08854100000462495,
+            "semantic": 0.13570800000161398,
+            "lower": 0.6386249999995925,
+            "taint": 437.8997090000048,
+            "findings": 0.06458399999974063,
+            "codegen": 4.103791000001365,
+            "verify": 2.042915999998513
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 443.5084579999966,
+          "stageDurationsMs": {
+            "validate": 0.00695800000539748,
+            "lex": 0.21304199999576667,
+            "parse": 0.09970800000155577,
+            "semantic": 0.13874999999825377,
+            "lower": 0.7386249999981374,
+            "taint": 435.7993329999954,
+            "findings": 0.07137499999953434,
+            "codegen": 3.200582999998005,
+            "verify": 3.170708999998169
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 446.91433299999335,
+          "stageDurationsMs": {
+            "validate": 0.002666000000317581,
+            "lex": 0.1728750000038417,
+            "parse": 0.08883300000161398,
+            "semantic": 0.1394159999981639,
+            "lower": 0.6454159999993863,
+            "taint": 440.51279099999374,
+            "findings": 0.06429200000275159,
+            "codegen": 3.1599159999968833,
+            "verify": 2.053082999998878
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 462.74908300000243,
+          "stageDurationsMs": {
+            "validate": 0.0021249999990686774,
+            "lex": 0.18308299999625888,
+            "parse": 0.09445799999957671,
+            "semantic": 0.13404199999786215,
+            "lower": 0.6548340000008466,
+            "taint": 455.7897499999963,
+            "findings": 0.08029099999839673,
+            "codegen": 3.512332999998762,
+            "verify": 2.235000000000582
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 451.9215419999964,
+          "stageDurationsMs": {
+            "validate": 0.0030839999963063747,
+            "lex": 0.21495799999684095,
+            "parse": 0.10341700000572018,
+            "semantic": 0.15162499999860302,
+            "lower": 0.810750000004191,
+            "taint": 444.6182919999992,
+            "findings": 0.07462500000110595,
+            "codegen": 3.5967909999963013,
+            "verify": 2.2780839999977616
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 469.9647909999985,
+          "stageDurationsMs": {
+            "validate": 0.0042500000054133125,
+            "lex": 0.17270799999823794,
+            "parse": 0.08787499999743886,
+            "semantic": 0.1544590000048629,
+            "lower": 0.6545830000031856,
+            "taint": 463.53662500000064,
+            "findings": 0.07845899999665562,
+            "codegen": 3.1620419999962905,
+            "verify": 2.044207999999344
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 469.9647909999985
+    },
+    {
+      "id": "benchmark-08",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nsql_query(value);\nprint(n);\n",
+      "sha256": "84b1f495eb7411422196fbee792ad395f448ecc7af55d3f0b7764a3844447b84",
+      "lines": 117,
+      "nodes": 443,
+      "sources": 1,
+      "warmupMs": 846.1459170000016,
+      "samples": [
+        {
+          "durationMs": 819.9329580000049,
+          "stageDurationsMs": {
+            "validate": 0.004249999998137355,
+            "lex": 0.2950840000048629,
+            "parse": 0.16333299999678275,
+            "semantic": 0.19062499999563443,
+            "lower": 1.0258749999993597,
+            "taint": 805.4404589999976,
+            "findings": 0.8977499999964493,
+            "codegen": 8.600416000001132,
+            "verify": 3.2336660000000848
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 848.9467090000035,
+          "stageDurationsMs": {
+            "validate": 0.0036669999972218648,
+            "lex": 0.27087500000197906,
+            "parse": 0.15850000000500586,
+            "semantic": 0.1732080000001588,
+            "lower": 4.396999999997206,
+            "taint": 830.6859159999949,
+            "findings": 0.9377499999973224,
+            "codegen": 8.872166000001016,
+            "verify": 3.3702920000068843
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 831.1543749999983,
+          "stageDurationsMs": {
+            "validate": 0.005707999996957369,
+            "lex": 0.3004159999982221,
+            "parse": 0.17608300001302268,
+            "semantic": 0.19933299999684095,
+            "lower": 1.1932500000111759,
+            "taint": 812.0652499999997,
+            "findings": 1.2639169999893056,
+            "codegen": 4.996332999988226,
+            "verify": 10.864790999999968
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 907.0579580000049,
+          "stageDurationsMs": {
+            "validate": 0.004167000006418675,
+            "lex": 0.30970899999374524,
+            "parse": 0.23354200000176206,
+            "semantic": 0.22016700000676792,
+            "lower": 1.4377499999973224,
+            "taint": 892.3193750000064,
+            "findings": 0.9152500000054715,
+            "codegen": 4.677874999993946,
+            "verify": 6.84679199999664
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 831.6765409999934,
+          "stageDurationsMs": {
+            "validate": 0.003958000001148321,
+            "lex": 0.3025000000052387,
+            "parse": 0.15608299999439623,
+            "semantic": 0.1854170000005979,
+            "lower": 1.1198339999973541,
+            "taint": 816.6799580000079,
+            "findings": 0.8548749999899883,
+            "codegen": 4.766125000009197,
+            "verify": 7.523833999992348
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 824.2462079999968,
+          "stageDurationsMs": {
+            "validate": 0.003790999995544553,
+            "lex": 0.2967919999937294,
+            "parse": 0.14016699999046978,
+            "semantic": 0.19591599999694154,
+            "lower": 1.112582999994629,
+            "taint": 810.7930840000045,
+            "findings": 0.9415410000074189,
+            "codegen": 7.738708000004408,
+            "verify": 2.9278339999873424
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 828.7208329999994,
+          "stageDurationsMs": {
+            "validate": 0.003500000006170012,
+            "lex": 0.25337500000023283,
+            "parse": 0.12837500000023283,
+            "semantic": 0.17350000000442378,
+            "lower": 1.0033750000002328,
+            "taint": 813.8636659999902,
+            "findings": 1.3062090000021271,
+            "codegen": 8.184916999991401,
+            "verify": 3.7390839999861782
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 848.0628750000033,
+          "stageDurationsMs": {
+            "validate": 0.006500000003143214,
+            "lex": 0.34445899999991525,
+            "parse": 0.18683299999975134,
+            "semantic": 0.2348749999946449,
+            "lower": 1.1579170000040904,
+            "taint": 833.5862500000076,
+            "findings": 0.931708999996772,
+            "codegen": 4.8793750000040745,
+            "verify": 6.651208000010229
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 1021.8137909999932,
+          "stageDurationsMs": {
+            "validate": 0.0041249999922001734,
+            "lex": 0.30662499999743886,
+            "parse": 0.1496670000051381,
+            "semantic": 0.18504199999733828,
+            "lower": 0.9842499999940628,
+            "taint": 1004.9579999999987,
+            "findings": 2.4522500000020955,
+            "codegen": 9.503834000002826,
+            "verify": 3.1524159999971744
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 910.1175829999993,
+          "stageDurationsMs": {
+            "validate": 0.012665999995078892,
+            "lex": 0.3648329999996349,
+            "parse": 0.18212500000663567,
+            "semantic": 0.4560829999973066,
+            "lower": 5.906875000000582,
+            "taint": 888.8286660000012,
+            "findings": 1.175833999994211,
+            "codegen": 9.069209000008414,
+            "verify": 3.898624999987078
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 1021.8137909999932
+    },
+    {
+      "id": "benchmark-09",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "6b29a2ac668e419d8789d39d6f5f9c2ab9c670fd444813a9f6a015a9a259b045",
+      "lines": 87,
+      "nodes": 286,
+      "sources": 1,
+      "warmupMs": 547.8005839999969,
+      "samples": [
+        {
+          "durationMs": 521.1932499999966,
+          "stageDurationsMs": {
+            "validate": 0.0020419999927980825,
+            "lex": 0.17149999999674037,
+            "parse": 0.09629200000199489,
+            "semantic": 0.1355829999956768,
+            "lower": 0.5685000000084983,
+            "taint": 513.1416250000038,
+            "findings": 0.06620800000382587,
+            "codegen": 4.618167000007816,
+            "verify": 2.3226659999927506
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 516.4521250000107,
+          "stageDurationsMs": {
+            "validate": 0.003041999996639788,
+            "lex": 0.2006660000042757,
+            "parse": 0.10050000000046566,
+            "semantic": 0.1531669999967562,
+            "lower": 0.6637080000073183,
+            "taint": 509.8064169999998,
+            "findings": 0.0744999999878928,
+            "codegen": 3.344375000000582,
+            "verify": 2.0300419999985024
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 526.2946660000016,
+          "stageDurationsMs": {
+            "validate": 0.0025000000023283064,
+            "lex": 0.18666700000176206,
+            "parse": 0.09145900000294205,
+            "semantic": 0.13633399999525864,
+            "lower": 0.6244169999990845,
+            "taint": 518.1682909999945,
+            "findings": 0.07124999999359716,
+            "codegen": 3.195916999990004,
+            "verify": 3.748041999991983
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 617.6644579999993,
+          "stageDurationsMs": {
+            "validate": 0.0027089999930467457,
+            "lex": 0.2132500000006985,
+            "parse": 0.0977920000004815,
+            "semantic": 0.15591600000334438,
+            "lower": 0.6576670000067679,
+            "taint": 607.9760410000017,
+            "findings": 0.08833400000003166,
+            "codegen": 3.9480840000032913,
+            "verify": 4.448083999988739
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 541.8427910000028,
+          "stageDurationsMs": {
+            "validate": 0.002666000000317581,
+            "lex": 0.2223329999978887,
+            "parse": 0.12741600000299513,
+            "semantic": 0.1991660000057891,
+            "lower": 0.8659590000024764,
+            "taint": 534.7380829999893,
+            "findings": 0.07737499999348074,
+            "codegen": 3.261792000004789,
+            "verify": 2.241834000000381
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 519.6652920000051,
+          "stageDurationsMs": {
+            "validate": 0.003500000006170012,
+            "lex": 0.2298750000045402,
+            "parse": 0.1058329999941634,
+            "semantic": 0.15800000001036096,
+            "lower": 0.8717920000053709,
+            "taint": 512.0175829999935,
+            "findings": 0.08079199999338016,
+            "codegen": 3.75304199999664,
+            "verify": 2.3712090000044554
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 510.315208,
+          "stageDurationsMs": {
+            "validate": 0.0020000000076834112,
+            "lex": 0.18891599999915343,
+            "parse": 0.08691700000781566,
+            "semantic": 0.16904100000101607,
+            "lower": 0.7102500000037253,
+            "taint": 501.8238330000022,
+            "findings": 0.08320900000398979,
+            "codegen": 4.967624999990221,
+            "verify": 2.2148339999985183
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 517.8276250000054,
+          "stageDurationsMs": {
+            "validate": 0.012499999997089617,
+            "lex": 0.20387499999196734,
+            "parse": 0.08787499999743886,
+            "semantic": 0.13879100000485778,
+            "lower": 0.7122080000117421,
+            "taint": 511.36358399999153,
+            "findings": 0.06770800000231247,
+            "codegen": 2.991708000001381,
+            "verify": 2.177332999999635
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 569.9353750000009,
+          "stageDurationsMs": {
+            "validate": 0.002833999998983927,
+            "lex": 0.19695800000044983,
+            "parse": 0.09258299999055453,
+            "semantic": 0.17016599999624304,
+            "lower": 0.7731669999920996,
+            "taint": 561.0688750000118,
+            "findings": 0.08358299999963492,
+            "codegen": 3.7062500000029104,
+            "verify": 3.775416000004043
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 513.2909579999978,
+          "stageDurationsMs": {
+            "validate": 0.0028749999910360202,
+            "lex": 0.21691600000485778,
+            "parse": 0.1053329999995185,
+            "semantic": 0.14699999999720603,
+            "lower": 0.773124999992433,
+            "taint": 504.9380000000092,
+            "findings": 1.221333000008599,
+            "codegen": 3.564334000009694,
+            "verify": 2.233250000004773
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 617.6644579999993
+    },
+    {
+      "id": "benchmark-10",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nvalue=value+\"x\";\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nvalue=value+\"x\";\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nvalue=value+\"x\";\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nsql_query(value);\nprint(n);\n",
+      "sha256": "b2d4b51e7e857357b874d284a913e93a55eb867f652396b253a9601057986c23",
+      "lines": 82,
+      "nodes": 242,
+      "sources": 1,
+      "warmupMs": 414.5342910000036,
+      "samples": [
+        {
+          "durationMs": 412.82704200000444,
+          "stageDurationsMs": {
+            "validate": 0.0032910000008996576,
+            "lex": 0.1966250000114087,
+            "parse": 0.095166999992216,
+            "semantic": 0.1250419999996666,
+            "lower": 0.8701250000012806,
+            "taint": 405.8680000000022,
+            "findings": 0.5319159999926342,
+            "codegen": 3.032875000004424,
+            "verify": 2.02675000000454
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 406.5098750000034,
+          "stageDurationsMs": {
+            "validate": 0.002334000004339032,
+            "lex": 0.1959999999962747,
+            "parse": 0.09204099999624304,
+            "semantic": 0.15137500000128057,
+            "lower": 0.6645420000131708,
+            "taint": 399.67279199999757,
+            "findings": 0.6308339999959571,
+            "codegen": 3.1400830000056885,
+            "verify": 1.8929589999897871
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 446.6984999999986,
+          "stageDurationsMs": {
+            "validate": 0.0020419999927980825,
+            "lex": 0.21279200000572018,
+            "parse": 0.08641699999861885,
+            "semantic": 0.12191599998914171,
+            "lower": 0.6135829999984708,
+            "taint": 439.82825000000594,
+            "findings": 0.7188749999913853,
+            "codegen": 3.1416670000035083,
+            "verify": 1.9065000000118744
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 417.2226249999949,
+          "stageDurationsMs": {
+            "validate": 0.002582999994046986,
+            "lex": 0.1770410000026459,
+            "parse": 0.08187500000349246,
+            "semantic": 0.12191700001130812,
+            "lower": 0.6053329999995185,
+            "taint": 409.8987919999927,
+            "findings": 0.5494170000019949,
+            "codegen": 2.756500000003143,
+            "verify": 2.9605000000010477
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 399.82745799999975,
+          "stageDurationsMs": {
+            "validate": 0.0030830000032437965,
+            "lex": 0.16766599999391474,
+            "parse": 0.08520899999712128,
+            "semantic": 0.15691700000024866,
+            "lower": 0.6432080000085989,
+            "taint": 394.00108299999556,
+            "findings": 0.5956250000017462,
+            "codegen": 2.4855419999948936,
+            "verify": 1.6114999999990687
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 399.6333750000049,
+          "stageDurationsMs": {
+            "validate": 0.001959000001079403,
+            "lex": 0.14737500000046566,
+            "parse": 0.07462499999382999,
+            "semantic": 0.11116699999547563,
+            "lower": 0.5456249999988358,
+            "taint": 393.35933300000033,
+            "findings": 0.6596669999998994,
+            "codegen": 2.9249999999883585,
+            "verify": 1.7328330000018468
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 400.99041600000055,
+          "stageDurationsMs": {
+            "validate": 0.0027079999999841675,
+            "lex": 0.16408400000364054,
+            "parse": 0.07679199999256525,
+            "semantic": 0.1144159999967087,
+            "lower": 0.5677500000019791,
+            "taint": 392.52154100000917,
+            "findings": 0.5043339999974705,
+            "codegen": 4.014875000008033,
+            "verify": 2.956500000000233
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 423.367167000004,
+          "stageDurationsMs": {
+            "validate": 0.009541999999783002,
+            "lex": 0.1687909999891417,
+            "parse": 0.07816699999966659,
+            "semantic": 0.12075000000186265,
+            "lower": 0.5769170000130543,
+            "taint": 417.002833999999,
+            "findings": 0.48812500000349246,
+            "codegen": 3.0874169999879086,
+            "verify": 1.7632919999887235
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 432.1446250000008,
+          "stageDurationsMs": {
+            "validate": 0.0017500000103609636,
+            "lex": 0.15191600000252947,
+            "parse": 0.07216699999116827,
+            "semantic": 0.11954200000036508,
+            "lower": 0.5512500000040745,
+            "taint": 422.7757500000007,
+            "findings": 0.4842910000006668,
+            "codegen": 5.635333000012906,
+            "verify": 2.2779999999911524
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 490.6998329999915,
+          "stageDurationsMs": {
+            "validate": 0.006290999997872859,
+            "lex": 0.2475000000122236,
+            "parse": 0.08816600000136532,
+            "semantic": 0.13183399999979883,
+            "lower": 0.6961250000022119,
+            "taint": 482.9834589999955,
+            "findings": 0.5360419999924488,
+            "codegen": 4.260541999989073,
+            "verify": 1.665500000002794
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 490.6998329999915
+    },
+    {
+      "id": "benchmark-11",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "8fa0a7bdff0115685b0f6aa88dc9429bfa48bfd2218e0ad6a21e1969035520af",
+      "lines": 99,
+      "nodes": 294,
+      "sources": 1,
+      "warmupMs": 576.5954579999961,
+      "samples": [
+        {
+          "durationMs": 558.9191250000003,
+          "stageDurationsMs": {
+            "validate": 0.0030830000032437965,
+            "lex": 0.18974999999045394,
+            "parse": 0.08954200000152923,
+            "semantic": 0.13337499999033753,
+            "lower": 0.6477500000037253,
+            "taint": 551.8104170000006,
+            "findings": 0.06920800000079907,
+            "codegen": 3.3369580000144197,
+            "verify": 2.562208000003011
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 561.4312090000021,
+          "stageDurationsMs": {
+            "validate": 0.002290999997057952,
+            "lex": 0.2242909999913536,
+            "parse": 0.10833299999649171,
+            "semantic": 0.1577499999984866,
+            "lower": 3.1491669999959413,
+            "taint": 551.9990830000024,
+            "findings": 0.06379100000776816,
+            "codegen": 3.1685839999991003,
+            "verify": 2.488916000002064
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 582.4614999999903,
+          "stageDurationsMs": {
+            "validate": 0.0032079999946290627,
+            "lex": 0.23708299999998417,
+            "parse": 0.13466700000572018,
+            "semantic": 0.1683329999941634,
+            "lower": 0.8310419999907026,
+            "taint": 575.1786250000005,
+            "findings": 0.06937499999185093,
+            "codegen": 3.4431660000118427,
+            "verify": 2.3303330000053393
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 580.1399589999928,
+          "stageDurationsMs": {
+            "validate": 0.0028750000055879354,
+            "lex": 0.2252500000031432,
+            "parse": 0.11629200000606943,
+            "semantic": 0.15870800000266172,
+            "lower": 0.7874580000061542,
+            "taint": 572.3291670000035,
+            "findings": 0.08150000000023283,
+            "codegen": 3.8819170000060694,
+            "verify": 2.480999999999767
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 669.0121669999935,
+          "stageDurationsMs": {
+            "validate": 0.0029159999976400286,
+            "lex": 0.2282909999921685,
+            "parse": 0.10549999999057036,
+            "semantic": 0.16091700000106357,
+            "lower": 0.7873749999998836,
+            "taint": 659.9094999999943,
+            "findings": 0.14779099999577738,
+            "codegen": 5.173541000011028,
+            "verify": 2.4076250000071013
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 603.7675840000011,
+          "stageDurationsMs": {
+            "validate": 0.009500000000116415,
+            "lex": 0.20449999999254942,
+            "parse": 0.09870800000499003,
+            "semantic": 0.16112499999871943,
+            "lower": 0.7658329999976559,
+            "taint": 593.5366250000079,
+            "findings": 0.08729199999652337,
+            "codegen": 5.68604200000118,
+            "verify": 3.1430420000106096
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 575.2799579999992,
+          "stageDurationsMs": {
+            "validate": 0.004291999997803941,
+            "lex": 0.22604199999477714,
+            "parse": 0.10554199999023695,
+            "semantic": 0.16004099999554455,
+            "lower": 0.7847909999982221,
+            "taint": 566.1686250000057,
+            "findings": 0.08179199999722186,
+            "codegen": 3.6727910000045085,
+            "verify": 3.992167000003974
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 664.4286659999925,
+          "stageDurationsMs": {
+            "validate": 0.004125000006752089,
+            "lex": 0.24220799999602605,
+            "parse": 0.10779100000218023,
+            "semantic": 0.16675000000395812,
+            "lower": 0.7955409999995027,
+            "taint": 656.7884999999951,
+            "findings": 0.07837499999732245,
+            "codegen": 3.630166000002646,
+            "verify": 2.5263340000092285
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 591.4169590000092,
+          "stageDurationsMs": {
+            "validate": 0.002458999995724298,
+            "lex": 0.22304199999780394,
+            "parse": 0.11629100001300685,
+            "semantic": 0.16150000000197906,
+            "lower": 0.7712909999972908,
+            "taint": 583.6133339999942,
+            "findings": 0.08949999998731073,
+            "codegen": 3.981707999992068,
+            "verify": 2.3484580000076676
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 558.8023340000072,
+          "stageDurationsMs": {
+            "validate": 0.0028750000055879354,
+            "lex": 0.2090840000018943,
+            "parse": 0.10337499999150168,
+            "semantic": 0.16408400000364054,
+            "lower": 0.8966250000084983,
+            "taint": 549.4045000000042,
+            "findings": 0.06375000000116415,
+            "codegen": 4.941125000012107,
+            "verify": 2.9357920000038575
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 669.0121669999935
+    },
+    {
+      "id": "benchmark-12",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+3;\nsql_query(value);\nprint(n);\n",
+      "sha256": "3f5d13393e0dfedec90c2bb93e76db369d3d9e1efd0dc005d9caf4f25b5623ba",
+      "lines": 107,
+      "nodes": 405,
+      "sources": 1,
+      "warmupMs": 855.1172499999957,
+      "samples": [
+        {
+          "durationMs": 941.658666000003,
+          "stageDurationsMs": {
+            "validate": 0.026291999995009974,
+            "lex": 0.2783330000092974,
+            "parse": 0.13850000000093132,
+            "semantic": 0.17270799999823794,
+            "lower": 1.0110830000048736,
+            "taint": 925.9073329999956,
+            "findings": 2.7656669999996666,
+            "codegen": 8.009749999997439,
+            "verify": 3.255416999993031
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 881.487249999991,
+          "stageDurationsMs": {
+            "validate": 0.0036249999975552782,
+            "lex": 0.3119580000056885,
+            "parse": 0.144083999999566,
+            "semantic": 0.26829199999338016,
+            "lower": 1.1612499999901047,
+            "taint": 868.5359579999931,
+            "findings": 0.8650409999972908,
+            "codegen": 7.396166999998968,
+            "verify": 2.6928340000013122
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 915.7307499999879,
+          "stageDurationsMs": {
+            "validate": 0.0033339999936288223,
+            "lex": 0.2554169999930309,
+            "parse": 0.11566599999787286,
+            "semantic": 0.1662919999944279,
+            "lower": 0.8846670000057202,
+            "taint": 905.9221249999973,
+            "findings": 0.7279579999885755,
+            "codegen": 4.25166700000409,
+            "verify": 3.332541999989189
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 848.692166000008,
+          "stageDurationsMs": {
+            "validate": 0.003416000006836839,
+            "lex": 0.33541700000932906,
+            "parse": 0.1824169999890728,
+            "semantic": 0.22220800000650343,
+            "lower": 1.2668750000011642,
+            "taint": 838.7266249999957,
+            "findings": 0.8229579999897396,
+            "codegen": 4.413625000001048,
+            "verify": 2.6391660000081174
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 859.2099580000067,
+          "stageDurationsMs": {
+            "validate": 0.0031670000025769696,
+            "lex": 0.25637499999720603,
+            "parse": 2.986125000010361,
+            "semantic": 0.20304100000066683,
+            "lower": 1.1040829999983544,
+            "taint": 843.2167499999923,
+            "findings": 1.076375000004191,
+            "codegen": 4.285541999997804,
+            "verify": 6.004874999998719
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 1058.0486249999958,
+          "stageDurationsMs": {
+            "validate": 0.0033750000002328306,
+            "lex": 0.27841699999407865,
+            "parse": 0.1401250000053551,
+            "semantic": 0.1951250000129221,
+            "lower": 1.0476249999919673,
+            "taint": 1043.3897089999955,
+            "findings": 0.9243750000023283,
+            "codegen": 5.63058299999102,
+            "verify": 6.344083000003593
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 977.5746249999938,
+          "stageDurationsMs": {
+            "validate": 0.010834000000613742,
+            "lex": 0.28749999999126885,
+            "parse": 0.1523330000054557,
+            "semantic": 0.1960419999959413,
+            "lower": 1.0029999999969732,
+            "taint": 963.1760840000061,
+            "findings": 0.8922500000044238,
+            "codegen": 5.302290999999968,
+            "verify": 6.458041999998386
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 938.7733329999901,
+          "stageDurationsMs": {
+            "validate": 0.0038340000028256327,
+            "lex": 0.2954159999935655,
+            "parse": 0.14320899998710956,
+            "semantic": 0.20879199999035336,
+            "lower": 1.1499999999941792,
+            "taint": 924.4395829999994,
+            "findings": 1.0324169999948936,
+            "codegen": 5.582083000001148,
+            "verify": 5.825084000010975
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 1026.971417000008,
+          "stageDurationsMs": {
+            "validate": 0.004333999997470528,
+            "lex": 0.2536670000117738,
+            "parse": 0.13191699999151751,
+            "semantic": 0.18733299999439623,
+            "lower": 1.0535410000011325,
+            "taint": 1011.4945000000007,
+            "findings": 0.9361670000071172,
+            "codegen": 5.142500000001746,
+            "verify": 7.679000000003725
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 968.4713340000017,
+          "stageDurationsMs": {
+            "validate": 0.01374999999825377,
+            "lex": 0.33487500000046566,
+            "parse": 0.13637500000186265,
+            "semantic": 0.18895799999882001,
+            "lower": 0.9776669999992009,
+            "taint": 955.2508340000059,
+            "findings": 0.860791999992216,
+            "codegen": 4.717541999998502,
+            "verify": 5.878250000008848
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 1058.0486249999958
+    },
+    {
+      "id": "benchmark-13",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+1;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "898ec3b2cacc2bf3ac84d2ab9e0b64a5e52bf65af7f2c4cecd48f0b0647cd2e9",
+      "lines": 102,
+      "nodes": 339,
+      "sources": 1,
+      "warmupMs": 946.7772919999989,
+      "samples": [
+        {
+          "durationMs": 898.273125000007,
+          "stageDurationsMs": {
+            "validate": 0.004999999990104698,
+            "lex": 0.26600000000325963,
+            "parse": 0.12524999999732245,
+            "semantic": 0.17466599999170285,
+            "lower": 0.9666250000009313,
+            "taint": 889.9016249999986,
+            "findings": 0.10666700000001583,
+            "codegen": 4.170708000005106,
+            "verify": 2.4562909999949625
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 889.1916249999922,
+          "stageDurationsMs": {
+            "validate": 0.0032079999946290627,
+            "lex": 0.2975000000005821,
+            "parse": 0.129666000008001,
+            "semantic": 0.33533400000305846,
+            "lower": 1.1952909999963595,
+            "taint": 877.8353329999954,
+            "findings": 0.09670799999730662,
+            "codegen": 4.4635830000042915,
+            "verify": 4.72737499998766
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 871.3768330000021,
+          "stageDurationsMs": {
+            "validate": 0.003416999999899417,
+            "lex": 0.23045899999851827,
+            "parse": 0.10670899999968242,
+            "semantic": 0.15712499999790452,
+            "lower": 0.8274999999994179,
+            "taint": 861.1760420000064,
+            "findings": 0.08454199999687262,
+            "codegen": 5.873500000001513,
+            "verify": 2.8401250000024447
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 879.3557080000028,
+          "stageDurationsMs": {
+            "validate": 0.006166000006487593,
+            "lex": 0.27558300000964664,
+            "parse": 0.12787500000558794,
+            "semantic": 0.2056250000023283,
+            "lower": 0.9605000000010477,
+            "taint": 870.9616249999963,
+            "findings": 0.109375,
+            "codegen": 4.033207999993465,
+            "verify": 2.597875000006752
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 896.335500000001,
+          "stageDurationsMs": {
+            "validate": 0.002917000005254522,
+            "lex": 0.24624999999650754,
+            "parse": 0.12070900000981055,
+            "semantic": 0.1583329999994021,
+            "lower": 0.7782089999964228,
+            "taint": 887.6494169999933,
+            "findings": 0.07329200000094716,
+            "codegen": 4.392707999999402,
+            "verify": 2.834499999997206
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 996.5550840000069,
+          "stageDurationsMs": {
+            "validate": 0.0534170000028098,
+            "lex": 0.3431249999994179,
+            "parse": 0.24575000000186265,
+            "semantic": 0.33941699999559205,
+            "lower": 3.13445800000045,
+            "taint": 984.406084000002,
+            "findings": 0.12683300000207964,
+            "codegen": 4.35695799998939,
+            "verify": 3.345041999986279
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 912.9336249999906,
+          "stageDurationsMs": {
+            "validate": 0.006124999999883585,
+            "lex": 0.3385829999897396,
+            "parse": 0.1442910000041593,
+            "semantic": 0.20529199999873526,
+            "lower": 1.18399999999383,
+            "taint": 902.2516670000041,
+            "findings": 0.0962500000023283,
+            "codegen": 6.327374999993481,
+            "verify": 2.262417000005371
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 875.713459000006,
+          "stageDurationsMs": {
+            "validate": 0.0033750000002328306,
+            "lex": 0.20637499999429565,
+            "parse": 0.10795799999323208,
+            "semantic": 0.15949999999429565,
+            "lower": 0.8158750000002328,
+            "taint": 866.8382500000007,
+            "findings": 0.09104200000001583,
+            "codegen": 4.477666999999201,
+            "verify": 2.943874999997206
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 926.7932920000021,
+          "stageDurationsMs": {
+            "validate": 0.0032500000088475645,
+            "lex": 0.26129199999559205,
+            "parse": 0.12283400000887923,
+            "semantic": 0.1742919999960577,
+            "lower": 0.9682909999974072,
+            "taint": 918.5601659999957,
+            "findings": 0.07595800000126474,
+            "codegen": 3.7015420000097947,
+            "verify": 2.8505830000067363
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 970.7467500000057,
+          "stageDurationsMs": {
+            "validate": 0.0031670000025769696,
+            "lex": 0.2605420000036247,
+            "parse": 0.13266699999803677,
+            "semantic": 0.181416999999783,
+            "lower": 0.971332999994047,
+            "taint": 958.3482919999951,
+            "findings": 0.09054099999775644,
+            "codegen": 4.755999999993946,
+            "verify": 5.928458000009414
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 996.5550840000069
+    },
+    {
+      "id": "benchmark-14",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nvalue=value+\"x\";\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nvalue=value+\"x\";\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nvalue=value+\"x\";\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nvalue=value+\"x\";\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nvalue=value+\"x\";\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nvalue=value+\"x\";\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nn=n+2;\nsql_query(value);\nprint(n);\n",
+      "sha256": "ef26e12b2d9bbdf8c6715ae517d856628da6b300c0f746f585637614869bf0df",
+      "lines": 112,
+      "nodes": 332,
+      "sources": 1,
+      "warmupMs": 926.3889999999956,
+      "samples": [
+        {
+          "durationMs": 886.8554999999906,
+          "stageDurationsMs": {
+            "validate": 0.005209000009926967,
+            "lex": 0.22720900000422262,
+            "parse": 0.1400829999911366,
+            "semantic": 0.20416699998895638,
+            "lower": 0.9313750000001164,
+            "taint": 877.8449589999946,
+            "findings": 0.7629170000000158,
+            "codegen": 4.248500000001513,
+            "verify": 2.4198340000002645
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 857.7642500000075,
+          "stageDurationsMs": {
+            "validate": 0.002833000005921349,
+            "lex": 0.24479099999007303,
+            "parse": 0.14645800000289455,
+            "semantic": 0.19970800000010058,
+            "lower": 1.0336249999963911,
+            "taint": 848.6075839999976,
+            "findings": 0.9885419999918668,
+            "codegen": 3.8004589999909513,
+            "verify": 2.677791000009165
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 896.8334170000016,
+          "stageDurationsMs": {
+            "validate": 0.00304100000357721,
+            "lex": 0.25479200000700075,
+            "parse": 0.12183400000503752,
+            "semantic": 0.17670899999211542,
+            "lower": 0.9015829999989364,
+            "taint": 884.632958999995,
+            "findings": 1.2307500000024447,
+            "codegen": 4.266333999999915,
+            "verify": 5.165916999991168
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 890.3983750000043,
+          "stageDurationsMs": {
+            "validate": 0.00408400000014808,
+            "lex": 0.283832999994047,
+            "parse": 0.11920799998915754,
+            "semantic": 0.18366599999717437,
+            "lower": 1.392374999995809,
+            "taint": 878.5637920000008,
+            "findings": 0.8545829999929992,
+            "codegen": 6.324542000002111,
+            "verify": 2.5831249999901047
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 909.4224160000012,
+          "stageDurationsMs": {
+            "validate": 0.006915999998454936,
+            "lex": 0.2398749999993015,
+            "parse": 0.11170799999672454,
+            "semantic": 0.17933300000731833,
+            "lower": 0.8765419999981532,
+            "taint": 900.4901669999963,
+            "findings": 0.853333000006387,
+            "codegen": 4.149959000002127,
+            "verify": 2.4394590000010794
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 905.6385000000009,
+          "stageDurationsMs": {
+            "validate": 0.0030830000032437965,
+            "lex": 0.25787499999569263,
+            "parse": 0.15445899999758694,
+            "semantic": 0.20129199999792036,
+            "lower": 0.9572920000064187,
+            "taint": 897.614499999996,
+            "findings": 0.6490000000048894,
+            "codegen": 3.45604099999764,
+            "verify": 2.263875000004191
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 845.675041999988,
+          "stageDurationsMs": {
+            "validate": 0.0029169999907026067,
+            "lex": 0.2107079999987036,
+            "parse": 0.09970799999427982,
+            "semantic": 0.16445799999928568,
+            "lower": 0.9155420000024606,
+            "taint": 836.9918749999924,
+            "findings": 0.9230419999948936,
+            "codegen": 3.889708000002429,
+            "verify": 2.397792000003392
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 1013.4331250000105,
+          "stageDurationsMs": {
+            "validate": 0.003041999996639788,
+            "lex": 0.21249999999417923,
+            "parse": 0.10345799999777228,
+            "semantic": 0.2061670000111917,
+            "lower": 0.8829170000099111,
+            "taint": 1002.6523339999985,
+            "findings": 0.7337499999994179,
+            "codegen": 3.9339580000087153,
+            "verify": 4.60899999999674
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 905.6977909999987,
+          "stageDurationsMs": {
+            "validate": 0.042499999995925464,
+            "lex": 0.25995800000964664,
+            "parse": 0.14862500000162981,
+            "semantic": 0.18279099999926984,
+            "lower": 0.9547080000047572,
+            "taint": 894.9787499999948,
+            "findings": 0.6341670000110753,
+            "codegen": 5.637209000007715,
+            "verify": 2.774416000000201
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 893.1431249999878,
+          "stageDurationsMs": {
+            "validate": 0.0032499999942956492,
+            "lex": 0.2232499999954598,
+            "parse": 0.10699999998905696,
+            "semantic": 0.15395799999532755,
+            "lower": 0.7934999999997672,
+            "taint": 882.6129169999913,
+            "findings": 2.862250000005588,
+            "codegen": 3.9568339999968885,
+            "verify": 2.363375000000815
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 1013.4331250000105
+    },
+    {
+      "id": "benchmark-15",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "c9f3bab225a5583ec2680895a8b2862a81f8cb18ac2e712d6b710172c1c95df2",
+      "lines": 123,
+      "nodes": 366,
+      "sources": 1,
+      "warmupMs": 867.2017919999926,
+      "samples": [
+        {
+          "durationMs": 886.2915000000066,
+          "stageDurationsMs": {
+            "validate": 0.01937500000349246,
+            "lex": 0.23608400000375696,
+            "parse": 0.10995800000091549,
+            "semantic": 0.21208300000580493,
+            "lower": 0.9024999999965075,
+            "taint": 877.2340419999964,
+            "findings": 0.09441699998569675,
+            "codegen": 4.1979169999976875,
+            "verify": 3.1979580000042915
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 832.861625000005,
+          "stageDurationsMs": {
+            "validate": 0.0030830000032437965,
+            "lex": 0.2952910000021802,
+            "parse": 0.13337500000488944,
+            "semantic": 0.19379099999787286,
+            "lower": 1.077292000001762,
+            "taint": 821.0530410000065,
+            "findings": 0.0952499999984866,
+            "codegen": 4.42029100000218,
+            "verify": 5.521875000005821
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 832.1559160000033,
+          "stageDurationsMs": {
+            "validate": 0.002582999994046986,
+            "lex": 0.23662499999045394,
+            "parse": 0.10095900000305846,
+            "semantic": 0.14887499999895226,
+            "lower": 0.8160829999978887,
+            "taint": 823.4149159999943,
+            "findings": 0.08820899999409448,
+            "codegen": 4.39375000000291,
+            "verify": 2.8835410000028787
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 855.1222500000003,
+          "stageDurationsMs": {
+            "validate": 0.0032079999946290627,
+            "lex": 0.2738330000138376,
+            "parse": 0.12437499999941792,
+            "semantic": 0.19083300000056624,
+            "lower": 0.9524589999928139,
+            "taint": 844.0096659999981,
+            "findings": 0.08295799999905284,
+            "codegen": 6.647333999993862,
+            "verify": 2.7705409999907715
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 900.2098750000005,
+          "stageDurationsMs": {
+            "validate": 0.01295800000661984,
+            "lex": 0.25687500000640284,
+            "parse": 0.13445800000044983,
+            "semantic": 0.17116699999314733,
+            "lower": 0.8720420000026934,
+            "taint": 878.0787920000002,
+            "findings": 0.10779100000218023,
+            "codegen": 16.827249999987544,
+            "verify": 3.679166999994777
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 860.1270829999994,
+          "stageDurationsMs": {
+            "validate": 0.017584000001079403,
+            "lex": 0.3084999999991851,
+            "parse": 0.15408300000126474,
+            "semantic": 0.2309170000080485,
+            "lower": 1.1754579999978887,
+            "taint": 847.7167090000003,
+            "findings": 0.09675000001152512,
+            "codegen": 5.216375000003609,
+            "verify": 5.1085000000020955
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 851.1317080000008,
+          "stageDurationsMs": {
+            "validate": 0.015916999996989034,
+            "lex": 0.21900000001187436,
+            "parse": 0.10816600000543986,
+            "semantic": 0.171916000006604,
+            "lower": 0.9307499999995343,
+            "taint": 841.2938330000034,
+            "findings": 0.14629099999729078,
+            "codegen": 4.492666999998619,
+            "verify": 3.683208000002196
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 889.812665999998,
+          "stageDurationsMs": {
+            "validate": 0.013334000002942048,
+            "lex": 0.3371249999909196,
+            "parse": 0.14404099999228492,
+            "semantic": 0.1829579999903217,
+            "lower": 1.0247079999971902,
+            "taint": 878.3523750000022,
+            "findings": 0.10237499998765998,
+            "codegen": 6.66287500000908,
+            "verify": 2.913083999999799
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 899.9927920000046,
+          "stageDurationsMs": {
+            "validate": 0.003874999994877726,
+            "lex": 0.2782500000030268,
+            "parse": 0.12520799999765586,
+            "semantic": 0.18087500000547152,
+            "lower": 0.951708000007784,
+            "taint": 891.0217909999919,
+            "findings": 0.10495800001081079,
+            "codegen": 4.402249999999185,
+            "verify": 2.8584160000027623
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 837.5899589999899,
+          "stageDurationsMs": {
+            "validate": 0.0032499999942956492,
+            "lex": 0.2968330000003334,
+            "parse": 0.1224590000056196,
+            "semantic": 0.18274999999266583,
+            "lower": 3.303209000005154,
+            "taint": 823.4590420000022,
+            "findings": 0.10341599999810569,
+            "codegen": 7.338208000001032,
+            "verify": 2.713707999995677
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 900.2098750000005
+    },
+    {
+      "id": "benchmark-16",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nif(n<50){n=n+1;}else{n=n+2;}\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nsql_query(value);\nprint(n);\n",
+      "sha256": "57165a8a1bef66d73d37e584e2311b0bd6ab3a98069a944515ca18376b10570f",
+      "lines": 81,
+      "nodes": 303,
+      "sources": 1,
+      "warmupMs": 797.3060409999889,
+      "samples": [
+        {
+          "durationMs": 770.7973750000092,
+          "stageDurationsMs": {
+            "validate": 0.003000000011525117,
+            "lex": 0.19316699999035336,
+            "parse": 0.09404199999698903,
+            "semantic": 0.12279199999466073,
+            "lower": 0.6936660000064876,
+            "taint": 763.6872500000172,
+            "findings": 0.5560830000031274,
+            "codegen": 3.2126660000067204,
+            "verify": 2.1637920000066515
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 786.4743750000198,
+          "stageDurationsMs": {
+            "validate": 0.0027910000062547624,
+            "lex": 0.22108299998217262,
+            "parse": 0.10412500001257285,
+            "semantic": 0.14600000000791624,
+            "lower": 0.8455829999875277,
+            "taint": 778.4952499999781,
+            "findings": 0.6621250000025611,
+            "codegen": 3.559000000008382,
+            "verify": 2.3692079999891575
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 791.7929170000134,
+          "stageDurationsMs": {
+            "validate": 0.003333000000566244,
+            "lex": 0.25737500001559965,
+            "parse": 0.12183300001197495,
+            "semantic": 0.15729199998895638,
+            "lower": 0.9633329999924172,
+            "taint": 782.6294169999892,
+            "findings": 0.9605420000152662,
+            "codegen": 3.8974579999921843,
+            "verify": 2.72841700000572
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 802.7218749999884,
+          "stageDurationsMs": {
+            "validate": 0.002957999997306615,
+            "lex": 0.32824999999138527,
+            "parse": 0.16470900000422262,
+            "semantic": 0.20641600000089966,
+            "lower": 0.9946249999920838,
+            "taint": 794.3046249999898,
+            "findings": 0.6466660000151023,
+            "codegen": 3.586875000008149,
+            "verify": 2.3638750000100117
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 809.4023330000055,
+          "stageDurationsMs": {
+            "validate": 0.002582999994046986,
+            "lex": 0.20995899999979883,
+            "parse": 0.10158399998908862,
+            "semantic": 0.16362499998649582,
+            "lower": 0.8814999999885913,
+            "taint": 800.1604170000064,
+            "findings": 0.6725420000148006,
+            "codegen": 3.425333999999566,
+            "verify": 3.7111670000012964
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 845.6196670000209,
+          "stageDurationsMs": {
+            "validate": 0.004499999980907887,
+            "lex": 0.23766600000089966,
+            "parse": 0.11654100002488121,
+            "semantic": 0.15775000001303852,
+            "lower": 0.9094589999876916,
+            "taint": 835.7707079999964,
+            "findings": 1.0374159999773838,
+            "codegen": 4.695000000006985,
+            "verify": 2.581624999991618
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 898.8118330000143,
+          "stageDurationsMs": {
+            "validate": 0.005583999998634681,
+            "lex": 0.2399579999910202,
+            "parse": 0.11950000000069849,
+            "semantic": 0.2263329999987036,
+            "lower": 0.9940000000060536,
+            "taint": 890.1415410000191,
+            "findings": 0.9039160000102129,
+            "codegen": 3.7352910000190604,
+            "verify": 2.2963330000056885
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 851.8729580000218,
+          "stageDurationsMs": {
+            "validate": 0.0043750000186264515,
+            "lex": 0.2182500000053551,
+            "parse": 0.10220799999660812,
+            "semantic": 0.16508299999986775,
+            "lower": 0.8464160000148695,
+            "taint": 842.9310420000111,
+            "findings": 0.7158329999947455,
+            "codegen": 3.926874999975553,
+            "verify": 2.8734580000163987
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 851.6320419999829,
+          "stageDurationsMs": {
+            "validate": 0.002749999985098839,
+            "lex": 0.2943329999980051,
+            "parse": 0.13041700000758283,
+            "semantic": 0.16620800000964664,
+            "lower": 0.9062080000003334,
+            "taint": 844.0535420000087,
+            "findings": 0.5373330000147689,
+            "codegen": 3.30487500000163,
+            "verify": 2.1583749999990687
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 789.1000000000058,
+          "stageDurationsMs": {
+            "validate": 0.0021249999990686774,
+            "lex": 0.22370900001260452,
+            "parse": 0.10012499999720603,
+            "semantic": 1.7443339999881573,
+            "lower": 0.7924169999896549,
+            "taint": 778.6423749999958,
+            "findings": 0.5247920000110753,
+            "codegen": 3.100209000025643,
+            "verify": 3.903375000023516
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 898.8118330000143
+    },
+    {
+      "id": "benchmark-17",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nwhile(n<2){n=n+1;}\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nwhile(n<2){n=n+1;}\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nwhile(n<2){n=n+1;}\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "f579de5156f8966dca584bedab8018028e952d64524ac9cd7c1a76da1aeb4d01",
+      "lines": 87,
+      "nodes": 286,
+      "sources": 1,
+      "warmupMs": 532.6059999999998,
+      "samples": [
+        {
+          "durationMs": 532.0099580000096,
+          "stageDurationsMs": {
+            "validate": 0.003792000003159046,
+            "lex": 0.2527080000145361,
+            "parse": 0.12208400000235997,
+            "semantic": 0.16279199998825788,
+            "lower": 0.8875829999742564,
+            "taint": 524.5670830000017,
+            "findings": 0.08866700000362471,
+            "codegen": 3.5234160000109114,
+            "verify": 2.314042000012705
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 531.8327500000014,
+          "stageDurationsMs": {
+            "validate": 0.0027920000138692558,
+            "lex": 0.20829199999570847,
+            "parse": 0.10104199999477714,
+            "semantic": 0.1405830000003334,
+            "lower": 0.7505419999943115,
+            "taint": 523.825708999997,
+            "findings": 0.07170800000312738,
+            "codegen": 2.968416999996407,
+            "verify": 3.6939580000180285
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 566.9304169999959,
+          "stageDurationsMs": {
+            "validate": 0.0031250000174622983,
+            "lex": 0.20779099999344908,
+            "parse": 0.10558299999684095,
+            "semantic": 0.14862500000162981,
+            "lower": 0.7992499999818392,
+            "taint": 559.3695420000004,
+            "findings": 0.07587499998044223,
+            "codegen": 3.5409579999977723,
+            "verify": 2.6037500000093132
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 526.4241249999905,
+          "stageDurationsMs": {
+            "validate": 0.0034589999995660037,
+            "lex": 0.23170800000661984,
+            "parse": 0.10999999998603016,
+            "semantic": 0.1587920000019949,
+            "lower": 0.9383749999979045,
+            "taint": 519.5371659999946,
+            "findings": 0.0876249999855645,
+            "codegen": 3.2631249999976717,
+            "verify": 2.020959000015864
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 542.6456659999967,
+          "stageDurationsMs": {
+            "validate": 0.0019159999792464077,
+            "lex": 0.24062499997671694,
+            "parse": 0.12412500000209548,
+            "semantic": 0.16000000000349246,
+            "lower": 0.8891669999866281,
+            "taint": 534.0548750000016,
+            "findings": 0.0882080000010319,
+            "codegen": 4.802916000015102,
+            "verify": 2.2187919999996666
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 518.5292500000214,
+          "stageDurationsMs": {
+            "validate": 0.00620800000615418,
+            "lex": 0.2158750000235159,
+            "parse": 0.10929200000828132,
+            "semantic": 0.15183299998170696,
+            "lower": 0.7605829999956768,
+            "taint": 511.58158300002106,
+            "findings": 0.06970799999544397,
+            "codegen": 3.372540999989724,
+            "verify": 2.176459000009345
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 522.427457999991,
+          "stageDurationsMs": {
+            "validate": 0.0025000000023283064,
+            "lex": 0.2026670000050217,
+            "parse": 0.10599999999976717,
+            "semantic": 0.14741700000013225,
+            "lower": 0.8312089999963064,
+            "taint": 514.9738339999749,
+            "findings": 0.10345799999777228,
+            "codegen": 3.996374999987893,
+            "verify": 1.9947920000122394
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 549.5092080000031,
+          "stageDurationsMs": {
+            "validate": 0.0019160000083502382,
+            "lex": 0.20158300001639873,
+            "parse": 0.10341700000572018,
+            "semantic": 0.250625000015134,
+            "lower": 0.7077910000225529,
+            "taint": 542.2853339999856,
+            "findings": 0.07983300002524629,
+            "codegen": 3.5429580000054557,
+            "verify": 2.248667000007117
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 539.379958000005,
+          "stageDurationsMs": {
+            "validate": 0.0023750000109430403,
+            "lex": 0.22349999999278225,
+            "parse": 0.10391700000036508,
+            "semantic": 0.16675000000395812,
+            "lower": 0.8239579999935813,
+            "taint": 531.4156249999942,
+            "findings": 0.09391699999105185,
+            "codegen": 4.541457999992417,
+            "verify": 1.9315409999981057
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 511.1050829999731,
+          "stageDurationsMs": {
+            "validate": 0.005707999982405454,
+            "lex": 0.1689159999950789,
+            "parse": 0.08437500000582077,
+            "semantic": 0.12945800001034513,
+            "lower": 0.6804169999959413,
+            "taint": 504.5434580000001,
+            "findings": 0.1063750000030268,
+            "codegen": 3.2992079999821726,
+            "verify": 2.028167000011308
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 566.9304169999959
+    },
+    {
+      "id": "benchmark-18",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nvalue=value+\"x\";\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+1;\nvalue=value+\"x\";\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nvalue=value+\"x\";\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+2;\nvalue=value+\"x\";\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nsql_query(value);\nprint(n);\n",
+      "sha256": "c7b7e413364f48358f14ffb7a7a971580f1603f8f3f719a9dfa1ff07a733dd02",
+      "lines": 94,
+      "nodes": 278,
+      "sources": 1,
+      "warmupMs": 514.0656660000095,
+      "samples": [
+        {
+          "durationMs": 542.3277079999971,
+          "stageDurationsMs": {
+            "validate": 0.0031669999880250543,
+            "lex": 0.23574999999254942,
+            "parse": 0.10962500001187436,
+            "semantic": 0.14595799997914582,
+            "lower": 0.8087499999965075,
+            "taint": 534.3756659999781,
+            "findings": 0.724000000016531,
+            "codegen": 3.5917090000002645,
+            "verify": 2.265332999988459
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 518.7691249999916,
+          "stageDurationsMs": {
+            "validate": 0.003333999979076907,
+            "lex": 0.2042500000097789,
+            "parse": 0.08999999999650754,
+            "semantic": 0.13599999999860302,
+            "lower": 0.6254169999738224,
+            "taint": 510.99166599998716,
+            "findings": 0.5235829999728594,
+            "codegen": 4.113000000012107,
+            "verify": 2.015499999979511
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 506.4290000000037,
+          "stageDurationsMs": {
+            "validate": 0.009250000002793968,
+            "lex": 0.19804199997452088,
+            "parse": 0.08708299999125302,
+            "semantic": 0.1350830000010319,
+            "lower": 0.6315000000176951,
+            "taint": 498.17975000001024,
+            "findings": 0.6259160000190604,
+            "codegen": 4.6298749999841675,
+            "verify": 1.8613750000076834
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 522.6620000000112,
+          "stageDurationsMs": {
+            "validate": 0.005499999999301508,
+            "lex": 0.18550000002142042,
+            "parse": 0.08516700001200661,
+            "semantic": 0.12866700001177378,
+            "lower": 0.5744160000176635,
+            "taint": 513.8485839999921,
+            "findings": 0.5982919999805745,
+            "codegen": 3.5919170000124723,
+            "verify": 3.5852500000037253
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 516.5702920000185,
+          "stageDurationsMs": {
+            "validate": 0.0027089999930467457,
+            "lex": 0.19270799998776056,
+            "parse": 0.09033400000771508,
+            "semantic": 0.13991600001463667,
+            "lower": 0.6713329999765847,
+            "taint": 508.49862500000745,
+            "findings": 0.5365419999870937,
+            "codegen": 2.8553329999849666,
+            "verify": 3.509124999982305
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 512.2919580000162,
+          "stageDurationsMs": {
+            "validate": 0.0033750000002328306,
+            "lex": 0.23762499997974373,
+            "parse": 0.12124999999650754,
+            "semantic": 0.1572499999892898,
+            "lower": 0.801207999989856,
+            "taint": 505.10262499999953,
+            "findings": 0.5290840000088792,
+            "codegen": 3.107041000010213,
+            "verify": 2.150708000001032
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 560.9033329999947,
+          "stageDurationsMs": {
+            "validate": 0.002166999998735264,
+            "lex": 0.2082910000171978,
+            "parse": 0.092333000007784,
+            "semantic": 0.15200000000186265,
+            "lower": 0.6874580000003334,
+            "taint": 553.1630000000005,
+            "findings": 0.6290000000153668,
+            "codegen": 3.659083999984432,
+            "verify": 2.2477080000098795
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 504.9467500000028,
+          "stageDurationsMs": {
+            "validate": 0.003124999988358468,
+            "lex": 0.22112500001094304,
+            "parse": 0.10370800000964664,
+            "semantic": 0.14904200000455603,
+            "lower": 0.7490420000103768,
+            "taint": 496.7380830000038,
+            "findings": 0.5215420000022277,
+            "codegen": 4.209000000002561,
+            "verify": 2.173791999986861
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 507.46937500001513,
+          "stageDurationsMs": {
+            "validate": 0.0076249999983701855,
+            "lex": 0.19087500000023283,
+            "parse": 0.08824999997159466,
+            "semantic": 0.13754200001130812,
+            "lower": 0.7177500000107102,
+            "taint": 499.3331659999967,
+            "findings": 0.5943329999863636,
+            "codegen": 4.477416999987327,
+            "verify": 1.8607090000004973
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 507.7421670000185,
+          "stageDurationsMs": {
+            "validate": 0.005750000011175871,
+            "lex": 0.1627079999889247,
+            "parse": 0.07741599998553284,
+            "semantic": 0.14362500002607703,
+            "lower": 0.7756249999802094,
+            "taint": 499.86358299999847,
+            "findings": 0.4984169999952428,
+            "codegen": 4.275792000000365,
+            "verify": 1.8773330000112765
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 560.9033329999947
+    },
+    {
+      "id": "benchmark-19",
+      "source": "let value:string=input(\"Synthetic input\");\nlet n:int=0;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+3;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+2;\nn=n+3;\nn=n+1;\nn=n+1;\nn=n+3;\nn=n+3;\nn=n+2;\nn=n+1;\nn=n+3;\nn=n+2;\nn=n+1;\nsql_bind(\"SELECT ?\",value);\nprint(n);\n",
+      "sha256": "c42187b8aed094553e067fd98ecaa845c95a3ff10fffd01e3e36017ef25ee579",
+      "lines": 109,
+      "nodes": 324,
+      "sources": 1,
+      "warmupMs": 848.9381659999781,
+      "samples": [
+        {
+          "durationMs": 837.7715829999943,
+          "stageDurationsMs": {
+            "validate": 0.005208000016864389,
+            "lex": 0.24062500000582077,
+            "parse": 0.11641700001200661,
+            "semantic": 0.17108299999381416,
+            "lower": 0.898709000000963,
+            "taint": 828.0247499999823,
+            "findings": 0.07975000000442378,
+            "codegen": 5.49391600000672,
+            "verify": 2.6748329999973066
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 843.0775830000057,
+          "stageDurationsMs": {
+            "validate": 0.003917000023648143,
+            "lex": 0.23491699999431148,
+            "parse": 0.1103329999896232,
+            "semantic": 0.17179200000828132,
+            "lower": 0.9011670000036247,
+            "taint": 835.716791999992,
+            "findings": 0.09587499999906868,
+            "codegen": 3.438332999998238,
+            "verify": 2.3255839999765158
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 888.8326669999806,
+          "stageDurationsMs": {
+            "validate": 0.0027920000138692558,
+            "lex": 0.2117079999879934,
+            "parse": 0.09824999998090789,
+            "semantic": 0.15079100002185442,
+            "lower": 0.7726660000043921,
+            "taint": 879.6974590000173,
+            "findings": 0.08733300000312738,
+            "codegen": 4.547083999990718,
+            "verify": 3.201999999990221
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 858.322125000006,
+          "stageDurationsMs": {
+            "validate": 0.004125000006752089,
+            "lex": 0.2735419999808073,
+            "parse": 0.1335829999879934,
+            "semantic": 0.44737500001792796,
+            "lower": 1.3942500000121072,
+            "taint": 848.8169169999892,
+            "findings": 0.08541699999477714,
+            "codegen": 3.9598750000004657,
+            "verify": 3.1145000000251457
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 898.6642079999729,
+          "stageDurationsMs": {
+            "validate": 0.003792000003159046,
+            "lex": 0.28308299998752773,
+            "parse": 0.1275420000019949,
+            "semantic": 0.18108400001074187,
+            "lower": 0.9944170000089798,
+            "taint": 889.8580000000075,
+            "findings": 0.09670799999730662,
+            "codegen": 4.272874999995111,
+            "verify": 2.7566250000090804
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 852.2205829999875,
+          "stageDurationsMs": {
+            "validate": 0.003708000003825873,
+            "lex": 0.24095899998792447,
+            "parse": 0.11437499997555278,
+            "semantic": 0.16612499998882413,
+            "lower": 0.879625000001397,
+            "taint": 842.483333000011,
+            "findings": 0.09562499998719431,
+            "codegen": 3.803542000008747,
+            "verify": 4.348249999980908
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 1029.1351250000007,
+          "stageDurationsMs": {
+            "validate": 0.0030839999963063747,
+            "lex": 0.2509579999896232,
+            "parse": 0.11516600000322796,
+            "semantic": 0.16599999999743886,
+            "lower": 0.8861249999899883,
+            "taint": 1018.4411670000118,
+            "findings": 0.09575000000768341,
+            "codegen": 4.31716699997196,
+            "verify": 4.775166999985231
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 919.7104589999944,
+          "stageDurationsMs": {
+            "validate": 0.003333000000566244,
+            "lex": 0.20554200001060963,
+            "parse": 0.10108299998682924,
+            "semantic": 0.1773749999993015,
+            "lower": 0.8082500000018626,
+            "taint": 909.7961249999935,
+            "findings": 0.08795799998915754,
+            "codegen": 3.894166000012774,
+            "verify": 4.534499999979744
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 850.496541999979,
+          "stageDurationsMs": {
+            "validate": 0.004958000004990026,
+            "lex": 0.24025000000256114,
+            "parse": 0.11212499998509884,
+            "semantic": 0.16158299997914582,
+            "lower": 0.8359170000185259,
+            "taint": 840.7634160000016,
+            "findings": 0.10608299999148585,
+            "codegen": 5.833041000005323,
+            "verify": 2.357958000007784
+          },
+          "status": "completed"
+        },
+        {
+          "durationMs": 857.4312079999945,
+          "stageDurationsMs": {
+            "validate": 0.0054579999996349216,
+            "lex": 0.22441699999035336,
+            "parse": 0.10820799999055453,
+            "semantic": 0.15045899999677204,
+            "lower": 0.7962500000139698,
+            "taint": 847.7762079999957,
+            "findings": 0.1043329999956768,
+            "codegen": 5.622249999985797,
+            "verify": 2.5621249999967404
+          },
+          "status": "completed"
+        }
+      ],
+      "p95Ms": 1029.1351250000007
+    }
+  ]
+}

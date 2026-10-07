@@ -19,7 +19,7 @@ export function App(){
  const result=canUseCurrentMarks(state)?state.currentAnalysis:null,artifacts=result?.artifacts;
  const highlight=artifacts?.lowered?.sourceMap[state.selectedNodeId??''];
  return <main>
-  <header><div className="brand"><span className="brand-mark">F</span><div><h1>FlowGuard</h1><p>Follow the code. Understand the flow.</p></div></div><span className="phase">Phase 3 · Analyze and run</span></header>
+  <header><div className="brand"><span className="brand-mark">F</span><div><h1>FlowGuard</h1><p>Follow the code. Understand the flow.</p></div></div><span className="phase">Analyze · Inspect · Run</span></header>
   <section className="notice"><strong>Analyze, inspect, then run</strong><span>Analyze finds possible explicit flows and verifies bytecode. Run uses your supplied inputs. SQL and shell effects are simulated.</span></section>
   <p className="desktop-guidance">Use a desktop viewport for the full workspace. Your source can still be edited and saved here.</p>
   <nav aria-label="Workspace panels">{(['workspace','examples','help'] as const).map(panel=><button key={panel} aria-pressed={state.panel===panel} onClick={()=>dispatch({type:'SET_PANEL',panel})}>{panel[0]!.toUpperCase()+panel.slice(1)}</button>)}</nav>
@@ -27,7 +27,7 @@ export function App(){
    <Toolbar fileLoading={fileLoading} filename={state.filename} dirty={state.dirty} revision={state.revision} onLoad={file=>{void loadFile(file);}} onSave={()=>save()} analyzeEnabled={canAnalyze(state,true)} runEnabled={canRun(state,true)} onAnalyze={()=>{void analyze();}} onRun={run}/>
    {state.activeAnalysisId&&<button onClick={cancel}>Cancel analysis</button>}
    {state.activeExecutionId&&<button onClick={stop}>Stop execution</button>}
-   {(state.progress||result)&&<div role="status" aria-live="polite">{state.progress?`Stage: ${state.progress.stage}`:`Analysis: ${result!.status}`}</div>}
+   {(state.progress||result)&&<div role="status" aria-live="polite" data-analysis-request-id={result?.requestId}>{state.progress?`Stage: ${state.progress.stage}`:`Analysis: ${result!.status}`}</div>}
    <div className="workspace"><section className="editor-panel"><h2>Source</h2><SourceEditor diagnostics={result?.diagnostics??[]} highlight={highlight} source={state.source} onChange={source=>dispatch({type:'EDIT_SOURCE',source})}/><p className="muted">Exact source stays in memory. Save source to download it.</p></section>
     <section className="graph-panel">{artifacts?.lowered?<GraphPanel program={artifacts.lowered} positions={state.positions} status={state.graphLayoutStatus} selected={state.selectedNodeId} onSelect={id=>dispatch({type:'SELECT_NODE',id})} partial={result?.status!=='completed'}/>:<><h2>Control flow</h2><div className="empty"><span className="diagram-icon">◇</span><h3>No graph yet</h3><p>Load an example or write source, then select Analyze.</p></div></>}</section>
     <section className="inspector-panel">{artifacts?<InspectorPanel artifacts={artifacts} nodeId={state.selectedNodeId} replay={state.replayMode==='final'?null:state.replayIndex} trace={artifacts.replay} taint={artifacts.taint}/>:<><h2>Inspection</h2><div className="empty"><h3>No analysis results</h3><p>Analyze to inspect compiler artifacts and possible flows.</p></div></>}{artifacts?.findings&&artifacts.semantic&&<FindingsPanel findings={artifacts.findings} semantic={artifacts.semantic} explanations={artifacts.explanations??[]} selected={state.selectedFindingId} onSelect={finding=>dispatch({type:'SELECT_FINDING',id:finding.id})}/>}</section></div>
@@ -40,6 +40,6 @@ export function App(){
   {state.panel==='examples'&&<ExamplesPanel onLoad={(source,filename)=>{replace(source,filename);dispatch({type:'SET_PANEL',panel:'workspace'});}}/>}
   {state.panel==='help'&&<HelpPanel/>}
   {state.pendingReplacement&&<ReplaceSourceDialog filename={state.pendingReplacement.filename} onSave={()=>save(true)} onDiscard={()=>dispatch({type:'CONFIRM_DISCARD_REPLACE'})} onCancel={()=>dispatch({type:'CANCEL_REPLACEMENT'})}/>}
-  <StatusBar source={state.source} notice={fileLoading?'Reading source file…':state.adapterNotice}/>
+  <StatusBar status={state.analysisStatus} source={state.source} notice={fileLoading?'Reading source file…':state.adapterNotice}/>
  </main>;
 }

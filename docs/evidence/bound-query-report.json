@@ -1,0 +1,1668 @@
+{
+  "schemaVersion": 1,
+  "analysis": {
+    "type": "analysis-result",
+    "schemaVersion": 1,
+    "requestId": "bound-query",
+    "snapshot": {
+      "snapshotId": "snapshot-0-96ec36aa315bda7baedb8e86b4bc7750979f5392f7a2bb44dae1e2bc8da38213",
+      "revision": 0,
+      "filename": "bound-query.fg",
+      "source": "let name: string = input(\"Name\");\nsql_bind(\"SELECT * FROM users WHERE name = ?\", name);\n",
+      "sha256": "96ec36aa315bda7baedb8e86b4bc7750979f5392f7a2bb44dae1e2bc8da38213"
+    },
+    "analyzerVersion": "0.1.0",
+    "languageVersion": 1,
+    "status": "completed",
+    "completedStages": [
+      "validate",
+      "lex",
+      "parse",
+      "semantic",
+      "lower",
+      "taint",
+      "findings",
+      "codegen",
+      "verify"
+    ],
+    "diagnostics": [],
+    "artifacts": {
+      "tokens": [
+        {
+          "id": "tok-0",
+          "kind": "LET",
+          "span": {
+            "start": 0,
+            "end": 3,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 1,
+            "endColumn": 4
+          },
+          "lexeme": "let"
+        },
+        {
+          "id": "tok-1",
+          "kind": "IDENTIFIER",
+          "span": {
+            "start": 4,
+            "end": 8,
+            "startLine": 1,
+            "startColumn": 5,
+            "endLine": 1,
+            "endColumn": 9
+          },
+          "lexeme": "name"
+        },
+        {
+          "id": "tok-2",
+          "kind": "COLON",
+          "span": {
+            "start": 8,
+            "end": 9,
+            "startLine": 1,
+            "startColumn": 9,
+            "endLine": 1,
+            "endColumn": 10
+          },
+          "lexeme": ":"
+        },
+        {
+          "id": "tok-3",
+          "kind": "TYPE_STRING",
+          "span": {
+            "start": 10,
+            "end": 16,
+            "startLine": 1,
+            "startColumn": 11,
+            "endLine": 1,
+            "endColumn": 17
+          },
+          "lexeme": "string"
+        },
+        {
+          "id": "tok-4",
+          "kind": "ASSIGN",
+          "span": {
+            "start": 17,
+            "end": 18,
+            "startLine": 1,
+            "startColumn": 18,
+            "endLine": 1,
+            "endColumn": 19
+          },
+          "lexeme": "="
+        },
+        {
+          "id": "tok-5",
+          "kind": "INPUT",
+          "span": {
+            "start": 19,
+            "end": 24,
+            "startLine": 1,
+            "startColumn": 20,
+            "endLine": 1,
+            "endColumn": 25
+          },
+          "lexeme": "input"
+        },
+        {
+          "id": "tok-6",
+          "kind": "LPAREN",
+          "span": {
+            "start": 24,
+            "end": 25,
+            "startLine": 1,
+            "startColumn": 25,
+            "endLine": 1,
+            "endColumn": 26
+          },
+          "lexeme": "("
+        },
+        {
+          "id": "tok-7",
+          "kind": "STRING",
+          "span": {
+            "start": 25,
+            "end": 31,
+            "startLine": 1,
+            "startColumn": 26,
+            "endLine": 1,
+            "endColumn": 32
+          },
+          "lexeme": "\"Name\"",
+          "literal": {
+            "type": "string",
+            "value": "Name"
+          }
+        },
+        {
+          "id": "tok-8",
+          "kind": "RPAREN",
+          "span": {
+            "start": 31,
+            "end": 32,
+            "startLine": 1,
+            "startColumn": 32,
+            "endLine": 1,
+            "endColumn": 33
+          },
+          "lexeme": ")"
+        },
+        {
+          "id": "tok-9",
+          "kind": "SEMICOLON",
+          "span": {
+            "start": 32,
+            "end": 33,
+            "startLine": 1,
+            "startColumn": 33,
+            "endLine": 1,
+            "endColumn": 34
+          },
+          "lexeme": ";"
+        },
+        {
+          "id": "tok-10",
+          "kind": "SQL_BIND",
+          "span": {
+            "start": 34,
+            "end": 42,
+            "startLine": 2,
+            "startColumn": 1,
+            "endLine": 2,
+            "endColumn": 9
+          },
+          "lexeme": "sql_bind"
+        },
+        {
+          "id": "tok-11",
+          "kind": "LPAREN",
+          "span": {
+            "start": 42,
+            "end": 43,
+            "startLine": 2,
+            "startColumn": 9,
+            "endLine": 2,
+            "endColumn": 10
+          },
+          "lexeme": "("
+        },
+        {
+          "id": "tok-12",
+          "kind": "STRING",
+          "span": {
+            "start": 43,
+            "end": 79,
+            "startLine": 2,
+            "startColumn": 10,
+            "endLine": 2,
+            "endColumn": 46
+          },
+          "lexeme": "\"SELECT * FROM users WHERE name = ?\"",
+          "literal": {
+            "type": "string",
+            "value": "SELECT * FROM users WHERE name = ?"
+          }
+        },
+        {
+          "id": "tok-13",
+          "kind": "COMMA",
+          "span": {
+            "start": 79,
+            "end": 80,
+            "startLine": 2,
+            "startColumn": 46,
+            "endLine": 2,
+            "endColumn": 47
+          },
+          "lexeme": ","
+        },
+        {
+          "id": "tok-14",
+          "kind": "IDENTIFIER",
+          "span": {
+            "start": 81,
+            "end": 85,
+            "startLine": 2,
+            "startColumn": 48,
+            "endLine": 2,
+            "endColumn": 52
+          },
+          "lexeme": "name"
+        },
+        {
+          "id": "tok-15",
+          "kind": "RPAREN",
+          "span": {
+            "start": 85,
+            "end": 86,
+            "startLine": 2,
+            "startColumn": 52,
+            "endLine": 2,
+            "endColumn": 53
+          },
+          "lexeme": ")"
+        },
+        {
+          "id": "tok-16",
+          "kind": "SEMICOLON",
+          "span": {
+            "start": 86,
+            "end": 87,
+            "startLine": 2,
+            "startColumn": 53,
+            "endLine": 2,
+            "endColumn": 54
+          },
+          "lexeme": ";"
+        },
+        {
+          "id": "tok-17",
+          "kind": "EOF",
+          "span": {
+            "start": 88,
+            "end": 88,
+            "startLine": 3,
+            "startColumn": 1,
+            "endLine": 3,
+            "endColumn": 1
+          },
+          "lexeme": ""
+        }
+      ],
+      "ast": {
+        "id": "ast-0",
+        "kind": "Program",
+        "span": {
+          "start": 0,
+          "end": 88,
+          "startLine": 1,
+          "startColumn": 1,
+          "endLine": 3,
+          "endColumn": 1
+        },
+        "statements": [
+          {
+            "id": "ast-1",
+            "kind": "Declaration",
+            "span": {
+              "start": 0,
+              "end": 33,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 34
+            },
+            "name": "name",
+            "nameSpan": {
+              "start": 4,
+              "end": 8,
+              "startLine": 1,
+              "startColumn": 5,
+              "endLine": 1,
+              "endColumn": 9
+            },
+            "type": "string",
+            "initializer": {
+              "id": "ast-2",
+              "kind": "InputCall",
+              "span": {
+                "start": 19,
+                "end": 32,
+                "startLine": 1,
+                "startColumn": 20,
+                "endLine": 1,
+                "endColumn": 33
+              },
+              "prompt": {
+                "id": "ast-3",
+                "kind": "Literal",
+                "span": {
+                  "start": 25,
+                  "end": 31,
+                  "startLine": 1,
+                  "startColumn": 26,
+                  "endLine": 1,
+                  "endColumn": 32
+                },
+                "scalar": {
+                  "type": "string",
+                  "value": "Name"
+                }
+              }
+            }
+          },
+          {
+            "id": "ast-4",
+            "kind": "EffectCall",
+            "span": {
+              "start": 34,
+              "end": 87,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 54
+            },
+            "name": "sql_bind",
+            "args": [
+              {
+                "id": "ast-5",
+                "kind": "Literal",
+                "span": {
+                  "start": 43,
+                  "end": 79,
+                  "startLine": 2,
+                  "startColumn": 10,
+                  "endLine": 2,
+                  "endColumn": 46
+                },
+                "scalar": {
+                  "type": "string",
+                  "value": "SELECT * FROM users WHERE name = ?"
+                }
+              },
+              {
+                "id": "ast-6",
+                "kind": "Variable",
+                "span": {
+                  "start": 81,
+                  "end": 85,
+                  "startLine": 2,
+                  "startColumn": 48,
+                  "endLine": 2,
+                  "endColumn": 52
+                },
+                "name": "name"
+              }
+            ]
+          }
+        ]
+      },
+      "semantic": {
+        "symbols": [
+          {
+            "id": "sym-0",
+            "name": "name",
+            "type": "string",
+            "declarationSpan": {
+              "start": 4,
+              "end": 8,
+              "startLine": 1,
+              "startColumn": 5,
+              "endLine": 1,
+              "endColumn": 9
+            },
+            "scopeId": "scope-0",
+            "slotId": "slot-0",
+            "topLevel": true
+          }
+        ],
+        "scopes": [
+          {
+            "id": "scope-0",
+            "span": {
+              "start": 0,
+              "end": 88,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            },
+            "symbolIds": [
+              "sym-0"
+            ]
+          }
+        ],
+        "expressionTypes": {
+          "ast-3": "string",
+          "ast-2": "string",
+          "ast-5": "string",
+          "ast-6": "string"
+        },
+        "resolvedUses": {
+          "ast-1": "sym-0",
+          "ast-6": "sym-0"
+        },
+        "inputSources": [
+          {
+            "id": "src-0",
+            "astId": "ast-2",
+            "span": {
+              "start": 19,
+              "end": 32,
+              "startLine": 1,
+              "startColumn": 20,
+              "endLine": 1,
+              "endColumn": 33
+            },
+            "label": "input at 1:20"
+          }
+        ],
+        "diagnostics": []
+      },
+      "lowered": {
+        "slots": [
+          {
+            "id": "slot-0",
+            "type": "string",
+            "symbolId": "sym-0",
+            "displayName": "name",
+            "temporary": false
+          },
+          {
+            "id": "slot-1",
+            "type": "string",
+            "displayName": "t1",
+            "temporary": true
+          },
+          {
+            "id": "slot-2",
+            "type": "string",
+            "displayName": "t2",
+            "temporary": true
+          },
+          {
+            "id": "slot-3",
+            "type": "string",
+            "displayName": "t3",
+            "temporary": true
+          }
+        ],
+        "instructions": [
+          {
+            "id": "ir-0",
+            "span": {
+              "start": 25,
+              "end": 31,
+              "startLine": 1,
+              "startColumn": 26,
+              "endLine": 1,
+              "endColumn": 32
+            },
+            "astId": "ast-3",
+            "visibleSymbolIds": [],
+            "op": "const",
+            "dst": "slot-1",
+            "scalar": {
+              "type": "string",
+              "value": "Name"
+            }
+          },
+          {
+            "id": "ir-1",
+            "span": {
+              "start": 19,
+              "end": 32,
+              "startLine": 1,
+              "startColumn": 20,
+              "endLine": 1,
+              "endColumn": 33
+            },
+            "astId": "ast-2",
+            "visibleSymbolIds": [],
+            "op": "input",
+            "dst": "slot-2",
+            "promptSlot": "slot-1",
+            "sourceId": "src-0"
+          },
+          {
+            "id": "ir-2",
+            "span": {
+              "start": 0,
+              "end": 33,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 34
+            },
+            "astId": "ast-1",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "copy",
+            "dst": "slot-0",
+            "src": "slot-2"
+          },
+          {
+            "id": "ir-3",
+            "span": {
+              "start": 43,
+              "end": 79,
+              "startLine": 2,
+              "startColumn": 10,
+              "endLine": 2,
+              "endColumn": 46
+            },
+            "astId": "ast-5",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "const",
+            "dst": "slot-3",
+            "scalar": {
+              "type": "string",
+              "value": "SELECT * FROM users WHERE name = ?"
+            }
+          },
+          {
+            "id": "ir-4",
+            "span": {
+              "start": 34,
+              "end": 87,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 54
+            },
+            "astId": "ast-4",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "effect",
+            "effectName": "sql_bind",
+            "argSlots": [
+              "slot-3",
+              "slot-0"
+            ],
+            "effectAstId": "ast-4"
+          },
+          {
+            "id": "ir-5",
+            "span": {
+              "start": 0,
+              "end": 88,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            },
+            "astId": "ast-0",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "halt"
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-0",
+            "from": "ir-0",
+            "to": "ir-1",
+            "kind": "next"
+          },
+          {
+            "id": "edge-1",
+            "from": "ir-1",
+            "to": "ir-2",
+            "kind": "next"
+          },
+          {
+            "id": "edge-2",
+            "from": "ir-2",
+            "to": "ir-3",
+            "kind": "next"
+          },
+          {
+            "id": "edge-3",
+            "from": "ir-3",
+            "to": "ir-4",
+            "kind": "next"
+          },
+          {
+            "id": "edge-4",
+            "from": "ir-4",
+            "to": "ir-5",
+            "kind": "next"
+          }
+        ],
+        "entryNodeId": "ir-0",
+        "exitNodeId": "ir-5",
+        "sourceMap": {
+          "ir-0": {
+            "start": 25,
+            "end": 31,
+            "startLine": 1,
+            "startColumn": 26,
+            "endLine": 1,
+            "endColumn": 32
+          },
+          "ir-1": {
+            "start": 19,
+            "end": 32,
+            "startLine": 1,
+            "startColumn": 20,
+            "endLine": 1,
+            "endColumn": 33
+          },
+          "ir-2": {
+            "start": 0,
+            "end": 33,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 1,
+            "endColumn": 34
+          },
+          "ir-3": {
+            "start": 43,
+            "end": 79,
+            "startLine": 2,
+            "startColumn": 10,
+            "endLine": 2,
+            "endColumn": 46
+          },
+          "ir-4": {
+            "start": 34,
+            "end": 87,
+            "startLine": 2,
+            "startColumn": 1,
+            "endLine": 2,
+            "endColumn": 54
+          },
+          "ir-5": {
+            "start": 0,
+            "end": 88,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 3,
+            "endColumn": 1
+          }
+        }
+      },
+      "taint": {
+        "states": {
+          "ir-0": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-1": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-2": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-3": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-4": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-5": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": [
+                    "src-0"
+                  ]
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          }
+        },
+        "processedNodeCount": 6,
+        "updateCount": 6,
+        "reachedNodeIds": [
+          "ir-0",
+          "ir-1",
+          "ir-2",
+          "ir-3",
+          "ir-4",
+          "ir-5"
+        ]
+      },
+      "findings": [],
+      "explanations": [],
+      "replay": {
+        "events": [
+          {
+            "index": 0,
+            "nodeId": "ir-0",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 1,
+            "nodeId": "ir-1",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 2,
+            "nodeId": "ir-2",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 3,
+            "nodeId": "ir-3",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 4,
+            "nodeId": "ir-4",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 5,
+            "nodeId": "ir-5",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": [
+                  "src-0"
+                ]
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          }
+        ],
+        "checkpoints": [
+          {
+            "eventIndex": -1,
+            "outputs": {
+              "ir-0": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-1": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-2": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-3": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-4": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-5": {
+                "reachable": false,
+                "entries": []
+              }
+            }
+          }
+        ],
+        "truncated": false,
+        "droppedEventCount": 0
+      },
+      "bytecode": {
+        "version": 1,
+        "snapshotId": "snapshot-0-96ec36aa315bda7baedb8e86b4bc7750979f5392f7a2bb44dae1e2bc8da38213",
+        "sourceSha256": "96ec36aa315bda7baedb8e86b4bc7750979f5392f7a2bb44dae1e2bc8da38213",
+        "slots": [
+          {
+            "id": "slot-0",
+            "type": "string",
+            "symbolId": "sym-0",
+            "displayName": "name",
+            "temporary": false
+          },
+          {
+            "id": "slot-1",
+            "type": "string",
+            "displayName": "t1",
+            "temporary": true
+          },
+          {
+            "id": "slot-2",
+            "type": "string",
+            "displayName": "t2",
+            "temporary": true
+          },
+          {
+            "id": "slot-3",
+            "type": "string",
+            "displayName": "t3",
+            "temporary": true
+          }
+        ],
+        "topLevelSymbolIds": [
+          "sym-0"
+        ],
+        "sourceIds": [
+          "src-0"
+        ],
+        "constants": [
+          {
+            "type": "string",
+            "value": "Name"
+          },
+          {
+            "type": "string",
+            "value": "SELECT * FROM users WHERE name = ?"
+          }
+        ],
+        "instructions": [
+          {
+            "opcode": "PUSH_CONST",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "INPUT",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              2
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              2
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "PUSH_CONST",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              3
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              3
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "SQL_BIND",
+            "operands": []
+          },
+          {
+            "opcode": "HALT",
+            "operands": []
+          }
+        ],
+        "sourceMap": [
+          {
+            "pc": 0,
+            "irNodeId": "ir-0",
+            "astId": "ast-3",
+            "span": {
+              "start": 25,
+              "end": 31,
+              "startLine": 1,
+              "startColumn": 26,
+              "endLine": 1,
+              "endColumn": 32
+            }
+          },
+          {
+            "pc": 1,
+            "irNodeId": "ir-0",
+            "astId": "ast-3",
+            "span": {
+              "start": 25,
+              "end": 31,
+              "startLine": 1,
+              "startColumn": 26,
+              "endLine": 1,
+              "endColumn": 32
+            }
+          },
+          {
+            "pc": 2,
+            "irNodeId": "ir-1",
+            "astId": "ast-2",
+            "span": {
+              "start": 19,
+              "end": 32,
+              "startLine": 1,
+              "startColumn": 20,
+              "endLine": 1,
+              "endColumn": 33
+            }
+          },
+          {
+            "pc": 3,
+            "irNodeId": "ir-1",
+            "astId": "ast-2",
+            "span": {
+              "start": 19,
+              "end": 32,
+              "startLine": 1,
+              "startColumn": 20,
+              "endLine": 1,
+              "endColumn": 33
+            }
+          },
+          {
+            "pc": 4,
+            "irNodeId": "ir-1",
+            "astId": "ast-2",
+            "span": {
+              "start": 19,
+              "end": 32,
+              "startLine": 1,
+              "startColumn": 20,
+              "endLine": 1,
+              "endColumn": 33
+            }
+          },
+          {
+            "pc": 5,
+            "irNodeId": "ir-2",
+            "astId": "ast-1",
+            "span": {
+              "start": 0,
+              "end": 33,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 34
+            }
+          },
+          {
+            "pc": 6,
+            "irNodeId": "ir-2",
+            "astId": "ast-1",
+            "span": {
+              "start": 0,
+              "end": 33,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 34
+            }
+          },
+          {
+            "pc": 7,
+            "irNodeId": "ir-3",
+            "astId": "ast-5",
+            "span": {
+              "start": 43,
+              "end": 79,
+              "startLine": 2,
+              "startColumn": 10,
+              "endLine": 2,
+              "endColumn": 46
+            }
+          },
+          {
+            "pc": 8,
+            "irNodeId": "ir-3",
+            "astId": "ast-5",
+            "span": {
+              "start": 43,
+              "end": 79,
+              "startLine": 2,
+              "startColumn": 10,
+              "endLine": 2,
+              "endColumn": 46
+            }
+          },
+          {
+            "pc": 9,
+            "irNodeId": "ir-4",
+            "astId": "ast-4",
+            "span": {
+              "start": 34,
+              "end": 87,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 54
+            }
+          },
+          {
+            "pc": 10,
+            "irNodeId": "ir-4",
+            "astId": "ast-4",
+            "span": {
+              "start": 34,
+              "end": 87,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 54
+            }
+          },
+          {
+            "pc": 11,
+            "irNodeId": "ir-4",
+            "astId": "ast-4",
+            "span": {
+              "start": 34,
+              "end": 87,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 54
+            }
+          },
+          {
+            "pc": 12,
+            "irNodeId": "ir-5",
+            "astId": "ast-0",
+            "span": {
+              "start": 0,
+              "end": 88,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            }
+          }
+        ],
+        "maxVerifiedStack": 2
+      },
+      "disassembly": [
+        "00000  PUSH_CONST 0  ; ir-0 1:26",
+        "00001  STORE 1  ; ir-0 1:26",
+        "00002  LOAD 1  ; ir-1 1:20",
+        "00003  INPUT 0  ; ir-1 1:20",
+        "00004  STORE 2  ; ir-1 1:20",
+        "00005  LOAD 2  ; ir-2 1:1",
+        "00006  STORE 0  ; ir-2 1:1",
+        "00007  PUSH_CONST 1  ; ir-3 2:10",
+        "00008  STORE 3  ; ir-3 2:10",
+        "00009  LOAD 3  ; ir-4 2:1",
+        "00010  LOAD 0  ; ir-4 2:1",
+        "00011  SQL_BIND  ; ir-4 2:1",
+        "00012  HALT  ; ir-5 1:1"
+      ]
+    },
+    "limits": {
+      "maxSourceBytes": 262144,
+      "maxNesting": 128,
+      "maxTokens": 65536,
+      "maxAstNodes": 20000,
+      "maxSlots": 4000,
+      "maxCfgNodes": 2000,
+      "maxInputSources": 256,
+      "maxBytecodeInstructions": 50000,
+      "maxSolverVisits": 200000,
+      "maxVerifierVisits": 200000,
+      "maxStateCells": 4000000,
+      "maxSourceMemberships": 2000000,
+      "analysisDeadlineMs": 10000,
+      "maxReplayEvents": 10000,
+      "replayCheckpointInterval": 100,
+      "maxReplayBytes": 8388608,
+      "maxProvenanceFacts": 20000,
+      "maxExplanationFacts": 200,
+      "maxReportBytes": 16777216,
+      "maxInteractiveGraphNodes": 200,
+      "maxVmInstructions": 100000,
+      "executionDeadlineMs": 1000,
+      "maxVmStack": 1024,
+      "maxStringBytes": 65536,
+      "maxVmStorageBytes": 4194304,
+      "maxVmEvents": 1000,
+      "maxVmOutputBytes": 1048576,
+      "maxInputItems": 1000,
+      "maxInputBytes": 1048576
+    },
+    "statistics": {
+      "sourceUtf8Bytes": 88,
+      "tokenCount": 18,
+      "astCount": 7,
+      "slotCount": 4,
+      "cfgNodeCount": 6,
+      "inputSourceCount": 1,
+      "processedNodeCount": 6,
+      "updateCount": 6,
+      "bytecodeCount": 13,
+      "stageDurationsMs": {
+        "validate": 0.00333299999999781,
+        "lex": 0.023041000000006306,
+        "parse": 0.03412500000001728,
+        "semantic": 0.019875000000013188,
+        "lower": 0.04779200000001538,
+        "taint": 0.2762920000000122,
+        "findings": 0.007082999999994399,
+        "codegen": 0.15874999999999773,
+        "verify": 0.1495830000000069
+      },
+      "totalDurationMs": 0.7464590000000157
+    },
+    "limitations": [
+      "Structural paths are overapproximated; a finding does not prove a feasible attack.",
+      "Explicit data flow only; implicit control flow is not tracked.",
+      "SQL and shell sinks are educational models."
+    ]
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "requestId": "run-bound-query",
+    "snapshotId": "snapshot-0-96ec36aa315bda7baedb8e86b4bc7750979f5392f7a2bb44dae1e2bc8da38213",
+    "revision": 0,
+    "status": "completed",
+    "diagnostics": [],
+    "events": [
+      {
+        "index": 0,
+        "span": {
+          "start": 19,
+          "end": 32,
+          "startLine": 1,
+          "startColumn": 20,
+          "endLine": 1,
+          "endColumn": 33
+        },
+        "pc": 3,
+        "kind": "input",
+        "sourceId": "src-0",
+        "prompt": "Name",
+        "value": "Ada"
+      },
+      {
+        "index": 1,
+        "span": {
+          "start": 34,
+          "end": 87,
+          "startLine": 2,
+          "startColumn": 1,
+          "endLine": 2,
+          "endColumn": 54
+        },
+        "pc": 11,
+        "kind": "sql-bind",
+        "template": "SELECT * FROM users WHERE name = ?",
+        "value": {
+          "type": "string",
+          "value": "Ada"
+        },
+        "simulated": true
+      }
+    ],
+    "consumedInputCount": 1,
+    "instructionCount": 13,
+    "elapsedMs": 0.31862499999999727,
+    "finalTopLevelValues": [
+      {
+        "symbolId": "sym-0",
+        "name": "name",
+        "value": {
+          "type": "string",
+          "value": "Ada"
+        }
+      }
+    ],
+    "limits": {
+      "maxSourceBytes": 262144,
+      "maxNesting": 128,
+      "maxTokens": 65536,
+      "maxAstNodes": 20000,
+      "maxSlots": 4000,
+      "maxCfgNodes": 2000,
+      "maxInputSources": 256,
+      "maxBytecodeInstructions": 50000,
+      "maxSolverVisits": 200000,
+      "maxVerifierVisits": 200000,
+      "maxStateCells": 4000000,
+      "maxSourceMemberships": 2000000,
+      "analysisDeadlineMs": 10000,
+      "maxReplayEvents": 10000,
+      "replayCheckpointInterval": 100,
+      "maxReplayBytes": 8388608,
+      "maxProvenanceFacts": 20000,
+      "maxExplanationFacts": 200,
+      "maxReportBytes": 16777216,
+      "maxInteractiveGraphNodes": 200,
+      "maxVmInstructions": 100000,
+      "executionDeadlineMs": 1000,
+      "maxVmStack": 1024,
+      "maxStringBytes": 65536,
+      "maxVmStorageBytes": 4194304,
+      "maxVmEvents": 1000,
+      "maxVmOutputBytes": 1048576,
+      "maxInputItems": 1000,
+      "maxInputBytes": 1048576
+    }
+  }
+}

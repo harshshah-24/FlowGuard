@@ -8,7 +8,7 @@ Files use `.fg` and UTF-8. A leading BOM is ignored by the lexer but retained in
 
 Reserved words: `let string int bool if else while true false input print sql_query sql_bind shell`. Comments are `//` through the line ending or nonnested `/* ... */`. Unterminated block comments are errors. Whitespace is ASCII space, tab, CR/LF, vertical tab, or form feed.
 
-Strings use double quotes. Supported escapes are `\"`, `\\`, `\n`, `\r`, and `\t`. Unknown escapes and raw line breaks are errors. Integers are decimal literals from 0 through 2147483647; use `-2147483647 - 1` for the minimum signed integer. Runtime overflow/division rules are specified below but execution is not implemented in Phase 1.
+Strings use double quotes. Supported escapes are `\"`, `\\`, `\n`, `\r`, and `\t`. Unknown escapes and raw line breaks are errors. Integers are decimal literals from 0 through 2147483647; use `-2147483647 - 1` for the minimum signed integer. Runtime overflow/division rules are specified below in the bounded VM.
 
 ## Grammar
 
@@ -39,7 +39,7 @@ Binary operators associate left; unary operators associate right. Fixed effect a
 
 ## Scope and exact types
 
-Declarations require initializers. Resolve the initializer before bringing its declaration into scope. Referencing an undeclared name, a duplicate declaration in the same scope, or shadowing any visible name is an error. Sibling blocks may reuse a name with separate symbol/slot IDs. Block declarations cannot be used outside the block. While-body declarations are initialized on each runtime iteration under the planned VM behavior.
+Declarations require initializers. Resolve the initializer before bringing its declaration into scope. Referencing an undeclared name, a duplicate declaration in the same scope, or shadowing any visible name is an error. Sibling blocks may reuse a name with separate symbol/slot IDs. Block declarations cannot be used outside the block. While-body declarations are initialized on each runtime iteration on each VM execution.
 
 Assignment requires an existing visible name and an exactly matching scalar type. Conditions and `&&`, `||`, `!` require bool. Unary `-`, arithmetic other than `+`, and relational comparisons require int. `+` accepts int/int or string/string. Equality compares matching scalar types. There are no coercions. `1 < 2 < 3` is parsed left-associatively, then rejected because the second comparison receives a bool.
 

@@ -1,51 +1,20 @@
-# Phase 4 Coding-Agent Handoff
+# Phase 4 continuation handoff
 
-**Updated:** 7 October 2026. The user requested publishing Phases 2/3 so their teammate can continue Phase 4 with a coding agent. Phase 4 continuation is authorized for that teammate; it has not been executed in this publication task.
+**Updated:** 8 October 2026. Harsh approved Phase 4 and Markdown report format. Its technical work is prepared locally on `codex/flowguard-build`, based on canonical publication `3a7678c`. Harsh approved commit/merge/push on 8 October; publication is in progress.
 
-## Starting point
+Read [status](status_update.md), [context handoff](context_handoff.md), [PRD](flowguard_prd.md), [master plan](implementation_plan.md), [acceptance](../docs/acceptance.md), [evaluation](../docs/evaluation.md), [testing](../docs/testing.md), [assignment report](../docs/assignment_report.md) and [demo script](../docs/demo_script.md).
 
-Use the sole canonical repository [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard), branch `main`. Phases 2/3 were published as implementation commit `9b3e96c`; Phases 0–3 are functionally complete. The shared TypeScript core, browser workers and CLI perform real analysis, verified bytecode execution and simulated effects. Required `topLevelSymbolIds` metadata was explicitly approved and is implemented. No mock completion or missing final-value feature remains.
+## Prepared work
 
-Read in order:
+The real compiler/solver/verifier/VM remains intact. Phase 4 adds accurate visible status/cancellation, release browser checks, fixed independent labels, reproducible evidence scripts, actual benchmark runs, sample reports and visually inspected synthetic screenshots. Dependencies, contracts, hard caps and performance targets are unchanged. CI adds deterministic evaluation, never machine-sensitive timing.
 
-1. [Context handoff](context_handoff.md) and [status](status_update.md).
-2. [PRD v0.3](flowguard_prd.md) and [master plan v1.3](implementation_plan.md), especially sections 14–18.
-3. [Phase 4 tasks and exit gate](phases/phase_4_release_validation.md).
-4. [Architecture](../docs/architecture.md), [language](../docs/language.md) and [executed testing evidence](../docs/testing.md).
+`npm ci`, `npm run check`, `npm run evaluate`, and the production preview/benchmark reproduce the technical evidence. Use exact Node26.5.0/npm11.17.0. Stop any manual preview before browser tests. To benchmark: `npm run build`, start `npm run preview` on4173, then `npm run benchmark` without competing heavy checks. To recapture screenshots: `npm run build:scripts` then `node .vite/scripts/capture-demo.js` against that preview. Evidence uses synthetic inputs only.
 
-## Establish your own baseline
+## Remaining work
 
-Update a clean checkout without overwriting local work:
+- Harsh approved committing/merging/pushing Phase 4; publish it to the sole canonical repository https://github.com/harshshah-24/FlowGuard. Fetch current main and preserve teammate history; never force-push.
+- Verify GitHub Actions on the new actual Phase 4 commit. Existing run37660826256 passed for implementation9b3e96c; it is prior remote evidence.
+- Harsh and Jyot each run the demo and explain the other person's modules. Record their confirmation without inventing human rehearsal.
+- Submit according to faculty instructions. Markdown is approved; exact submission time and required demo computer remain unknown. No PDF conversion, deployment or submission has been performed.
 
-```sh
-git switch main
-git pull --ff-only origin main
-```
-
-Provide Node **26.5.0** and npm **11.17.0** using the project's `.nvmrc` and `packageManager`; the previous Windows TEMP toolchain is machine-specific. Then:
-
-```sh
-npm ci
-npx playwright install chromium
-npm run check
-npm run dev
-```
-
-On Linux, Playwright may require `npx playwright install --with-deps chromium`. The workspace serves at loopback 5173. Production tests use 4173; the separate static harness uses 4174 and is absent from the release build.
-
-Prior local full check: **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration tests**, typechecks and builds, on Windows. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu. Verify current CI and rerun on the teammate's actual machine; prior timings are not performance benchmarks.
-
-## Work still required in Phase 4
-
-- Map every PRD AC-01–17 to explicit test/demo/evidence and close the remaining browser/accessibility/race/offline/limit coverage required by the plan.
-- Create the planned `scripts/evaluate.ts`, `scripts/benchmark.ts` and `tsconfig.scripts.json`; they do not exist yet. Use independently labeled fixtures/counting units, report precision/recall/confusion counts where applicable, and count invalid/incomplete outcomes separately.
-- Benchmark the exact approved workloads, seeds/checksums, warm-up/repeats and p95 method. Record actual hardware/OS/Node/npm/browser versions; separate engine, layout, selection and cancellation timings. Investigate the existing large-main-chunk warning without silently altering targets, dependencies or language scope.
-- Verify fresh installation, local startup, CLI help/analyze/run and self-hosted worker/editor assets. SQL/shell effects must remain simulated and drafts memory-only.
-- Finish evaluation/bytecode/release documentation, real sample reports, verified screenshots, assignment report and demo script. Rehearse unsafe query → source-linked finding → binding correction → reanalysis → explicit simulated Run.
-- Update status/handoff/decision/testing records with measured evidence. Do not label planned work as executed. If a required target cannot be met, seek an explicit adjustment rather than changing fixtures or limits.
-
-Submission deadline is 8 October 2026; exact time, faculty template, teammate identities and demo hardware remain unspecified. Do not invent them or convert the report to an assumed faculty format. Preserve canonical history and the no-project-license decision. Publication of subsequent Phase 4 changes needs the applicable authorization; this handoff does not authorize deployment or package publication.
-
-## Suggested initial prompt
-
-> Continue Phase 4 of FlowGuard from the latest canonical main. Read context/phase_4_agent_handoff.md, context/context_handoff.md, context/implementation_plan.md and context/phases/phase_4_release_validation.md first. Phases 0–3 are complete and Phase 4 continuation is authorized. Verify the current checkout and CI, establish a fresh local test baseline, then carry out Phase 4 validation, independent evaluation, actual-machine benchmarks, documentation and demo/submission preparation. Preserve the approved scope, dependency pins and fixed budgets, and record only evidence actually measured. Ask about unresolved contract/target changes or missing faculty requirements; do not push or deploy further work without the applicable authorization.
+Do not restart completed phases, relabel false alarms to inflate accuracy, change budgets to pass timing, add a project license, persist/upload drafts or enable real SQL/shell effects. If a future substantive requirement/contract/target change is needed, ask Harsh and synchronize PRD/plan/state first.

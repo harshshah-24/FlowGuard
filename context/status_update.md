@@ -1,34 +1,33 @@
 # Status Update
 
-**Updated:** 2026-10-07
+**Updated:** 8 October 2026. **Branch:** `codex/flowguard-build`.
 
-## Completed Implementation
+## Completed
 
-- Phases 0–3 are published on canonical main. Phases 2/3 implementation commit is `9b3e96c`, fast-forwarded from the Phase 1 publication record `f4c0aa9` without rewriting history.
-- Phase 3 was explicitly authorized and completed locally, including the separately approved topLevelSymbolIds contract amendment.
-- Typed bytecode generation with deduplicated constants, patched jumps, ordered input-source IDs, per-PC source maps and disassembly.
-- Strict bytecode verification: schemas/operands/types, stack joins, bounded greatest-fixed-point definite initialization, and LOAD checks after convergence.
-- Full Analyze now completes through codegen/verify and only then publishes findings, bytecode and disassembly. Failures retain safe partial static artifacts.
-- Bounded typed VM with BigInt-backed int32 checks, short circuit, encounter-order inputs, typed simulated effects, HALT completion and all fixed instruction/time/string/storage/event/output/input caps.
-- Separate execution worker/client, 1250 ms watchdog, fresh workers, stale/duplicate rejection, Stop/retry and cancellation on source/input edits.
-- Browser Analyze/Run controls, bytecode/source/graph selection, JSON input validation, paginated runtime events, matching-snapshot reports and keyboard Analyze.
-- CLI --run/--inputs, runtime failure exit precedence, static-plus-failed-runtime reports and shared-memory SIGINT cancellation while the main thread remains responsive.
+Phases 0–3 are published on canonical main: implementation `9b3e96c`, publication record `3a7678c`. Harsh approved Phase 4 in this chat. Its technical work is prepared locally, with commit/merge/push now explicitly authorized by Harsh. Publication is in progress.
 
-## Validation
+- Real full compiler/taint/codegen/verifier and bounded simulated VM remain implemented, with the approved top-level scope metadata.
+- Fixed obsolete footer wording and added visible analysis cancellation/stale guidance. Removed the historical phase label from the workspace header.
+- Added fixed-label evaluation and fixed-seed benchmark scripts with raw runs, workload/source hashes, exact machine/versions and unchanged targets.
+- Added production checks for cancellation/retry/edit races, keyboard inspection, reduced motion, >200-node fallback, stale Markdown exports/no persistence, and actual replay-byte truncation with usable final states.
+- Prepared Markdown assignment report, bytecode reference, demo script, AC-01–17 mapping, actual sample JSON/Markdown reports and visually inspected synthetic production screenshots.
+- Added deterministic evaluation to local check and GitHub Actions. No benchmark timing gate was added to CI; no dependencies or hard limits changed.
 
-- Typechecks and core/CLI/production web builds passed using exact Node 26.5.0/npm 11.17.0 from the existing temporary toolchain.
-- 260 unit/CLI tests passed, including independent expectations for all nine catalog runtime examples.
-- Eleven production Chromium checks and four existing isolated static-integration checks passed.
-- Production browser verification found and fixed a graph selection feedback loop. Synthetic binding/run screenshot was visually inspected.
-- Dependency pins and lockfile remain unchanged. See [testing notes](../docs/testing.md).
-- Phases 2/3 publication is complete. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu. No release evaluation or benchmark claim is made.
+## Actual evidence
 
-## Completed Phase 3 Gate
+Fresh `npm ci --no-audit --no-fund` succeeded on this Mac with Node26.5.0/npm11.17.0. Typechecks, 260 unit/CLI tests and production builds passed. Final `npm run check` completed successfully on 8 October: fifteen production Chromium tests, four isolated static-integration tests and deterministic evaluation passed. Full results are recorded in [testing](../docs/testing.md).
 
-The user approved topLevelSymbolIds with "go ahead". The schema/codegen/verifier now carries unique, ordered user-symbol references from final HALT visibility. VM projection returns initialized top-level values on successful and core-reported failed/cancelled runs, excluding locals, temporaries and unreached declarations. Unverified bytecode exposes no values. Core, CLI and real-worker browser tests pass. Master plan v1.3 and affected phase/contracts are synchronized.
+Evaluation: TP6/FP2/FN0/TN4, precision75%, recall100%, invalid8/incomplete0, zero expectation/attribution mismatches. The two infeasible structural false alarms are included and separately documented. This is a small educational fixture set.
 
-The full npm run check passed, completing the Phase 3 functional gate. Phase 4 remains unstarted and is authorized for the teammate.
+Measured p95: engine938.8ms; 200-node graph readiness1282.5ms; layout/render82.5ms; selection34.9ms; analysis cancellation3.2ms; VM cancellation12.5ms. All approved targets passed on the recorded Apple A18 Pro Mac. Raw evidence identifies local changes based on3a7678c and includes source hashes; it does not pretend those changes are already published.
 
-## Risks and Next Step
+Current dependency audit reported zero vulnerabilities. Synthetic screenshots were inspected. The Vite main-chunk warning persists (~3.50MB/~0.925MB gzip); the specified steady-state performance targets passed. No cold-load performance target or universal machine guarantee is claimed.
 
-The teammate can pull canonical main and continue Phase 4 via the [agent handoff](phase_4_agent_handoff.md). Publication of later Phase 4 changes needs applicable authorization. Vite's existing large-main-chunk warning persists (~3.50 MB uncompressed/~0.92 MB gzip); performance evaluation remains a later gate. Submission time, template, teammate identities and demo hardware are unspecified.
+## Remaining gates and immediate next steps
+
+1. Publish the approved Phase 4 changes to canonical main without rewriting history.
+2. After publication, verify the new real commit's GitHub Actions result. Prior implementation CI run37660826256 passed for9b3e96c; it is not Phase 4 remote CI.
+3. Harsh and Jyot each rehearse [the demo](../docs/demo_script.md) and confirm understanding of both compiler/solver and verifier/VM. Automated demo evidence does not establish human rehearsal.
+4. Submit the working project/source/documentation according to faculty instructions. Harsh confirmed Markdown; exact submission time and required demo computer are unknown. No submission or deployment was performed.
+
+See [handoff](context_handoff.md), [evaluation](../docs/evaluation.md), [acceptance](../docs/acceptance.md) and [report](../docs/assignment_report.md). Phase 4's release/submission exit gate remains open for these human/publication actions; technical preparation is not mislabeled as faculty submission.

@@ -104,7 +104,7 @@ Create `examples/catalog.json` and `.fg` files named `unsafe-query`, `bound-quer
 
 Create `fixtures/manifest.json`, separate valid/invalid fixture `.fg` files, and runtime input JSON files. Manifest stores independently derived expected diagnostic codes, sink spans/rules/source IDs, and runtime events/outcomes; it is not auto-generated from analyzer output.
 
-Create `scripts/evaluate.ts`, `scripts/benchmark.ts` and root `tsconfig.scripts.json`. Compiled scripts write user-requested evidence under `docs/evidence/`; temporary measurements stay under ignored `test-results/` until reviewed. Include fixture IDs, versions, raw runs, hardware, and limits. No invented screenshots/results are committed.
+Create `scripts/evaluate.ts`, `scripts/benchmark.ts` and root `tsconfig.scripts.json`. Phase 4 shares exact-source hashing, machine/source provenance and sample-report generation in `scripts/evidence.ts`; fixed-seed workloads and nearest-rank p95 are in `scripts/workloads.ts`. `scripts/capture-demo.ts` captures actual synthetic production screenshots with external origins blocked; it is an evidence utility, never a release entry. Compiled scripts write user-requested evidence under `docs/evidence/`; temporary measurements stay under ignored `test-results/` until reviewed. Include fixture IDs, versions, raw runs, hardware, and limits. No invented screenshots/results are committed.
 
 ## 4. Exact Data and Public Interfaces
 
@@ -343,7 +343,7 @@ Define root scripts:
 - `flowguard`: node built CLI entry (README says build first).
 - `test:e2e`: Playwright against preview production build.
 - `evaluate`: compile scripts and run labeled fixtures; `benchmark`: compile scripts and run timing workloads.
-- `check`: typecheck → test → build → test:e2e. No benchmark timings as pass/fail on CI.
+- `check`: typecheck → test → build → test:e2e → test:phase2 → evaluate. Evaluation is a deterministic correctness check; benchmark timings are not pass/fail on CI. `build:scripts` compiles the approved evidence scripts into ignored `.vite/scripts`.
 
 Vite target supports BigInt/Web Workers on Chromium-based desktop browsers; official support is Playwright-bundled Chromium and current Chrome on macOS/Ubuntu. Safari/Firefox are outside release-1 acceptance and not promised. Bundle worker/core/Monaco assets under `apps/web/dist`; base URL is relative `./`. No service worker or CDN. Core/CLI outputs use `dist/` and declaration maps; no source credentials embedded.
 
@@ -355,7 +355,7 @@ Create CI triggered by push and pull_request for all branches, permission conten
 - setup-node v6.4.0: `48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e`.
 - upload-artifact v6.0.0: `b7c566a772e6b6bfb58ed0dc250532a479d7789f`.
 
-Use Node `.nvmrc`, explicitly ensure npm 11.17.0, npm cache using root lockfile, `npm ci`, `npm run typecheck`, `npm run test`, `npm run build`, `npx playwright install --with-deps chromium`, `npm run test:e2e`. Upload failure-only synthetic Playwright traces/report with 7-day retention; no personal source inputs or secrets. Do not include package publication or deployment. CI has not been created/run during planning.
+Use Node `.nvmrc`, explicitly ensure npm 11.17.0, npm cache using root lockfile, `npm ci`, `npm run typecheck`, `npm run test`, `npm run build`, `npx playwright install --with-deps chromium`, `npm run test:e2e`, the isolated `npm run test:phase2` suite and deterministic `npm run evaluate`. Upload failure-only synthetic Playwright traces/report with 7-day retention; no personal source inputs or secrets. Do not include package publication or deployment. CI has not been created/run during planning.
 
 Playwright webServer starts production preview on loopback 4173, reuseExistingServer false, Chromium only, 1280×800 viewport; screenshots/videos disabled except failure evidence. Root CI installs dependencies; local README explains one-time browser install.
 

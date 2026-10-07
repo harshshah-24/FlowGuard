@@ -1,0 +1,36 @@
+{
+  "verifiedAt": "2026-10-07T18:37:04.599403+00:00",
+  "baseCommit": "3a7678cefa4121174aac271785974bc5f1003567",
+  "phase4Published": false,
+  "commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0,
+      "unitCliTests": 260,
+      "unitFiles": 22,
+      "productionChromiumTests": 15,
+      "isolatedChromiumTests": 4,
+      "evaluationExpectationMismatches": 0
+    },
+    {
+      "command": "npm run benchmark",
+      "exitCode": 0,
+      "targetsChanged": false
+    },
+    {
+      "command": "npm audit --json",
+      "exitCode": 0,
+      "vulnerabilities": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "humanRehearsalsConfirmed": [],
+  "dependencyLockChanged": false
+}

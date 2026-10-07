@@ -42,7 +42,7 @@ CLI parsing has a fixed flag set, duplicate/unknown/missing-value validation, bo
 
 Normal builds include only `index.html`. The `phase2-test` Vite mode additionally builds `test/phase2.html` into ignored `.vite/phase2-dist`. That clearly labeled harness computes real static artifacts and exercises the actual bundled analysis/layout/Monaco workers and presentation components. It is absent from `apps/web/dist`, uses synthetic sources only, and has no release URL flag to enable mocks or raise limits.
 
-Full release evaluation, benchmarks and submission evidence belong to Phase 4. Phase 3 is complete locally, including the approved scope-metadata amendment.
+Phases 0–3 are published. Phase 4 evaluation, benchmark and acceptance evidence are recorded in docs/evaluation.md, docs/testing.md and docs/acceptance.md. Human rehearsal and Phase 4 publication/remote CI remain separate gates.
 
 ## Bytecode and verifier
 
@@ -57,3 +57,7 @@ The VM verifies again before execution. It uses typed scalar slots/stack, encoun
 ExecutionClient creates a fresh bundled execution worker per run, validates request/snapshot/revision identity, ignores stale/duplicate results and terminates on Stop/source/input edit/error. An independent 1250 ms watchdog guards the core's 1000 ms deadline. Runtime failure leaves static findings/bytecode available. Kill/watchdog outcomes have no recoverable worker-local event history. Runtime and bytecode rows paginate at 100; selection links source/graph. Text payloads render as text.
 
 The approved required topLevelSymbolIds field carries final HALT lexical visibility in symbol order. Strict validation rejects missing/duplicate/unordered IDs and references outside user slots. The VM projects only initialized values after execution, including core-reported errors, limits and cancellation; unverified requests expose no values. Block locals, temporaries and unreached declarations are omitted. Core, CLI and real-worker browser tests verify this behavior.
+
+## Release status feedback
+
+The footer reflects the reducer analysis status, including visible cancellation and stale-draft guidance. It does not advertise the obsolete Phase 1 analyzer limitation. The analysis status region exposes its result request identity to correlate repeated browser timing runs; this adds no source persistence, budget control or test-only release mode.

@@ -1,0 +1,3 @@
+let text:string=input("value");
+while(false){text="trusted";}
+shell(text);

@@ -1,0 +1,3 @@
+let text:string="trusted";
+if(false){text=input("never");}
+sql_query(text);

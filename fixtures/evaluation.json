@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "countingUnit": "One sensitive argument-zero plus rule. Labels represent feasible explicit flow in these educational fixtures. Structurally infeasible findings remain false positives in the primary counts. Invalid/incomplete sources are counted separately. Labels fixed before evaluation.",
+  "fixtures": [
+    {
+      "id": "direct",
+      "filename": "fixtures/taint/direct.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 2,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transitive",
+      "filename": "fixtures/taint/transitive.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 5,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merge",
+      "filename": "fixtures/taint/merge.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 3,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0",
+            "src-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overwrite",
+      "filename": "fixtures/taint/overwrite.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 3,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "loop",
+      "filename": "fixtures/taint/loop.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 4,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": false,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ],
+      "structurallyInfeasible": true
+    },
+    {
+      "id": "multiple",
+      "filename": "fixtures/taint/multiple.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 3,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0",
+            "src-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "binding",
+      "filename": "fixtures/taint/binding.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 2,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "binding-template",
+      "filename": "fixtures/taint/binding-template.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [
+        "TEMPLATE_UNVERIFIED"
+      ],
+      "units": [
+        {
+          "line": 2,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "literal",
+      "filename": "fixtures/evaluation/literal.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 1,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": false,
+          "sourceIds": []
+        },
+        {
+          "line": 2,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "infeasible-branch",
+      "filename": "fixtures/evaluation/infeasible-branch.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 3,
+          "rule": "SQL_QUERY_TEXT",
+          "positive": false,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ],
+      "structurallyInfeasible": true
+    },
+    {
+      "id": "print-only",
+      "filename": "fixtures/evaluation/print-only.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": []
+    },
+    {
+      "id": "zero-iteration",
+      "filename": "fixtures/evaluation/zero-iteration.fg",
+      "expectedStatus": "completed",
+      "diagnostics": [],
+      "units": [
+        {
+          "line": 3,
+          "rule": "SHELL_COMMAND_TEXT",
+          "positive": true,
+          "sourceIds": [
+            "src-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invalid-missing-initializer",
+      "filename": "fixtures/invalid/missing-initializer.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "PARSE_EXPECTED"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-shadowing",
+      "filename": "fixtures/invalid/shadowing.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "SEM_SHADOWING"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-unknown-escape",
+      "filename": "fixtures/invalid/unknown-escape.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "LEX_INVALID_ESCAPE"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-integer-range",
+      "filename": "fixtures/invalid/integer-range.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "LEX_INTEGER_RANGE"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-undeclared",
+      "filename": "fixtures/invalid/undeclared.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "SEM_UNDECLARED"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-type-mismatch",
+      "filename": "fixtures/invalid/type-mismatch.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "SEM_TYPE"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-placeholders",
+      "filename": "fixtures/invalid/placeholders.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "SEM_TEMPLATE_PLACEHOLDERS"
+      ],
+      "units": []
+    },
+    {
+      "id": "invalid-arity",
+      "filename": "fixtures/invalid/arity.fg",
+      "expectedStatus": "invalid-source",
+      "diagnostics": [
+        "SEM_ARGUMENTS"
+      ],
+      "units": []
+    }
+  ]
+}

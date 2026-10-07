@@ -1,0 +1,1531 @@
+{
+  "schemaVersion": 1,
+  "analysis": {
+    "type": "analysis-result",
+    "schemaVersion": 1,
+    "requestId": "runtime-error",
+    "snapshot": {
+      "snapshotId": "snapshot-0-0cc299a24ce940ddfbc5ed5dc18c7e1b5bedc8ebe19996f45efc20539fbda3c4",
+      "revision": 0,
+      "filename": "runtime-error.fg",
+      "source": "let n: int = 1 / 0;\nprint(n);\n",
+      "sha256": "0cc299a24ce940ddfbc5ed5dc18c7e1b5bedc8ebe19996f45efc20539fbda3c4"
+    },
+    "analyzerVersion": "0.1.0",
+    "languageVersion": 1,
+    "status": "completed",
+    "completedStages": [
+      "validate",
+      "lex",
+      "parse",
+      "semantic",
+      "lower",
+      "taint",
+      "findings",
+      "codegen",
+      "verify"
+    ],
+    "diagnostics": [],
+    "artifacts": {
+      "tokens": [
+        {
+          "id": "tok-0",
+          "kind": "LET",
+          "span": {
+            "start": 0,
+            "end": 3,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 1,
+            "endColumn": 4
+          },
+          "lexeme": "let"
+        },
+        {
+          "id": "tok-1",
+          "kind": "IDENTIFIER",
+          "span": {
+            "start": 4,
+            "end": 5,
+            "startLine": 1,
+            "startColumn": 5,
+            "endLine": 1,
+            "endColumn": 6
+          },
+          "lexeme": "n"
+        },
+        {
+          "id": "tok-2",
+          "kind": "COLON",
+          "span": {
+            "start": 5,
+            "end": 6,
+            "startLine": 1,
+            "startColumn": 6,
+            "endLine": 1,
+            "endColumn": 7
+          },
+          "lexeme": ":"
+        },
+        {
+          "id": "tok-3",
+          "kind": "TYPE_INT",
+          "span": {
+            "start": 7,
+            "end": 10,
+            "startLine": 1,
+            "startColumn": 8,
+            "endLine": 1,
+            "endColumn": 11
+          },
+          "lexeme": "int"
+        },
+        {
+          "id": "tok-4",
+          "kind": "ASSIGN",
+          "span": {
+            "start": 11,
+            "end": 12,
+            "startLine": 1,
+            "startColumn": 12,
+            "endLine": 1,
+            "endColumn": 13
+          },
+          "lexeme": "="
+        },
+        {
+          "id": "tok-5",
+          "kind": "INTEGER",
+          "span": {
+            "start": 13,
+            "end": 14,
+            "startLine": 1,
+            "startColumn": 14,
+            "endLine": 1,
+            "endColumn": 15
+          },
+          "lexeme": "1",
+          "literal": {
+            "type": "int",
+            "value": 1
+          }
+        },
+        {
+          "id": "tok-6",
+          "kind": "SLASH",
+          "span": {
+            "start": 15,
+            "end": 16,
+            "startLine": 1,
+            "startColumn": 16,
+            "endLine": 1,
+            "endColumn": 17
+          },
+          "lexeme": "/"
+        },
+        {
+          "id": "tok-7",
+          "kind": "INTEGER",
+          "span": {
+            "start": 17,
+            "end": 18,
+            "startLine": 1,
+            "startColumn": 18,
+            "endLine": 1,
+            "endColumn": 19
+          },
+          "lexeme": "0",
+          "literal": {
+            "type": "int",
+            "value": 0
+          }
+        },
+        {
+          "id": "tok-8",
+          "kind": "SEMICOLON",
+          "span": {
+            "start": 18,
+            "end": 19,
+            "startLine": 1,
+            "startColumn": 19,
+            "endLine": 1,
+            "endColumn": 20
+          },
+          "lexeme": ";"
+        },
+        {
+          "id": "tok-9",
+          "kind": "PRINT",
+          "span": {
+            "start": 20,
+            "end": 25,
+            "startLine": 2,
+            "startColumn": 1,
+            "endLine": 2,
+            "endColumn": 6
+          },
+          "lexeme": "print"
+        },
+        {
+          "id": "tok-10",
+          "kind": "LPAREN",
+          "span": {
+            "start": 25,
+            "end": 26,
+            "startLine": 2,
+            "startColumn": 6,
+            "endLine": 2,
+            "endColumn": 7
+          },
+          "lexeme": "("
+        },
+        {
+          "id": "tok-11",
+          "kind": "IDENTIFIER",
+          "span": {
+            "start": 26,
+            "end": 27,
+            "startLine": 2,
+            "startColumn": 7,
+            "endLine": 2,
+            "endColumn": 8
+          },
+          "lexeme": "n"
+        },
+        {
+          "id": "tok-12",
+          "kind": "RPAREN",
+          "span": {
+            "start": 27,
+            "end": 28,
+            "startLine": 2,
+            "startColumn": 8,
+            "endLine": 2,
+            "endColumn": 9
+          },
+          "lexeme": ")"
+        },
+        {
+          "id": "tok-13",
+          "kind": "SEMICOLON",
+          "span": {
+            "start": 28,
+            "end": 29,
+            "startLine": 2,
+            "startColumn": 9,
+            "endLine": 2,
+            "endColumn": 10
+          },
+          "lexeme": ";"
+        },
+        {
+          "id": "tok-14",
+          "kind": "EOF",
+          "span": {
+            "start": 30,
+            "end": 30,
+            "startLine": 3,
+            "startColumn": 1,
+            "endLine": 3,
+            "endColumn": 1
+          },
+          "lexeme": ""
+        }
+      ],
+      "ast": {
+        "id": "ast-0",
+        "kind": "Program",
+        "span": {
+          "start": 0,
+          "end": 30,
+          "startLine": 1,
+          "startColumn": 1,
+          "endLine": 3,
+          "endColumn": 1
+        },
+        "statements": [
+          {
+            "id": "ast-1",
+            "kind": "Declaration",
+            "span": {
+              "start": 0,
+              "end": 19,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 20
+            },
+            "name": "n",
+            "nameSpan": {
+              "start": 4,
+              "end": 5,
+              "startLine": 1,
+              "startColumn": 5,
+              "endLine": 1,
+              "endColumn": 6
+            },
+            "type": "int",
+            "initializer": {
+              "id": "ast-2",
+              "kind": "Binary",
+              "span": {
+                "start": 13,
+                "end": 18,
+                "startLine": 1,
+                "startColumn": 14,
+                "endLine": 1,
+                "endColumn": 19
+              },
+              "op": "/",
+              "left": {
+                "id": "ast-3",
+                "kind": "Literal",
+                "span": {
+                  "start": 13,
+                  "end": 14,
+                  "startLine": 1,
+                  "startColumn": 14,
+                  "endLine": 1,
+                  "endColumn": 15
+                },
+                "scalar": {
+                  "type": "int",
+                  "value": 1
+                }
+              },
+              "right": {
+                "id": "ast-4",
+                "kind": "Literal",
+                "span": {
+                  "start": 17,
+                  "end": 18,
+                  "startLine": 1,
+                  "startColumn": 18,
+                  "endLine": 1,
+                  "endColumn": 19
+                },
+                "scalar": {
+                  "type": "int",
+                  "value": 0
+                }
+              }
+            }
+          },
+          {
+            "id": "ast-5",
+            "kind": "EffectCall",
+            "span": {
+              "start": 20,
+              "end": 29,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 10
+            },
+            "name": "print",
+            "args": [
+              {
+                "id": "ast-6",
+                "kind": "Variable",
+                "span": {
+                  "start": 26,
+                  "end": 27,
+                  "startLine": 2,
+                  "startColumn": 7,
+                  "endLine": 2,
+                  "endColumn": 8
+                },
+                "name": "n"
+              }
+            ]
+          }
+        ]
+      },
+      "semantic": {
+        "symbols": [
+          {
+            "id": "sym-0",
+            "name": "n",
+            "type": "int",
+            "declarationSpan": {
+              "start": 4,
+              "end": 5,
+              "startLine": 1,
+              "startColumn": 5,
+              "endLine": 1,
+              "endColumn": 6
+            },
+            "scopeId": "scope-0",
+            "slotId": "slot-0",
+            "topLevel": true
+          }
+        ],
+        "scopes": [
+          {
+            "id": "scope-0",
+            "span": {
+              "start": 0,
+              "end": 30,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            },
+            "symbolIds": [
+              "sym-0"
+            ]
+          }
+        ],
+        "expressionTypes": {
+          "ast-3": "int",
+          "ast-4": "int",
+          "ast-2": "int",
+          "ast-6": "int"
+        },
+        "resolvedUses": {
+          "ast-1": "sym-0",
+          "ast-6": "sym-0"
+        },
+        "inputSources": [],
+        "diagnostics": []
+      },
+      "lowered": {
+        "slots": [
+          {
+            "id": "slot-0",
+            "type": "int",
+            "symbolId": "sym-0",
+            "displayName": "n",
+            "temporary": false
+          },
+          {
+            "id": "slot-1",
+            "type": "int",
+            "displayName": "t1",
+            "temporary": true
+          },
+          {
+            "id": "slot-2",
+            "type": "int",
+            "displayName": "t2",
+            "temporary": true
+          },
+          {
+            "id": "slot-3",
+            "type": "int",
+            "displayName": "t3",
+            "temporary": true
+          }
+        ],
+        "instructions": [
+          {
+            "id": "ir-0",
+            "span": {
+              "start": 13,
+              "end": 14,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 15
+            },
+            "astId": "ast-3",
+            "visibleSymbolIds": [],
+            "op": "const",
+            "dst": "slot-1",
+            "scalar": {
+              "type": "int",
+              "value": 1
+            }
+          },
+          {
+            "id": "ir-1",
+            "span": {
+              "start": 17,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 18,
+              "endLine": 1,
+              "endColumn": 19
+            },
+            "astId": "ast-4",
+            "visibleSymbolIds": [],
+            "op": "const",
+            "dst": "slot-2",
+            "scalar": {
+              "type": "int",
+              "value": 0
+            }
+          },
+          {
+            "id": "ir-2",
+            "span": {
+              "start": 13,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 19
+            },
+            "astId": "ast-2",
+            "visibleSymbolIds": [],
+            "op": "binary",
+            "dst": "slot-3",
+            "operator": "/",
+            "left": "slot-1",
+            "right": "slot-2"
+          },
+          {
+            "id": "ir-3",
+            "span": {
+              "start": 0,
+              "end": 19,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 20
+            },
+            "astId": "ast-1",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "copy",
+            "dst": "slot-0",
+            "src": "slot-3"
+          },
+          {
+            "id": "ir-4",
+            "span": {
+              "start": 20,
+              "end": 29,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 10
+            },
+            "astId": "ast-5",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "effect",
+            "effectName": "print",
+            "argSlots": [
+              "slot-0"
+            ],
+            "effectAstId": "ast-5"
+          },
+          {
+            "id": "ir-5",
+            "span": {
+              "start": 0,
+              "end": 30,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            },
+            "astId": "ast-0",
+            "visibleSymbolIds": [
+              "sym-0"
+            ],
+            "op": "halt"
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-0",
+            "from": "ir-0",
+            "to": "ir-1",
+            "kind": "next"
+          },
+          {
+            "id": "edge-1",
+            "from": "ir-1",
+            "to": "ir-2",
+            "kind": "next"
+          },
+          {
+            "id": "edge-2",
+            "from": "ir-2",
+            "to": "ir-3",
+            "kind": "next"
+          },
+          {
+            "id": "edge-3",
+            "from": "ir-3",
+            "to": "ir-4",
+            "kind": "next"
+          },
+          {
+            "id": "edge-4",
+            "from": "ir-4",
+            "to": "ir-5",
+            "kind": "next"
+          }
+        ],
+        "entryNodeId": "ir-0",
+        "exitNodeId": "ir-5",
+        "sourceMap": {
+          "ir-0": {
+            "start": 13,
+            "end": 14,
+            "startLine": 1,
+            "startColumn": 14,
+            "endLine": 1,
+            "endColumn": 15
+          },
+          "ir-1": {
+            "start": 17,
+            "end": 18,
+            "startLine": 1,
+            "startColumn": 18,
+            "endLine": 1,
+            "endColumn": 19
+          },
+          "ir-2": {
+            "start": 13,
+            "end": 18,
+            "startLine": 1,
+            "startColumn": 14,
+            "endLine": 1,
+            "endColumn": 19
+          },
+          "ir-3": {
+            "start": 0,
+            "end": 19,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 1,
+            "endColumn": 20
+          },
+          "ir-4": {
+            "start": 20,
+            "end": 29,
+            "startLine": 2,
+            "startColumn": 1,
+            "endLine": 2,
+            "endColumn": 10
+          },
+          "ir-5": {
+            "start": 0,
+            "end": 30,
+            "startLine": 1,
+            "startColumn": 1,
+            "endLine": 3,
+            "endColumn": 1
+          }
+        }
+      },
+      "taint": {
+        "states": {
+          "ir-0": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-1": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-2": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-3": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-4": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          },
+          "ir-5": {
+            "in": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            },
+            "out": {
+              "reachable": true,
+              "entries": [
+                {
+                  "slotId": "slot-0",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-1",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-2",
+                  "sourceIds": []
+                },
+                {
+                  "slotId": "slot-3",
+                  "sourceIds": []
+                }
+              ]
+            }
+          }
+        },
+        "processedNodeCount": 6,
+        "updateCount": 6,
+        "reachedNodeIds": [
+          "ir-0",
+          "ir-1",
+          "ir-2",
+          "ir-3",
+          "ir-4",
+          "ir-5"
+        ]
+      },
+      "findings": [],
+      "explanations": [],
+      "replay": {
+        "events": [
+          {
+            "index": 0,
+            "nodeId": "ir-0",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 1,
+            "nodeId": "ir-1",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 2,
+            "nodeId": "ir-2",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 3,
+            "nodeId": "ir-3",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 4,
+            "nodeId": "ir-4",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          },
+          {
+            "index": 5,
+            "nodeId": "ir-5",
+            "changes": [
+              {
+                "slotId": "slot-0",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-1",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-2",
+                "beforeSources": [],
+                "afterSources": []
+              },
+              {
+                "slotId": "slot-3",
+                "beforeSources": [],
+                "afterSources": []
+              }
+            ],
+            "reachableBefore": false,
+            "reachableAfter": true
+          }
+        ],
+        "checkpoints": [
+          {
+            "eventIndex": -1,
+            "outputs": {
+              "ir-0": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-1": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-2": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-3": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-4": {
+                "reachable": false,
+                "entries": []
+              },
+              "ir-5": {
+                "reachable": false,
+                "entries": []
+              }
+            }
+          }
+        ],
+        "truncated": false,
+        "droppedEventCount": 0
+      },
+      "bytecode": {
+        "version": 1,
+        "snapshotId": "snapshot-0-0cc299a24ce940ddfbc5ed5dc18c7e1b5bedc8ebe19996f45efc20539fbda3c4",
+        "sourceSha256": "0cc299a24ce940ddfbc5ed5dc18c7e1b5bedc8ebe19996f45efc20539fbda3c4",
+        "slots": [
+          {
+            "id": "slot-0",
+            "type": "int",
+            "symbolId": "sym-0",
+            "displayName": "n",
+            "temporary": false
+          },
+          {
+            "id": "slot-1",
+            "type": "int",
+            "displayName": "t1",
+            "temporary": true
+          },
+          {
+            "id": "slot-2",
+            "type": "int",
+            "displayName": "t2",
+            "temporary": true
+          },
+          {
+            "id": "slot-3",
+            "type": "int",
+            "displayName": "t3",
+            "temporary": true
+          }
+        ],
+        "topLevelSymbolIds": [
+          "sym-0"
+        ],
+        "sourceIds": [],
+        "constants": [
+          {
+            "type": "int",
+            "value": 1
+          },
+          {
+            "type": "int",
+            "value": 0
+          }
+        ],
+        "instructions": [
+          {
+            "opcode": "PUSH_CONST",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "PUSH_CONST",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              2
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              1
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              2
+            ]
+          },
+          {
+            "opcode": "DIV_INT",
+            "operands": []
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              3
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              3
+            ]
+          },
+          {
+            "opcode": "STORE",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "LOAD",
+            "operands": [
+              0
+            ]
+          },
+          {
+            "opcode": "PRINT",
+            "operands": []
+          },
+          {
+            "opcode": "HALT",
+            "operands": []
+          }
+        ],
+        "sourceMap": [
+          {
+            "pc": 0,
+            "irNodeId": "ir-0",
+            "astId": "ast-3",
+            "span": {
+              "start": 13,
+              "end": 14,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 15
+            }
+          },
+          {
+            "pc": 1,
+            "irNodeId": "ir-0",
+            "astId": "ast-3",
+            "span": {
+              "start": 13,
+              "end": 14,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 15
+            }
+          },
+          {
+            "pc": 2,
+            "irNodeId": "ir-1",
+            "astId": "ast-4",
+            "span": {
+              "start": 17,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 18,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 3,
+            "irNodeId": "ir-1",
+            "astId": "ast-4",
+            "span": {
+              "start": 17,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 18,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 4,
+            "irNodeId": "ir-2",
+            "astId": "ast-2",
+            "span": {
+              "start": 13,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 5,
+            "irNodeId": "ir-2",
+            "astId": "ast-2",
+            "span": {
+              "start": 13,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 6,
+            "irNodeId": "ir-2",
+            "astId": "ast-2",
+            "span": {
+              "start": 13,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 7,
+            "irNodeId": "ir-2",
+            "astId": "ast-2",
+            "span": {
+              "start": 13,
+              "end": 18,
+              "startLine": 1,
+              "startColumn": 14,
+              "endLine": 1,
+              "endColumn": 19
+            }
+          },
+          {
+            "pc": 8,
+            "irNodeId": "ir-3",
+            "astId": "ast-1",
+            "span": {
+              "start": 0,
+              "end": 19,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 20
+            }
+          },
+          {
+            "pc": 9,
+            "irNodeId": "ir-3",
+            "astId": "ast-1",
+            "span": {
+              "start": 0,
+              "end": 19,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 1,
+              "endColumn": 20
+            }
+          },
+          {
+            "pc": 10,
+            "irNodeId": "ir-4",
+            "astId": "ast-5",
+            "span": {
+              "start": 20,
+              "end": 29,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 10
+            }
+          },
+          {
+            "pc": 11,
+            "irNodeId": "ir-4",
+            "astId": "ast-5",
+            "span": {
+              "start": 20,
+              "end": 29,
+              "startLine": 2,
+              "startColumn": 1,
+              "endLine": 2,
+              "endColumn": 10
+            }
+          },
+          {
+            "pc": 12,
+            "irNodeId": "ir-5",
+            "astId": "ast-0",
+            "span": {
+              "start": 0,
+              "end": 30,
+              "startLine": 1,
+              "startColumn": 1,
+              "endLine": 3,
+              "endColumn": 1
+            }
+          }
+        ],
+        "maxVerifiedStack": 2
+      },
+      "disassembly": [
+        "00000  PUSH_CONST 0  ; ir-0 1:14",
+        "00001  STORE 1  ; ir-0 1:14",
+        "00002  PUSH_CONST 1  ; ir-1 1:18",
+        "00003  STORE 2  ; ir-1 1:18",
+        "00004  LOAD 1  ; ir-2 1:14",
+        "00005  LOAD 2  ; ir-2 1:14",
+        "00006  DIV_INT  ; ir-2 1:14",
+        "00007  STORE 3  ; ir-2 1:14",
+        "00008  LOAD 3  ; ir-3 1:1",
+        "00009  STORE 0  ; ir-3 1:1",
+        "00010  LOAD 0  ; ir-4 2:1",
+        "00011  PRINT  ; ir-4 2:1",
+        "00012  HALT  ; ir-5 1:1"
+      ]
+    },
+    "limits": {
+      "maxSourceBytes": 262144,
+      "maxNesting": 128,
+      "maxTokens": 65536,
+      "maxAstNodes": 20000,
+      "maxSlots": 4000,
+      "maxCfgNodes": 2000,
+      "maxInputSources": 256,
+      "maxBytecodeInstructions": 50000,
+      "maxSolverVisits": 200000,
+      "maxVerifierVisits": 200000,
+      "maxStateCells": 4000000,
+      "maxSourceMemberships": 2000000,
+      "analysisDeadlineMs": 10000,
+      "maxReplayEvents": 10000,
+      "replayCheckpointInterval": 100,
+      "maxReplayBytes": 8388608,
+      "maxProvenanceFacts": 20000,
+      "maxExplanationFacts": 200,
+      "maxReportBytes": 16777216,
+      "maxInteractiveGraphNodes": 200,
+      "maxVmInstructions": 100000,
+      "executionDeadlineMs": 1000,
+      "maxVmStack": 1024,
+      "maxStringBytes": 65536,
+      "maxVmStorageBytes": 4194304,
+      "maxVmEvents": 1000,
+      "maxVmOutputBytes": 1048576,
+      "maxInputItems": 1000,
+      "maxInputBytes": 1048576
+    },
+    "statistics": {
+      "sourceUtf8Bytes": 30,
+      "tokenCount": 15,
+      "astCount": 7,
+      "slotCount": 4,
+      "cfgNodeCount": 6,
+      "inputSourceCount": 0,
+      "processedNodeCount": 6,
+      "updateCount": 6,
+      "bytecodeCount": 13,
+      "stageDurationsMs": {
+        "validate": 0.0029159999999990305,
+        "lex": 0.01941600000000676,
+        "parse": 0.02225000000001387,
+        "semantic": 0.01733400000000529,
+        "lower": 0.04291700000001697,
+        "taint": 0.26641599999999244,
+        "findings": 0.005124999999992497,
+        "codegen": 0.18029100000001108,
+        "verify": 0.15087500000001342
+      },
+      "totalDurationMs": 0.7462080000000242
+    },
+    "limitations": [
+      "Structural paths are overapproximated; a finding does not prove a feasible attack.",
+      "Explicit data flow only; implicit control flow is not tracked.",
+      "SQL and shell sinks are educational models."
+    ]
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "requestId": "run-runtime-error",
+    "snapshotId": "snapshot-0-0cc299a24ce940ddfbc5ed5dc18c7e1b5bedc8ebe19996f45efc20539fbda3c4",
+    "revision": 0,
+    "status": "runtime-error",
+    "diagnostics": [
+      {
+        "code": "RUNTIME_DIV_ZERO",
+        "stage": "runtime",
+        "severity": "error",
+        "message": "Division or remainder by zero.",
+        "blocking": true,
+        "span": {
+          "start": 13,
+          "end": 18,
+          "startLine": 1,
+          "startColumn": 14,
+          "endLine": 1,
+          "endColumn": 19
+        }
+      }
+    ],
+    "events": [],
+    "consumedInputCount": 0,
+    "instructionCount": 7,
+    "elapsedMs": 0.2842909999999961,
+    "finalTopLevelValues": [],
+    "limits": {
+      "maxSourceBytes": 262144,
+      "maxNesting": 128,
+      "maxTokens": 65536,
+      "maxAstNodes": 20000,
+      "maxSlots": 4000,
+      "maxCfgNodes": 2000,
+      "maxInputSources": 256,
+      "maxBytecodeInstructions": 50000,
+      "maxSolverVisits": 200000,
+      "maxVerifierVisits": 200000,
+      "maxStateCells": 4000000,
+      "maxSourceMemberships": 2000000,
+      "analysisDeadlineMs": 10000,
+      "maxReplayEvents": 10000,
+      "replayCheckpointInterval": 100,
+      "maxReplayBytes": 8388608,
+      "maxProvenanceFacts": 20000,
+      "maxExplanationFacts": 200,
+      "maxReportBytes": 16777216,
+      "maxInteractiveGraphNodes": 200,
+      "maxVmInstructions": 100000,
+      "executionDeadlineMs": 1000,
+      "maxVmStack": 1024,
+      "maxStringBytes": 65536,
+      "maxVmStorageBytes": 4194304,
+      "maxVmEvents": 1000,
+      "maxVmOutputBytes": 1048576,
+      "maxInputItems": 1000,
+      "maxInputBytes": 1048576
+    }
+  }
+}

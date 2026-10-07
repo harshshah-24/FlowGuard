@@ -6,11 +6,11 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 ## Current Status
 
-**Phases 0–3 are implemented and published on canonical main.** Phases 2/3 implementation commit is `9b3e96c`; the previous main was `f4c0aa9` (Phase 1 publication record).
+**Phases 0–3 are published; Phase 4 implementation and evidence are prepared locally.** Analyze completes the full compiler, explicit-flow analysis, codegen and verifier pipeline. Explicit Run executes verified bytecode with supplied inputs in a bounded VM. SQL and shell effects are simulated.
 
-Analyze now completes the full compiler, taint, codegen and verifier pipeline. Explicit Run executes verified bytecode in a bounded VM with supplied JSON string-array inputs. The browser includes source-linked findings, graph/inspectors, replay, bytecode selection, runtime events, Stop/retry and matching-snapshot exports. CLI analysis/runtime uses the same core. SQL and shell effects are simulations.
+The workspace links source, control flow, findings, analysis replay, bytecode and runtime events. CLI and browser use the same TypeScript core. Final initialized top-level values exclude block locals and temporary slots. Phase 4 adds deterministic evaluation, measured benchmarks, release checks, an assignment report and a repeatable demo. Human rehearsal and authorized publication/new remote CI remain separate gates.
 
-The approved `topLevelSymbolIds` bytecode field supports final initialized values in symbol order, excluding block locals, temporaries and declarations not reached. Values remain available on core-reported runtime failures/limits/cancellation. Phase 4 continuation is authorized for the teammate and remains unstarted. Use the [Phase 4 agent handoff](context/phase_4_agent_handoff.md).
+![Real unsafe-query analysis and simulated run](docs/evidence/unsafe-query-workspace.png)
 
 ## Local Setup
 
@@ -33,7 +33,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Or run `npm run check` after the browser installation. Current local checks passed **260 unit/CLI tests, eleven production Chromium tests, four isolated static-integration Chromium tests, typechecks and builds** with Node 26.5.0/npm 11.17.0. `npm run test:phase2` runs the existing isolated harness. [Testing notes](docs/testing.md) record the full-check evidence and approved scope-metadata amendment. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu.
+Or run `npm run check` after the browser installation. Phase 4 local checks passed **260 unit/CLI tests, fifteen production Chromium tests, four isolated static-integration Chromium tests, typechecks and builds** with Node 26.5.0/npm 11.17.0. `npm run test:phase2` runs the existing isolated harness. [Testing notes](docs/testing.md) record the full-check evidence and approved scope-metadata amendment. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu.
 
 CLI after building:
 
@@ -55,7 +55,8 @@ For example, `inputs.json` can contain `["Ada"]`. Exit codes: 0 completed withou
 - `apps/web/`: Monaco workspace, separate analysis/execution/layout workers, graph/inspectors/replay/bytecode/runtime panels, examples/help and state machine.
 - `examples/`, `fixtures/`: synthetic, independently specified teaching examples and expectations.
 - `context/`: PRD, master plan, phases, decisions, handoff, and status.
-- `docs/`: language reference, validation, and third-party notes.
+- `docs/`: language/bytecode reference, acceptance, evaluation, assignment report, demo and real synthetic evidence.
+- `scripts/`: reproducible evaluation, benchmark and demo capture.
 
 ## Behavior
 
@@ -65,13 +66,16 @@ The TypeScript engine is shared by the CLI and browser workers. Inspection inclu
 
 ## Project Documents
 
-- [Language reference](docs/language.md): grammar, types, errors, limits, and Phase 1 APIs.
-- [Architecture](docs/architecture.md): compiler/runtime algorithms, transport, reports and remaining boundary.
+- [Language reference](docs/language.md): grammar, types, errors, limits and core APIs.
+- [Architecture](docs/architecture.md): compiler/runtime algorithms, transport and reports.
+- [Assignment report](docs/assignment_report.md), [demo script](docs/demo_script.md), [acceptance](docs/acceptance.md), [evaluation and timings](docs/evaluation.md), [bytecode](docs/bytecode.md).
 - [PRD](context/flowguard_prd.md): product behavior and chosen scope.
 - [Master implementation plan](context/implementation_plan.md): exact files, contracts, algorithms, dependencies, and checks.
-- [Phase index](context/phases/README.md): ordered tasks and gates; Phases 0/1 are published; Phases 2/3 are complete locally.
+- [Phase index](context/phases/README.md): ordered tasks and publication/submission gates.
 - [Status](context/status_update.md), [handoff](context/context_handoff.md), and [decision log](context/decision_log.md).
 - [Original ideas](context/project_ideas.md): exploration history, not current scope.
 - [Third-party notes](docs/third_party.md): dependency licenses; no project license is added.
+
+Evaluation: TP6/FP2/FN0/TN4, precision 75%, recall 100% on the small independently labeled fixture set; invalid 8/incomplete 0. Engine p95 was 939 ms; 200-node graph readiness 1,283 ms; selection 35 ms; cancellation under 13 ms. These measurements apply to the recorded Mac and workloads. Run `npm run evaluate` to regenerate reports; after starting production preview, run `npm run benchmark` for timings.
 
 Target submission: **8 October 2026**, team of two. All project work belongs in [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard). Implement later phases only with authorization and the latest approved plan.

@@ -1,0 +1,42 @@
+{
+  "measuredAt": "2026-10-07T18:31:47.129Z",
+  "node": "v26.5.0",
+  "syntheticInput": [
+    "Ada"
+  ],
+  "checks": [
+    {
+      "id": "help",
+      "expectedExit": 0,
+      "actualExit": 0
+    },
+    {
+      "id": "version",
+      "expectedExit": 0,
+      "actualExit": 0
+    },
+    {
+      "id": "unsafe-analysis",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "summary": {
+        "analysis": "completed",
+        "findings": 1
+      }
+    },
+    {
+      "id": "binding-run",
+      "expectedExit": 0,
+      "actualExit": 0,
+      "summary": {
+        "analysis": "completed",
+        "findings": 0,
+        "execution": "completed",
+        "eventKinds": [
+          "input",
+          "sql-bind"
+        ]
+      }
+    }
+  ]
+}

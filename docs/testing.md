@@ -2,7 +2,7 @@
 
 ## Historical Phase 0 Scope
 
-These checks cover the implemented foundation. They do not validate an analyzer, parser, solver, bytecode generator, or VM; those do not exist yet. Hand-authored empty-program fixtures validate schemas only and are never displayed as real analysis results.
+These checks cover the implemented foundation. They do not validate an analyzer, parser, solver, bytecode generator, or VM; those do not exist yet. Hand-authored empty-program fixtures validate schemas only and were never displayed as real analysis results.
 
 ## Commands
 
@@ -27,7 +27,7 @@ Phase 2 additionally runs `npm run test:phase2` from `check` and CI. This builds
 - 28 Vitest tests passed across four files: source utilities, budgets, contracts, and workspace reducer.
 - Core/CLI ESM compilation and Vite production build passed.
 - Two Playwright Chromium tests passed on the production build.
-- CLI `--version` returned the foundation version; no analyze/run command is available.
+- CLI `--version` returned the foundation version; no analyze/run command was available at that historical check.
 - The browser screenshot was visually inspected; editor, placeholders, navigation, and phase labeling displayed correctly.
 
 Source checks cover LF/CRLF/CR, BOM preservation, surrogate-pair UTF-16 positions, invalid UTF-8, zero-width EOF, and exact byte-limit boundaries. Budget checks use fake clocks, cap/cap+1 counts, cancellation, and the separate execution deadline without running a VM. Contract checks reject unknown keys/versions, inconsistent snapshots, contradictory diagnostics, invalid opcode arity, non-simulated effect events, unsupported limits, incomplete completion claims, and artifacts before their stage.
@@ -135,3 +135,23 @@ Phase 3 is complete locally on codex/flowguard-build. Phases 2/3 remain uncommit
 After explicit user authorization, committed the completed implementation and Phase 4 teammate handoff as `9b3e96c`. Canonical main was verified at `f4c0aa9`, fast-forwarded and successfully pushed without overwriting history. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) completed successfully for `9b3e96c` on Ubuntu: clean npm install, typechecks, unit/CLI tests, production builds, normal Chromium suite and isolated static integration suite. This is actual remote CI evidence for the published implementation, separate from the Windows local baseline. Phase 4 evaluation and performance/submission evidence are not inferred from CI.
 
 The user authorized the teammate to continue Phase 4 with a coding agent. See [agent handoff](../context/phase_4_agent_handoff.md) for reading order, fresh setup, remaining tasks and a starting prompt. A subsequent documentation-only publication records the implementation commit, CI result and continuation status; no compiler/runtime code changes follow this verified implementation in that publication.
+
+## Phase 4 release validation — 7–8 October 2026
+
+Harsh approved Phase 4 in this chat and confirmed Markdown for the assignment report. The current technical work is local on codex/flowguard-build, based on publication3a7678c. No Phase 4 commit/push/new remote CI is claimed here.
+
+Fresh npm ci --no-audit --no-fund succeeded on the recorded Mac with Node26.5.0/npm11.17.0. Typechecks, **260 unit/CLI tests across22 files**, production builds, **15 production Chromium tests** and **four isolated static-integration tests** passed. Deterministic evaluation also passed, with TP6/FP2/FN0/TN4, invalid8/incomplete0 and zero expected status/diagnostic/attribution mismatches. Raw reports and the independent labels/protocol are in [evaluation](evaluation.md).
+
+New release checks cover visible analysis cancellation/retry, source editing during processing, reduced-motion/manual replay, keyboard inspection, a real >200-node graph fallback retaining edges, previous-snapshot Markdown exact source/no stale runtime, empty local/session storage/reload, and a real replay-byte cap while final analysis remains usable. Early runs exposed outdated phase/footer assertions and test fixtures that either failed the CFG cap before Cancel could be clicked or did not exceed the graph-render threshold. Those test expectations/fixtures were corrected, not production limits. The replay test waits within the existing ten-second compile/watchdog budget instead of assuming every valid workload finishes inside Playwright's five-second assertion default.
+
+The release UI now uses correct state-based footer guidance and visible cancellation. All previous offline-origin/text-injection, dirty-source, worker identity/watchdog/error, input/runtime, verifier/limits and report checks continue to pass. Actual CLI help/version, unsafe analysis exit1 and binding Run exit0 were checked independently; [cli-smoke.json](evidence/cli-smoke.json) records outcomes.
+
+All measured targets passed unchanged on the actual development Mac: engine p95 938.8ms, 200-node full graph readiness1282.5ms, layout/render82.5ms, source selection34.9ms, analysis cancellation3.2ms and VM cancellation12.5ms. See [benchmark.json](evidence/benchmark.json) for every raw run, fixed seed, source checksum, counts, versions and hardware. The initial sandboxed Chromium launch was unavailable; the actual successful browser benchmark used permitted process access. The VM timing harness and production Stop test click the real Stop control immediately when rendered to avoid confusing fast instruction-limit completion with a cancellation failure.
+
+Production screenshots unsafe-query-workspace.png and bound-query-workspace.png in docs/evidence were captured with synthetic Ada input and visually inspected. Source, graph, findings, replay, bytecode, inputs and runtime agree. The capture blocked external origins and recorded zero remote requests/browser errors. Runtime sample reports were generated from actual analyzer/VM calls; none is mock data.
+
+Current npm audit --json reported **zero vulnerabilities**. Dependency pins and lockfile did not change. Vite's existing ~3.50MB/~0.925MB gzip main-chunk warning remains; the measured steady-state targets passed. This does not establish a cold-load target or a complete third-party security guarantee.
+
+GitHub Actions adds the same deterministic evaluation gate; timing benchmarks stay outside CI. Existing published implementation run37660826256 was verified successful for9b3e96c. New Phase 4 remote CI awaits an authorized push. All AC-01–17 evidence/boundaries are in [acceptance](acceptance.md). Human rehearsal by both teammates and faculty submission have not been performed by this agent.
+
+Final **npm run check completed with exit0 on 8 October2026**, including all260 unit/CLI, fifteen production Chromium, four isolated Chromium and deterministic evaluation checks. [release-checks.json](evidence/release-checks.json) records the executed local gates. No further code changes followed that passing check.

@@ -2,7 +2,7 @@
 
 **Suggested window:** 7–8 October 2026
 
-**State:** Continuation authorized for the teammate by the user on 7 October 2026; not started. Phases 0–3 have passed their local functional gates. Use the [agent handoff](../phase_4_agent_handoff.md) and verify the published commit/current CI before beginning.
+**State:** Harsh approved implementation in this chat. Technical preparation and measured evidence are complete locally on `codex/flowguard-build`; release/submission exit gate remains open for human rehearsal, authorized publication/new remote CI and faculty submission. Markdown format is confirmed. See current [status](../status_update.md).
 
 ## Source of Truth
 
@@ -35,11 +35,11 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 
 ## Required Validation
 
-- [ ] Every PRD AC-01–17 has explicit test/demo/evidence, not only a checked task box.
+- [x] Every PRD AC-01–17 has explicit test/demo/evidence, not only a checked task box.
 - [ ] CI and clean-install production checks actually pass; recorded benchmark targets pass or have approved revisions.
-- [ ] Reports/screenshots and README reflect implemented behavior; no projected measurement is presented as executed.
-- [ ] No incomplete feature, mock release data, hidden persistence, real SQL/shell call, or unreviewed scope reduction remains.
-- [ ] Deadline is 8 October 2026; exact submission time/template remains unconfirmed and is not invented.
+- [x] Reports/screenshots and README reflect implemented behavior; no projected measurement is presented as executed.
+- [x] No incomplete feature, mock release data, hidden persistence, real SQL/shell call, or unreviewed scope reduction remains.
+- [x] Deadline is 8 October 2026; Markdown format is confirmed; exact submission time remains unconfirmed and is not invented.
 
 ## Exit Gate
 
@@ -50,3 +50,7 @@ Release only after all acceptance evidence is complete and required publication/
 Update [status](../status_update.md), [decision log](../decision_log.md), and [handoff](../context_handoff.md) with completed behavior, checks actually run, remaining issues, and next steps. Stop and ask for any unresolved choice or deviation from the approved plan.
 
 Previous: [Phase 3](phase_3_codegen_vm.md).
+
+## Measured local evidence
+
+See docs/testing.md for final commands and docs/evaluation.md for the independent labels and actual performance protocol/results. All targets passed unchanged. The remaining unchecked CI gate means new Phase 4 remote CI after authorized push; prior published implementation CI already passed. Both human rehearsals remain unrecorded.
