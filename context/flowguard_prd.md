@@ -333,3 +333,7 @@ Review is document-level, not runtime verification. Product/technical details de
 - [React Flow](https://reactflow.dev/api-reference/react-flow) and [Monaco](https://microsoft.github.io/monaco-editor/): presentation dependencies.
 - [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) and [termination](https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate): worker mechanism.
 - Official [npm registry](https://registry.npmjs.org/typescript): version metadata checked for the implementation plan. No packages installed.
+
+## Approved visual update — 8 October 2026
+
+Harsh requested and approved UI inspiration from https://apex-analytics-race-companion.projectsharsh-24.chatgpt.site. The FlowGuard interface is dark-only, with charcoal surfaces, blue-green/red accents, condensed uppercase display typography, pill navigation and bordered dashboard cards. No light theme or theme toggle is added. Existing source/compiler/runtime/export behavior remains unchanged. Summary cards derive stages, CFG nodes, completed findings and verified bytecode counts only from the current source-matching result; missing/stale results display a dash, not an invented zero or successful verdict. No external fonts/assets or reference-site functionality are imported.

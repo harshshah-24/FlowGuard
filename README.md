@@ -10,7 +10,9 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 The workspace links source, control flow, findings, analysis replay, bytecode and runtime events. CLI and browser use the same TypeScript core. Final initialized top-level values exclude block locals and temporary slots. Phase 4 adds deterministic evaluation, measured benchmarks, release checks, an assignment report and a repeatable demo. Human rehearsal and faculty submission remain separate gates; actual publication/CI evidence is recorded below.
 
-![Real unsafe-query analysis and simulated run](docs/evidence/unsafe-query-workspace.png)
+![Dark-only compiler workspace with real analysis and simulated execution](docs/evidence/dark-ui-workspace.png)
+
+The current UI uses dark charcoal cards, blue-green/red accents, bold headings and pill navigation, with matching dark editor/graph themes. Summary counts come from the current analysis. Harsh approved publication of this visual refresh on 8 October 2026; prior Phase 4 benchmarks retain their original measured source hashes.
 
 ## Local Setup
 

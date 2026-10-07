@@ -164,3 +164,17 @@ Harsh answered "yes" to the explicit request to commit and push Phase 4 to main.
 ## Phase 4 publication and remote validation — 8 October 2026
 
 Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.
+
+## 2026-10-08 — Dark-only reference-inspired UI approved
+
+Harsh requested an Apex Analytics-inspired design and answered yes to the pre-execution summary. The reference was visually inspected; its editorial headings, yellow/red accents, pill navigation and card borders are adapted onto dark charcoal surfaces. Preserve the compiler/VM and all existing interactions. Four summary counts use real current analysis artifacts; no fake dashboard metrics, external fonts/assets or light-mode switch. Local UI work is in progress on codex/flowguard-dark-ui; this approval does not authorize a new push.
+
+Dark UI verification completed: typechecks/production builds,15 production Chromium checks and4 isolated integration checks passed. Desktop screenshot inspected, mobile390px checked with no page overflow and forced dark color-scheme, and a real unsafe-query Analyze/Run showed9/9 stages,8 CFG nodes,1 finding and18 bytecode instructions with simulated Ada query events. Preview is running on4173; changes remain local and uncommitted pending review/push approval. Existing measured benchmark/evaluation files were not overwritten.
+
+## Approved palette revision — 8 October 2026
+
+Harsh requested blue-green in place of yellow and approved implementation. The primary accent is teal (#48dbc6), paired with cyan (#40c9d0) in navigation and graph output styling. Update buttons, headings, focus/selection highlights, Monaco cursor/line markers and graph controls consistently. Keep dark-only charcoal surfaces and red warning/sink accents. This supersedes the yellow primary palette above. Publication still requires separate approval.
+
+## UI publication approval — 8 October 2026
+
+Harsh answered yes to committing and pushing the complete dark UI refresh to main. Publish the teal/cyan version, refreshed screenshot and synchronized documentation to canonical origin. Local typechecks/build and all fifteen production Chromium checks passed; four isolated checks passed before the palette-only revision. Fetch confirmed main and the UI branch share base 44db27f. Fast-forward publication preserves teammate history. Verify remote main and its GitHub Actions result after pushing.

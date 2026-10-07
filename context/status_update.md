@@ -1,6 +1,6 @@
 # Status Update
 
-**Updated:** 8 October 2026. **Branch:** `main`.
+**Updated:** 8 October 2026. **Branch:** `codex/flowguard-dark-ui`.
 
 ## Completed
 
@@ -34,3 +34,11 @@ See [handoff](context_handoff.md), [evaluation](../docs/evaluation.md), [accepta
 ## Phase 4 publication and remote validation — 8 October 2026
 
 Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.
+
+## Active visual update — 8 October 2026
+
+Harsh approved a dark-only UI inspired by the supplied Apex Analytics reference. Charcoal/blue-green/red styling, condensed headings, pill navigation, real artifact summary cards and matching editor/graph themes are implemented locally on codex/flowguard-dark-ui. Typechecks and production builds passed; all fifteen production Chromium and four isolated integration checks passed. Desktop screenshot and mobile layout were inspected; dark color-scheme and no horizontal overflow were verified at390px. Core/CLI/worker contracts, dependencies and resource caps are unchanged. Prior benchmark evidence describes its older measured source hashes. Harsh approved committing and pushing the complete UI refresh to main on 8 October 2026.
+
+## Blue-green palette revision — 8 October 2026
+
+Approved replacement of yellow accents with teal/cyan is implemented locally. Dark mode and existing behavior remain intact. Typechecking, production build and all fifteen production Chromium checks passed for this palette revision. The evidence screenshot is refreshed. Harsh approved publication to canonical main; remote verification follows the push.

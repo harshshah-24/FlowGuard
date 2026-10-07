@@ -8,7 +8,7 @@ export function SourceEditor({source,onChange,diagnostics=[],highlight}:{source:
  callback.current=onChange;
  useEffect(()=>{
   let instance:Monaco.editor.IStandaloneCodeEditor|undefined,model:Monaco.editor.ITextModel|undefined,listener:Monaco.IDisposable|undefined;
-  try{const api=editorApi();model=api.editor.createModel(raw.current,'flowguard');instance=api.editor.create(container.current!,{model,theme:'vs-dark',automaticLayout:true,minimap:{enabled:false},fontSize:13,lineNumbers:'on',wordWrap:'on',ariaLabel:'Write a FlowGuard program',scrollBeyondLastLine:false,tabSize:2,accessibilitySupport:'on',unicodeHighlight:{ambiguousCharacters:false,invisibleCharacters:false},renderValidationDecorations:'on'});editor.current=instance;
+  try{const api=editorApi();model=api.editor.createModel(raw.current,'flowguard');instance=api.editor.create(container.current!,{model,theme:'flowguard-dark',automaticLayout:true,minimap:{enabled:false},fontSize:13,lineNumbers:'on',wordWrap:'on',ariaLabel:'Write a FlowGuard program',scrollBeyondLastLine:false,tabSize:2,accessibilitySupport:'on',unicodeHighlight:{ambiguousCharacters:false,invisibleCharacters:false},renderValidationDecorations:'on'});editor.current=instance;
    listener=model.onDidChangeContent(event=>{if(updating.current)return;const next=applyEditorChanges(raw.current,event.changes);raw.current=next;callback.current(next);});
   }catch{setFailure('Editor could not load. You can continue editing in the text area.');}
   return ()=>{listener?.dispose();instance?.dispose();model?.dispose();editor.current=null;releaseEditorWorkers();};
