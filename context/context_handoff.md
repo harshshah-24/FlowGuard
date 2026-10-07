@@ -12,7 +12,7 @@ No backend, accounts, persistence, autosave, real SQL/shell effects, new depende
 
 ## Authorization and State
 
-Phases 0–3 are published; current base is publication record `3a7678c` and implementation `9b3e96c`. Harsh explicitly approved Phase 4 and confirmed Markdown for the report. Phase 4 technical preparation is local on `codex/flowguard-build`; Harsh explicitly approved commit/merge/push on 8 October; publication is in progress. Do not overwrite teammate changes. Human rehearsal by Harsh and Jyot and new remote CI remain release gates.
+Phases 0–3 are published; current base is publication record `3a7678c` and implementation `9b3e96c`. Harsh explicitly approved Phase 4 and confirmed Markdown for the report. Harsh approved commit/merge/push on 8 October. Phase 4 implementation/evidence is published on canonical main as `164b94a`, fast-forwarded from `3a7678c`. Do not overwrite teammate changes. Human rehearsal by Harsh and Jyot and faculty submission remain delivery gates. Phase 4 CI evidence is recorded below.
 
 Read [status](status_update.md), [Phase 4 handoff](phase_4_agent_handoff.md), [acceptance](../docs/acceptance.md), [evaluation](../docs/evaluation.md), [report](../docs/assignment_report.md) and [demo](../docs/demo_script.md) for exact remaining actions.
 
@@ -42,4 +42,8 @@ Use Node26.5.0/npm11.17.0 via `.nvmrc`/packageManager; old Windows TEMP toolchai
 
 Normal builds exclude the test-only phase2 harness; its isolated build uses4174. Test suites manage their own servers, so stop a manual4173 preview before running them. Vite's main chunk remains3.50MB/~0.925MB gzip; measured targets passed, cold-load performance is unspecified.
 
-[Remote CI run37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for published implementation9b3e96c and was verified during Phase 4. No new Phase 4 remote CI exists before push. Complete the human rehearsal and publication/submission gates honestly. All work remains in the canonical repository; no subagents, real SQL/shell effects, persistence, license, deployment or faculty submission were added.
+[Remote CI run37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for published implementation9b3e96c and was verified during Phase 4. Phase 4 publication/CI evidence is recorded below. Complete the human rehearsal and submission gates honestly. All work remains in the canonical repository; no subagents, real SQL/shell effects, persistence, license, deployment or faculty submission were added.
+
+## Phase 4 publication and remote validation — 8 October 2026
+
+Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.

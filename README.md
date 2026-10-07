@@ -6,9 +6,9 @@ FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler D
 
 ## Current Status
 
-**Phases 0–3 are published; Phase 4 implementation and evidence are prepared locally.** Analyze completes the full compiler, explicit-flow analysis, codegen and verifier pipeline. Explicit Run executes verified bytecode with supplied inputs in a bounded VM. SQL and shell effects are simulated.
+**Phases 0–4 technical work is published on canonical main.** Phase 4 implementation/evidence commit: `164b94a`. Analyze completes the full compiler, explicit-flow analysis, codegen and verifier pipeline. Explicit Run executes verified bytecode with supplied inputs in a bounded VM. SQL and shell effects are simulated.
 
-The workspace links source, control flow, findings, analysis replay, bytecode and runtime events. CLI and browser use the same TypeScript core. Final initialized top-level values exclude block locals and temporary slots. Phase 4 adds deterministic evaluation, measured benchmarks, release checks, an assignment report and a repeatable demo. Human rehearsal and authorized publication/new remote CI remain separate gates.
+The workspace links source, control flow, findings, analysis replay, bytecode and runtime events. CLI and browser use the same TypeScript core. Final initialized top-level values exclude block locals and temporary slots. Phase 4 adds deterministic evaluation, measured benchmarks, release checks, an assignment report and a repeatable demo. Human rehearsal and faculty submission remain separate gates; actual publication/CI evidence is recorded below.
 
 ![Real unsafe-query analysis and simulated run](docs/evidence/unsafe-query-workspace.png)
 
@@ -79,3 +79,5 @@ The TypeScript engine is shared by the CLI and browser workers. Inspection inclu
 Evaluation: TP6/FP2/FN0/TN4, precision 75%, recall 100% on the small independently labeled fixture set; invalid 8/incomplete 0. Engine p95 was 939 ms; 200-node graph readiness 1,283 ms; selection 35 ms; cancellation under 13 ms. These measurements apply to the recorded Mac and workloads. Run `npm run evaluate` to regenerate reports; after starting production preview, run `npm run benchmark` for timings.
 
 Target submission: **8 October 2026**, team of two. All project work belongs in [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard). Implement later phases only with authorization and the latest approved plan.
+
+Phase 4 implementation `164b94a` is published on main. [Its GitHub Actions run](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) passed all functional checks, including deterministic evaluation and both Chromium suites. Human rehearsal and faculty submission remain.

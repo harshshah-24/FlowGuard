@@ -155,3 +155,7 @@ Current npm audit --json reported **zero vulnerabilities**. Dependency pins and 
 GitHub Actions adds the same deterministic evaluation gate; timing benchmarks stay outside CI. Existing published implementation run37660826256 was verified successful for9b3e96c. New Phase 4 remote CI awaits an authorized push. All AC-01–17 evidence/boundaries are in [acceptance](acceptance.md). Human rehearsal by both teammates and faculty submission have not been performed by this agent.
 
 Final **npm run check completed with exit0 on 8 October2026**, including all260 unit/CLI, fifteen production Chromium, four isolated Chromium and deterministic evaluation checks. [release-checks.json](evidence/release-checks.json) records the executed local gates. No further code changes followed that passing check.
+
+## Phase 4 publication and remote validation — 8 October 2026
+
+Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.

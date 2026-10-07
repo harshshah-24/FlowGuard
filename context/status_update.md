@@ -1,10 +1,10 @@
 # Status Update
 
-**Updated:** 8 October 2026. **Branch:** `codex/flowguard-build`.
+**Updated:** 8 October 2026. **Branch:** `main`.
 
 ## Completed
 
-Phases 0–3 are published on canonical main: implementation `9b3e96c`, publication record `3a7678c`. Harsh approved Phase 4 in this chat. Its technical work is prepared locally, with commit/merge/push now explicitly authorized by Harsh. Publication is in progress.
+Phases 0–3 are published on canonical main: implementation `9b3e96c`, publication record `3a7678c`. Harsh approved Phase 4 in this chat. Its technical work was committed as `164b94a`, fast-forwarded and pushed to canonical main after explicit approval.
 
 - Real full compiler/taint/codegen/verifier and bounded simulated VM remain implemented, with the approved top-level scope metadata.
 - Fixed obsolete footer wording and added visible analysis cancellation/stale guidance. Removed the historical phase label from the workspace header.
@@ -25,9 +25,12 @@ Current dependency audit reported zero vulnerabilities. Synthetic screenshots we
 
 ## Remaining gates and immediate next steps
 
-1. Publish the approved Phase 4 changes to canonical main without rewriting history.
-2. After publication, verify the new real commit's GitHub Actions result. Prior implementation CI run37660826256 passed for9b3e96c; it is not Phase 4 remote CI.
-3. Harsh and Jyot each rehearse [the demo](../docs/demo_script.md) and confirm understanding of both compiler/solver and verifier/VM. Automated demo evidence does not establish human rehearsal.
-4. Submit the working project/source/documentation according to faculty instructions. Harsh confirmed Markdown; exact submission time and required demo computer are unknown. No submission or deployment was performed.
+Publication completed without rewriting history. The new Phase 4 CI result is recorded below.
+1. Harsh and Jyot each rehearse [the demo](../docs/demo_script.md) and confirm understanding of both compiler/solver and verifier/VM. Automated demo evidence does not establish human rehearsal.
+2. Submit the working project/source/documentation according to faculty instructions. Harsh confirmed Markdown; exact submission time and required demo computer are unknown. No submission or deployment was performed.
 
 See [handoff](context_handoff.md), [evaluation](../docs/evaluation.md), [acceptance](../docs/acceptance.md) and [report](../docs/assignment_report.md). Phase 4's release/submission exit gate remains open for these human/publication actions; technical preparation is not mislabeled as faculty submission.
+
+## Phase 4 publication and remote validation — 8 October 2026
+
+Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.

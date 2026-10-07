@@ -160,3 +160,7 @@ Final npm run check completed with exit0 on8October:260 unit/CLI,15 production C
 ## 2026-10-08 — Phase 4 publication authorized
 
 Harsh answered "yes" to the explicit request to commit and push Phase 4 to main. Fetched canonical origin and verified origin/main exactly matches the local base3a7678c. Publish by fast-forward without force-push, then verify the new implementation commit in GitHub Actions. Human rehearsal and faculty submission remain separate actions.
+
+## Phase 4 publication and remote validation — 8 October 2026
+
+Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.

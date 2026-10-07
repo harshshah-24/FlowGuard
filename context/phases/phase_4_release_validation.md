@@ -2,7 +2,7 @@
 
 **Suggested window:** 7–8 October 2026
 
-**State:** Harsh approved implementation in this chat. Technical preparation and measured evidence are complete locally on `codex/flowguard-build`; release/submission exit gate remains open for human rehearsal, authorized publication/new remote CI and faculty submission. Markdown format is confirmed. See current [status](../status_update.md).
+**State:** Harsh approved implementation in this chat. Technical work and measured evidence are published as `164b94a` on main; release/submission exit gate remains open for human rehearsal and faculty submission. Actual CI evidence is recorded below. Markdown format is confirmed. See current [status](../status_update.md).
 
 ## Source of Truth
 
@@ -36,7 +36,7 @@ Full file paths and additional tests/docs are in master section 3. Shared contra
 ## Required Validation
 
 - [x] Every PRD AC-01–17 has explicit test/demo/evidence, not only a checked task box.
-- [ ] CI and clean-install production checks actually pass; recorded benchmark targets pass or have approved revisions.
+- [x] CI and clean-install production checks actually pass; recorded benchmark targets pass or have approved revisions.
 - [x] Reports/screenshots and README reflect implemented behavior; no projected measurement is presented as executed.
 - [x] No incomplete feature, mock release data, hidden persistence, real SQL/shell call, or unreviewed scope reduction remains.
 - [x] Deadline is 8 October 2026; Markdown format is confirmed; exact submission time remains unconfirmed and is not invented.
@@ -53,4 +53,8 @@ Previous: [Phase 3](phase_3_codegen_vm.md).
 
 ## Measured local evidence
 
-See docs/testing.md for final commands and docs/evaluation.md for the independent labels and actual performance protocol/results. All targets passed unchanged. The remaining unchecked CI gate means new Phase 4 remote CI after authorized push; prior published implementation CI already passed. Both human rehearsals remain unrecorded.
+See docs/testing.md for final commands and docs/evaluation.md for the independent labels and actual performance protocol/results. All targets passed unchanged. Phase 4 implementation164b94a is published and [remote CI](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) passed. Both human rehearsals remain unrecorded.
+
+## Phase 4 publication and remote validation — 8 October 2026
+
+Harsh explicitly approved publication. Implementation/evidence commit `164b94a` was fast-forwarded from `3a7678c` and pushed to canonical main without rewriting history. [GitHub Actions run 37669529758](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) completed successfully for `164b94acd7d77681af46c80306b76cd2750ce513`: clean installation, typechecks, unit/CLI tests, production builds, deterministic evaluation, production Chromium and isolated integration checks. This is actual remote evidence, separate from local measurements. Human rehearsal and faculty submission remain unrecorded. A documentation-only follow-up publishes this verified record.

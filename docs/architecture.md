@@ -42,7 +42,7 @@ CLI parsing has a fixed flag set, duplicate/unknown/missing-value validation, bo
 
 Normal builds include only `index.html`. The `phase2-test` Vite mode additionally builds `test/phase2.html` into ignored `.vite/phase2-dist`. That clearly labeled harness computes real static artifacts and exercises the actual bundled analysis/layout/Monaco workers and presentation components. It is absent from `apps/web/dist`, uses synthetic sources only, and has no release URL flag to enable mocks or raise limits.
 
-Phases 0–3 are published. Phase 4 evaluation, benchmark and acceptance evidence are recorded in docs/evaluation.md, docs/testing.md and docs/acceptance.md. Human rehearsal and Phase 4 publication/remote CI remain separate gates.
+Phases 0–3 are published. Phase 4 evaluation, benchmark and acceptance evidence are recorded in docs/evaluation.md, docs/testing.md and docs/acceptance.md. Phase 4 implementation164b94a is published and its remote CI passed; human rehearsal and faculty submission remain separate gates.
 
 ## Bytecode and verifier
 
