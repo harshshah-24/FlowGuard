@@ -1,2 +1,0 @@
-sql_query("trusted");
-shell("echo hello");

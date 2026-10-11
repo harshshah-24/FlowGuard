@@ -12,10 +12,9 @@ FlowGuard is an npm-workspace TypeScript project with three application packages
 | `apps/web/` | React workspace; browser file/download adapters; separate analysis, graph-layout, and execution workers. |
 | `packages/cli/` | Node command-line adapter for the same core, including bounded file I/O and responsive cancellation. |
 | `examples/` | Small synthetic `.fg` programs and their UI catalog. |
-| `fixtures/` | Valid/invalid compiler cases, taint/runtime expectations, and independently labeled evaluation cases. |
-| `scripts/` | Evaluation, benchmark workloads, machine/source evidence, and browser demo capture. |
-| `docs/` | Existing language/bytecode references, tests, reports, acceptance criteria, and evidence. |
-| `context/` | Requirements, decisions, phased plans, and historical/current handoff records. |
+| `fixtures/` | Valid/invalid compiler cases and taint/runtime expectations used by the retained tests. |
+| Root guides | Presentation walkthroughs, implementation reference, and compiler-concept explanations. |
+| `test-results/` | Disposable generated test output; ignored by Git and excluded from a submission ZIP. |
 
 There is no application backend, account system, database, or source-history store. Browser drafts stay in memory. Node provides local CLI I/O; Vite serves browser assets. SQL/shell operations produce simulated events.
 
@@ -330,7 +329,7 @@ Byte limits refer to UTF-8. VM retained-string accounting counts slot/stack refe
 
 `analyzeSource` publishes safe artifacts after completed stages. Final findings, bytecode, and disassembly are withheld unless the full pipeline succeeds. A semantic error can retain tokens/AST/semantic diagnostics; a runtime failure does not invalidate completed analysis. `TEMPLATE_UNVERIFIED` is the special nonblocking notice; other diagnostic codes are blocking errors.
 
-## 11. Tests, scripts, and build entry points
+## 11. Tests and build entry points
 
 | Location/file | What it checks or produces |
 |---|---|
@@ -344,18 +343,12 @@ Byte limits refer to UTF-8. VM retained-string accounting counts slot/stack refe
 | `apps/web/test/unit/` | Reducer, worker/execution clients, editor adapters and partial-result behavior. |
 | `apps/web/test/workspace.spec.ts`, `runtime.spec.ts`, `release.spec.ts` | Real production browser workspace, execution, exports/cancellation/stale states and release behavior. |
 | `apps/web/test/phase2.*` | Isolated development integration harness; absent from the normal production bundle. |
-| [evaluate.ts](scripts/evaluate.ts) | Runs independently labeled sink cases; records TP/FP/FN/TN, invalid/incomplete outcomes and attribution/expectation mismatches. |
-| [workloads.ts](scripts/workloads.ts) | Fixed-seed synthetic benchmark programs, 200-node graph source, nearest-rank p95 helper. |
-| [benchmark.ts](scripts/benchmark.ts) | Engine runs and production Chromium graph/selection/cancellation timings with raw samples and machine evidence. |
-| [evidence.ts](scripts/evidence.ts) | Snapshot/hash helpers, machine/version/source-tree evidence, JSON evidence writing and sample reports. |
-| [capture-demo.ts](scripts/capture-demo.ts) | Real production unsafe/binding Analyze/Run screenshots; synthetic input; external origins blocked. |
 | [package.json](package.json) | Workspace scripts and Node/npm version requirements. |
 | [apps/web/vite.config.ts](apps/web/vite.config.ts) | Production/development bundling and separate phase2-test build. |
 | [vitest.config.ts](vitest.config.ts) | Unit/CLI test discovery. |
 | [playwright.config.ts](playwright.config.ts), [playwright.phase2.config.ts](playwright.phase2.config.ts) | Production and isolated browser servers/test configurations. |
-| [.github/workflows/ci.yml](.github/workflows/ci.yml) | Clean-install CI, typechecks, unit tests, build, evaluation, both Chromium suites, failure artifacts. |
 
-`npm run check` includes typechecks, unit/CLI tests, production build, both browser suites, and deterministic evaluation. `npm run benchmark` is separate and requires production preview on port 4173. CI does not enforce hardware-sensitive benchmark timings. Existing measured results are historical evidence for their recorded sources/machine; these documentation changes do not constitute a new benchmark.
+`npm run check` includes typechecks, unit/CLI tests, production build, and both browser suites. Development evaluation, benchmark, evidence-generation, and automated demo-capture tools are omitted from this submission branch; their npm commands, script-specific TypeScript configuration, and unused evaluation-only fixtures are removed. Development plans and handoffs, GitHub CI, and the original report template are also omitted. Functional tests and their configurations remain. Historical measurements describe their recorded sources/machine; this cleanup is not a new benchmark. Compiler, CLI, browser analysis/execution, and report export do not depend on the omitted files.
 
 ## 12. Recommended code-reading order
 
@@ -367,4 +360,4 @@ Byte limits refer to UTF-8. VM retained-string accounting counts slot/stack refe
 6. Read `useWorkspace.ts`, `reducer.ts`, clients/workers, and `App.tsx` for the browser journey.
 7. Follow CLI `main.ts` → `cli.worker.ts` → `run.ts` to see reuse of the same core.
 
-For individual language rules use [docs/language.md](docs/language.md); for complete opcode definitions use [docs/bytecode.md](docs/bytecode.md). This guide explains implemented behavior rather than promising support for general-purpose languages, native machine-code generation, optimization, real external effects, or persistence.
+For language rules and compiler concepts use [pcd_guide.md](pcd_guide.md); for presentation examples use [demo_guide.md](demo_guide.md). Original development references remain in the [original repository history](README.md#historical-documentation); this submission branch omits their evaluation/capture utilities. This guide explains implemented behavior rather than promising support for general-purpose languages, native machine-code generation, optimization, real external effects, or persistence.

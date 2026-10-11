@@ -338,8 +338,8 @@ On **11 October 2026**, verification passed with Node **26.5.0** after rebuildin
 - All **10 additional source snippets** in the PCD guide matched their explained behavior.
 - **Five actual CLI invocations** confirmed the unsafe, binding, syntax-error, semantic-error, and runtime-error outcomes and exit codes.
 - JSON and Markdown serialization passed for every demo outcome, including invalid source and failed execution.
-- All **103 local Markdown links** across the three guides resolved to existing files.
+- All **103 local Markdown links** across the three guides resolved before the subsequent documentation cleanup. Current links are checked separately after layout changes.
 
 These checks do not establish a new browser rehearsal, new performance benchmark, faculty submission, or publication. Rehearse the UI steps on the presentation computer before showing faculty.
 
-Existing browser workflow coverage is in [runtime.spec.ts](apps/web/test/runtime.spec.ts), [workspace.spec.ts](apps/web/test/workspace.spec.ts), and [release.spec.ts](apps/web/test/release.spec.ts). Existing release evidence is described in [docs/testing.md](docs/testing.md). Use [docs/demo_script.md](docs/demo_script.md) for the repository's earlier compact demonstration.
+Existing browser workflow coverage is in [runtime.spec.ts](apps/web/test/runtime.spec.ts), [workspace.spec.ts](apps/web/test/workspace.spec.ts), and [release.spec.ts](apps/web/test/release.spec.ts). Earlier release evidence and the compact demo script remain in the [original repository history](README.md#historical-documentation). This submission branch omits development evaluation/benchmark/capture utilities. Use the manual demonstrations above and the application's JSON/Markdown exports when presenting.

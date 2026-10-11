@@ -2,42 +2,72 @@
 
 **A visual compiler and static analyzer that explains unsafe input flow.**
 
-FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler Design**. It connects compiler fundamentals with possible injection-related flows and an explicitly simulated bytecode runtime.
+FlowGuard is the Innovative Assignment for **4CS501CC25 Principles of Compiler Design**. It compiles a small typed language, tracks possible explicit input flow into modeled SQL/query or shell-command text, and executes verified bytecode in a bounded virtual machine. SQL and shell effects are simulated.
 
-## Current Status
+## What the project does
 
-**Phases 0–4 technical work is published on canonical main.** Phase 4 implementation/evidence commit: `164b94a`. Analyze completes the full compiler, explicit-flow analysis, codegen and verifier pipeline. Explicit Run executes verified bytecode with supplied inputs in a bounded VM. SQL and shell effects are simulated.
+- **Analyze:** tokenize, parse, check names/scopes/types, build a typed control-flow graph, solve input-flow analysis, explain findings, generate bytecode, and verify it.
+- **Inspect:** connect source locations to tokens, AST, symbols, graph nodes, final/replayed analysis states, findings, and bytecode instructions.
+- **Run:** execute the current verified bytecode with supplied inputs; show runtime events, failures, and initialized top-level values.
+- **Export:** download exact source and JSON/Markdown analysis reports, optionally including execution results.
 
-The workspace links source, control flow, findings, analysis replay, bytecode and runtime events. CLI and browser use the same TypeScript core. Final initialized top-level values exclude block locals and temporary slots. Phase 4 adds deterministic evaluation, measured benchmarks, release checks, an assignment report and a repeatable demo. Human rehearsal and faculty submission remain separate gates; actual publication/CI evidence is recorded below.
+The browser and CLI use the same TypeScript core. Findings describe possible explicit flows, not proven attacks or universal safety. Final values exclude block locals and temporary slots. Drafts stay in memory and disappear on reload; there are no accounts, database, autosave, backend analysis service, or remote runtime API.
 
-![Dark-only compiler workspace with real analysis and simulated execution](docs/evidence/dark-ui-workspace.png)
+## Project guides
 
-The current UI uses dark charcoal cards, blue-green/red accents, bold headings and pill navigation, with matching dark editor/graph themes. Summary counts come from the current analysis. This visual refresh is published to main as a591a69; prior Phase 4 benchmarks retain their original measured source hashes.
+- [Demo guide](demo_guide.md): setup, suggested faculty presentation, three end-to-end demonstrations, expected outputs, and viva questions.
+- [Architecture guide](architecture_guide.md): exact implementation, file responsibilities, data contracts, algorithms, browser workers, CLI, and runtime.
+- [PCD guide](pcd_guide.md): beginner-friendly compiler concepts mapped to the files that implement them.
+- [Assignment report](FlowGuard_Innovative_Assignment.docx): the project report document for submission.
 
-## Local Setup
+This branch is prepared for a source-code submission ZIP. Development plans and handoffs, GitHub automation, the report template, and evaluation/benchmark/capture utilities are omitted; the three root guides explain the submitted implementation. Functional tests and their fixtures remain available.
 
-Use **Node.js 26.5.0** and **npm 11.17.0**. From the repository root:
+## Local setup
+
+Use **Node.js 26.5.0** and **npm 11.17.0**, matching `.nvmrc` and the package manifest. From the repository root:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open [the local workspace](http://127.0.0.1:5173). Drafts live only in memory and disappear on reload. No account, database, backend analysis service, autosave, or remote runtime API is used.
+Open [the development workspace](http://127.0.0.1:5173/).
+
+For a production preview:
+
+```sh
+npm run build
+npm run preview
+```
+
+Open [the production preview](http://127.0.0.1:4173/). Keep the serving terminal running. Dependency and browser installation require network access; prepare them before presenting.
 
 ## Validation
+
+Install the test browser, then run the complete functional check:
+
+```sh
+npx playwright install chromium
+npm run check
+```
+
+`check` runs typechecks, unit/CLI tests, builds, production browser tests, and the isolated static-integration browser tests. Stop a manually running production preview before browser tests, which start their own servers.
+
+You can also run these individually:
 
 ```sh
 npm run typecheck
 npm run test
 npm run build
-npx playwright install chromium
 npm run test:e2e
+npm run test:phase2
 ```
 
-Or run `npm run check` after the browser installation. Phase 4 local checks passed **260 unit/CLI tests, fifteen production Chromium tests, four isolated static-integration Chromium tests, typechecks and builds** with Node 26.5.0/npm 11.17.0. `npm run test:phase2` runs the existing isolated harness. [Testing notes](docs/testing.md) record the full-check evidence and approved scope-metadata amendment. [GitHub Actions run 37660826256](https://github.com/harshshah-24/FlowGuard/actions/runs/37660826256) passed for implementation commit `9b3e96c`: clean install, typechecks, unit/CLI tests, production build and both Chromium suites on Ubuntu.
+The submission branch omits the development evaluation, benchmark, and automated demo-capture tools. These are not needed to compile, analyze, inspect, run, or export programs. Browser tests write disposable output under `test-results/`. Technical validation does not establish human rehearsal or faculty submission.
 
-CLI after building:
+## CLI
+
+After `npm run build`, use:
 
 ```sh
 node packages/cli/dist/main.js --version
@@ -48,38 +78,29 @@ node packages/cli/dist/main.js examples/arithmetic-loop.fg --run
 node packages/cli/dist/main.js examples/bound-query.fg --run --inputs inputs.json
 ```
 
-For example, `inputs.json` can contain `["Ada"]`. Exit codes: 0 completed without findings, 1 completed with findings, 2 invalid source/request/input file, 3 runtime/limit/internal/output failure, 130 cancellation. Runtime failure takes precedence over findings; failed runtime reports retain completed static analysis.
+For the last command, create `inputs.json` containing `["Ada"]`. Reports do not overwrite existing output files unless `--overwrite` is explicitly supplied.
+
+Exit codes: **0** completed without findings; **1** completed with findings; **2** invalid source/request/input file; **3** runtime/limit/internal/output failure; **130** cancellation. Runtime failure takes precedence over findings and retains completed static analysis in the report.
 
 ## Structure
 
-- `packages/core/`: portable compiler, CFG, taint/provenance/replay, bytecode/verifier/VM, coordinator, reports, contracts and budgets.
-- `packages/cli/`: strict flags, bounded files, analysis/run reports, no-clobber outputs and responsive shared-memory SIGINT handling.
-- `apps/web/`: Monaco workspace, separate analysis/execution/layout workers, graph/inspectors/replay/bytecode/runtime panels, examples/help and state machine.
-- `examples/`, `fixtures/`: synthetic, independently specified teaching examples and expectations.
-- `context/`: PRD, master plan, phases, decisions, handoff, and status.
-- `docs/`: language/bytecode reference, acceptance, evaluation, assignment report, demo and real synthetic evidence.
-- `scripts/`: reproducible evaluation, benchmark and demo capture.
+| Location | Responsibility |
+|---|---|
+| `packages/core/` | Compiler, CFG, taint/provenance/replay, bytecode/verifier/VM, reports, contracts, and budgets. |
+| `packages/cli/` | Flags, bounded file I/O, analysis/execution reports, and shared-memory cancellation. |
+| `apps/web/` | Monaco editor, analysis/execution/layout workers, graph, inspectors, replay, inputs, and runtime panels. |
+| `examples/`, `fixtures/` | Teaching programs and expected compiler, taint-analysis, and runtime behavior used by tests. |
+| Root guides | Presentation walkthroughs, implementation reference, and PCD explanations. |
+| `test-results/` | Generated local test output; ignored by Git and unnecessary in the submission ZIP. |
 
-## Behavior
+## Preparing the submission ZIP
 
-A custom typed language compiles into a source-linked control-flow graph and verified bytecode. Forward taint analysis explains possible explicit input flow into modeled query/command arguments. Run executes custom bytecode under fixed resource limits.
+Include application/core/CLI source, package manifests and lockfile, build configuration, `.nvmrc`, examples, the root guides, and the completed assignment report. Tests and their fixtures can remain to demonstrate correctness and preserve the documented validation commands.
 
-The TypeScript engine is shared by the CLI and browser workers. Inspection includes tokens, AST, symbols, states, findings, analysis replay, bytecode and runtime events. Conservative findings are not proven attacks or universal safety guarantees.
+Exclude `.git/`, `node_modules/` at every level, `.vite/`, `test-results/`, `playwright-report/`, `coverage/`, and generated `dist/` directories from a source ZIP. The recipient regenerates dependencies with `npm ci` and builds with `npm run build`. Development plans, GitHub workflows, the report template, and unused evaluation-only fixtures have already been removed from this branch.
 
-## Project Documents
+## Historical documentation
 
-- [Language reference](docs/language.md): grammar, types, errors, limits and core APIs.
-- [Architecture](docs/architecture.md): compiler/runtime algorithms, transport and reports.
-- [Assignment report](docs/assignment_report.md), [demo script](docs/demo_script.md), [acceptance](docs/acceptance.md), [evaluation and timings](docs/evaluation.md), [bytecode](docs/bytecode.md).
-- [PRD](context/flowguard_prd.md): product behavior and chosen scope.
-- [Master implementation plan](context/implementation_plan.md): exact files, contracts, algorithms, dependencies, and checks.
-- [Phase index](context/phases/README.md): ordered tasks and publication/submission gates.
-- [Status](context/status_update.md), [handoff](context/context_handoff.md), and [decision log](context/decision_log.md).
-- [Original ideas](context/project_ideas.md): exploration history, not current scope.
-- [Third-party notes](docs/third_party.md): dependency licenses; no project license is added.
+The former documentation, development plans and handoffs, GitHub workflow, report template, evaluation/benchmark utilities and fixtures, and screenshots are preserved in the original repository at pre-cleanup commit **`debf7f4fc6b6e19621329d943b406f35c7f25342`**. They are not part of this submission layout. The source ZIP does not need Git; use the three root guides for the current implementation and presentation.
 
-Evaluation: TP6/FP2/FN0/TN4, precision 75%, recall 100% on the small independently labeled fixture set; invalid 8/incomplete 0. Engine p95 was 939 ms; 200-node graph readiness 1,283 ms; selection 35 ms; cancellation under 13 ms. These measurements apply to the recorded Mac and workloads. Run `npm run evaluate` to regenerate reports; after starting production preview, run `npm run benchmark` for timings.
-
-Target submission: **8 October 2026**, team of two. All project work belongs in [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard). Implement later phases only with authorization and the latest approved plan.
-
-Phase 4 implementation `164b94a` is published on main. [Its GitHub Actions run](https://github.com/harshshah-24/FlowGuard/actions/runs/37669529758) passed all functional checks, including deterministic evaluation and both Chromium suites. Human rehearsal and faculty submission remain.
+All project work belongs in [harshshah-24/FlowGuard](https://github.com/harshshah-24/FlowGuard). The repository has no project license. Historical third-party notes do not grant a license to FlowGuard itself.
